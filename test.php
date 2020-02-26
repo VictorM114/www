@@ -3,7 +3,7 @@
 <body>
 
 <?php
-echo "My first PHP script!";
+echo "My first PHP script!<br>";#Podemos usar el <br> de HTML como endline
 ?>
 <?php
 $txt = "W3Schools.com";
