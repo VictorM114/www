@@ -7,7 +7,7 @@
 <body>
     <?php
 
-    echo "Hola! <br><b>Este es mi Landing page!</b>";
+    echo "Hola! <b>Este es mi Landing page!</b>";
     #Hice este landing page para probar
 
     ?>
