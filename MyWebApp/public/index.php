@@ -1,6 +1,6 @@
 <?php
 
-/** Hola
+/** Hola HWLLO HELLO
  * Laravel - A PHP Framework For Web Artisans
  *
  * @package  Laravel
