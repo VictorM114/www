@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3-HTML</title>
+    <style>
+        .cities {
+            background-color: black;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+    <style>
+        span.note{
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--Semantic HTML-->
+    <button>Click Me</button>
+
+    <!--Non-semantic-->
+    <div>Click Me</div>
+
+    <!--Heading-->
+    <h1>Heading1</h1>
+    <h2>Heading2</h2>
+    <h3>Heading3</h3>
+    <h4>Heading4</h4>
+    <h5>Heading5</h5>
+    <h6>Heading6</h6>
+
+    <!--HTML Backgroung Images-->
+    
+    <div style="background-image: url ('img_girl.jpg');">
+
+    <style>
+        div {
+            background-image: url('img_girl.jpg');
+        }
+    </style>
+<!--Backgroun repeat-->
+<style>
+    body{
+        background-image: url('example_img_girl.jpg');
+    }
+</style>
+
+<!--Avoid background image from repeating itself-->
+
+<style>
+    body{
+        background-image: url('example_img_girl.jpg');
+        background-repeat: no repeat;
+    }
+</style>
+
+<!--Background cover-->
+<style>
+    body{
+        background-image: url('img_girl.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<!--Background stretch-->
+<style>
+    body{
+        background-image: url('img_girl.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+
+<!--HTML Block and Inline Elements-->
+<!--Block-level Elements-->
+
+<div>Hello World</div>
+<div style="background-color: black;color:white;padding: 20px;">
+    <h2>London</h2>
+    <p>London is the capital city of England. It is the most populous city in the city in the
+        United Kingdom, with metropolitan area of over 13 million inhabitants.</p>
+</div>
+<!--Inline Elements-->
+<span>Hello World</span>
+<h1>My <span style="color:red">Important</span>Heading</h1>
+
+<!--HTML5 Canvas-->
+<canvas id="myCanvas" width="200" height="100"></canvas>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">\
+</canvas>
+<!--Draw a line-->
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d")
+ctx.moveTo (0, 0); 
+ctx.lineT0(200, 100)
+ctx.Stroke();
+
+
+<!--Classes-->
+<div class="cities">
+    <h2>London</h2>
+    <p>London is the capital of England.</p>
+</div>
+
+<div class="cities">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France</p>
+</div>
+
+<div class="cities">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan</p>
+</div>
+
+<h1>My<span class="note">Important</span>Heading</h1>
+<p>This is some <span class="note">important</span>text.</p>
+
+<!--CSS to style all elements with the class name city-->
+<style>
+    .city {
+        background-color: tomato;
+        color:white;
+        padding: 10px;
+    }
+</style>
+<h2 class="city">London</h2>
+<p>London is the capital of England</p>
+
+<h2 class="city">Paris</h2>
+<p>Paris is the capital of France</p>
+
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+<h2 class="city main">London</h2>
+<h2 class="city">Paris</h2>
+<h2 class="city">Tokyo</h2>
+
+<!--Different Tags can share same class-->
+<h2 class="city">Paris</h2>
+<p class="city">Paris is the capital of France</p>
+
+<!--using the class attribute in JavaScript-->
+<script>
+    function myFunction() {
+    var x = document.getElementsByClassName("city");
+    for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+    }
+    }
+    </script>
+<!--Computer Code-->
+<code>
+    x = 5;<br>
+    y = 6;<br>
+    z = x + y;
+    </code>
+
+    <pre>
+        <code>
+        x = 5;
+        y = 6;
+        z = x + y;
+        </code>
+        </pre>
+<!--HTML <kbd> for keyboard input-->
+
+    <p>Save the document by presing <kbd>Crtl + S</kbd></p>
+
+<!--HTML <samp> element represents output from a program or computing system-->
+<!--Text surrounded by <samp> tags is typically displayed in a monospace font-->
+    <p>If you input wrong value, the program will return <samp>Error!</samp></p>   
+
+<!--HTML <var> for variables-->
+<!--The HTML<var> element defines a variable-->
+
+    Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
+
+</body>
+</html>
