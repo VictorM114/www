@@ -1,0 +1,112 @@
+<html lang="en" lang="es">
+<head> <!--En el head va toda la metadata -->
+    <!--Ejemplo de CSS aparte-->
+    <link rel="stylesheet" href="CSSenW3Schools.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3SchoolsHTML</title>
+</head>
+<body>
+    <h1>PrimerHeading</h1>
+    <h2>SegundoHeading</h2>
+    <h3>TercerHeading</h3>
+    <!--Además de tamaño, 
+        Los heading son en orden de importancia -->
+    <p>Esto es un parrafo en HTML</p>
+    <!--Se tiene que usar la <a> para declarar un link
+        y el href para decir donde es el link-->
+    <a href="https://www.youtube.com">Esto es un Link para youtube</a><br>
+
+    <button>Asi se escribe un boton</button>
+    <!--Esto es una lista no ordenada en HTML-->
+    <ul>
+        <li>Pollo</li>
+        <li>Papas</li>
+        <li>Agua</li>
+    </ul>
+    <!--Esto es una lista ordenada en HTML-->
+    <ol>
+        <li>Pollo</li>
+        <li>Papas</li>
+        <li>Agua</li>
+    </ol>
+    <!--Podemos declarar una imagen como
+        <img src="imagen.jpg">-->
+        <!--Además podemos declarar la altura y la anchura además del nombre alternativo que tendrá-->
+    
+    <img src="imagen.jpg" width="200" height="100" alt= "Puto el que lo lea">
+
+    <!--Podemos poner un atributo llamado style para cambiar algunas cosas de un elemento
+        como color, font, size etc-->
+    <!--Las propiedades que están dentro de style son propiedades CSS-->
+    <p style ="color:lightseagreen">Esto es un parrafo de otro color</p>
+    <!--El atributo titulo va a mostrar el contenido 
+        cuando pases por encima de ese parrafo-->
+    <p title="I'm a tooltip">AnotherOne</p>
+
+    <!--Alguna información más especifica de headings-->
+    <h1 style="font-size:60px;">Grande</h1>
+    
+    <!--El tag <hr> es como un <br> pero con una linea-->
+    <!--Ejemplos-->
+    
+    <h1>Esto es un heading 1!</h1>
+    <hr>
+    <p>Esto es un parrafo</p>    
+    <!--Con este tag se utiliza un -->
+    <pre>Aqui podemos escribir un texto que con el formato preformateado</pre>
+    <!--Formateando HTML tags-->
+    <b>Con el tag b el texto se pone bold</b>
+    <br>
+    <strong>Con el tag strong el texto se pone bold pero con más importancia</strong>
+    <!--Me imagino que la importancia del texto lo decide el browser
+        o search engine-->
+    <br>
+    <i>Italico</i>
+    <br>
+    <em>Texto con enfasis</em>
+    <br>
+
+    <!--Como ya mencioné los atributos de STYLE son atributos de css
+        Por ende, eso se llama inline css-->
+    <!--Tambien tenemos internal css que va dentro del head del documento-->
+    <!--Y también podemo llamar una hoja de css aparte que también se coloca en el head-->
+        
+    <!--Utilizando CSS aparte-->
+    <!--Utilizando el id p01 que se encuentra en la hoja-->
+    <p id="p01">Soy CSS aparte</p>
+    <!--Utilizando clases-->
+    <p class="error">PELIGRO!</p>
+
+    <!--Imagenes en HTML-->
+    <!--Para el tamaño podemos usar los atributos height y width -->
+    <img src="imagenes/alphalogo.png" alt="Logo de Alpha" height="100" width="100">
+    <!--Es recomendable utilizar style-->
+    <hr>
+    <img src="imagenes/alphalogo.png" alt="Logo de Alpha"
+    style="width:128px; height:128px">
+
+    <!--Tablas en HTML-->
+    <H3 style="text-align: center;">Tablas en HTML</H3>
+    <!--Para declarar una tabla utilizamos table-->
+    <table style="width:58%">
+        <caption>Esto es un caption</caption>
+        <tr><!--Con TR declaramos el row de las tablas, la fila-->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Victor</td>
+            <td>Ayala</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>Romero</td>
+            <td>22</td>
+        </tr>
+    </table>
+
+</body>
+</html>
