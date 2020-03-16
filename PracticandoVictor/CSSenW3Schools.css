@@ -1,0 +1,23 @@
+/*Esto es un ID*/
+#p01 {
+    color: black;
+    font-size: 16px;
+    background-color: lightgrey;
+    font-style: italic;
+}
+p.error{
+    color: red;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+td {
+    text-align: right;
+}
