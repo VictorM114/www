@@ -1,0 +1,40 @@
+
+p {
+    /*Esto es un borde en CSS el borde te hace un borde dentro de un elemento de HTML*/
+    border: 10px solid powderblue;
+    /*El padding define el espacio
+    entre el texto y el borde */
+    padding: 30px;
+    /*El margin basicamente define 
+    espacio fuera del borde*/
+    margin: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*Para definir un estilo especifico  de un elemento en especidifico
+se hace un id, el id es unico
+en una pagina*/
+#p01 {
+    color: #BF0010;
+}
+
+/*Esto es una clase que define un estilo para diferentes tipos de elementos de html */
+/*Para cambiar los atributos hay 
+que sobreescribir los otros que estan
+en el css arriba*/
+p.error {
+  color: red; 
+  font-style: italic;
+  border: 10px solid black;
+  padding: 40px;
+  margin: 40px;
+
+}
+
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
