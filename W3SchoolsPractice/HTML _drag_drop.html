@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Drag and Drop</title>
+    <script>
+        function allowDrop(ev) {
+            ev.preventeDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag1" scr="img_logo.gif" draggable="true" ondragstart="drag(event)"
+    width="336" height="69">
+
+    <img draggable="true">
+<!--Character entities-->
+&lt;
+&nbsp;
+&amp;
+&cent;
+&yen;	
+
+<!--Diacritical mark-->
+<!--acentos-->
+a&#768;
+O&#771;
+
+
+</body>
+</html>
