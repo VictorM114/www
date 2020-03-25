@@ -61,7 +61,7 @@
 </div>
 
 <!-- Footer, alineado en el centro-->
-<div class="footer" align="center">
+<div class="footer" align="center"> 
   <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
 </div>
   <!--  <h1>Plataforma Actividades Extracurriculares</h1> -->
