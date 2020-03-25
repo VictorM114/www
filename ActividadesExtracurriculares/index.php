@@ -14,7 +14,7 @@
   <body>
   <nav class="navbar navbar-light bg-light">
     	<a class="navbar-brand" href="#">
-    <img src="C:\wamp64\www\ActividadesExtracurriculares\images\AIbEiAIAAABECIydnM6-j-Hu1AEiC3ZjYXJkX3Bob3RvKihkOTk2MGZkYzU5MDIyOTljNDIyMzZjMjBiYzFhMzA1YTc3ZDQ5OTA1MAHp4jH7iyip2nPCloDmKw87sI-XZQ.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="images/AIbEiAIAAABECIydnM6-j-Hu1AEiC3ZjYXJkX3Bob3RvKihkOTk2MGZkYzU5MDIyOTljNDIyMzZjMjBiYzFhMzA1YTc3ZDQ5OTA1MAHp4jH7iyip2nPCloDmKw87sI-XZQ.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
     Plataforma Actividades Extracurriculares
        </a> 
        <button type="button" class="btn btn-primary btn-sm">Log In</button>
@@ -28,13 +28,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0034.JPG" class="d-block w-100" alt="foto1">
+      <img src="images/Asociaciones/IMG_0034.JPG" class="d-block w-100" alt="foto1">
     </div>
     <div class="carousel-item">
-      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0042.JPG" class="d-block w-100" alt="foto2">
+      <img src="images/Asociaciones/IMG_0042.JPG" class="d-block w-100" alt="foto2">
     </div>
     <div class="carousel-item">
-      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0053.JPG" class="d-block w-100" alt="foto3">
+      <img src="images/Asociaciones/IMG_0053.JPG" class="d-block w-100" alt="foto3">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
