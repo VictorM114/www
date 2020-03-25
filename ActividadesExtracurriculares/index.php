@@ -19,6 +19,33 @@
        </a> 
        <button type="button" class="btn btn-primary btn-sm">Log In</button>
   </nav>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0034.JPG" class="d-block w-100" alt="foto1">
+    </div>
+    <div class="carousel-item">
+      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0042.JPG" class="d-block w-100" alt="foto2">
+    </div>
+    <div class="carousel-item">
+      <img src="C:\wamp64\www\ActividadesExtracurriculares\images\Asociaciones\IMG_0053.JPG" class="d-block w-100" alt="foto3">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
   <!--  <h1>Plataforma Actividades Extracurriculares</h1> -->
   
 
