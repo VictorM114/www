@@ -12,11 +12,18 @@
     <title>Plataforma de Actividades Extracurriculares</title>
   </head>
   <body>
-    <div>
-    <h1>Plataforma Actividades Extracurriculares</h1>
-    <img src="..." class="img-fluid" alt="Responsive image">
-    
-    </div>
+  <nav class="navbar navbar-light bg-light">
+    	<a class="navbar-brand" href="#">
+    <img src="C:\wamp64\www\ActividadesExtracurriculares\images\AIbEiAIAAABECIydnM6-j-Hu1AEiC3ZjYXJkX3Bob3RvKihkOTk2MGZkYzU5MDIyOTljNDIyMzZjMjBiYzFhMzA1YTc3ZDQ5OTA1MAHp4jH7iyip2nPCloDmKw87sI-XZQ.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
+    Plataforma Actividades Extracurriculares
+       </a> 
+       <button type="button" class="btn btn-primary btn-sm">Log In</button>
+  </nav>
+  <!--  <h1>Plataforma Actividades Extracurriculares</h1> -->
+  
+
+    <!-- Image and text -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
