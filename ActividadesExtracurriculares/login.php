@@ -22,8 +22,6 @@
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" class="form-control" placeholder="Ingresar email" id="email">
-      </div>
-      <div class="form-group">
         <label for="pwd">Password</label>
         <input type="password" class="form-control" placeholder="Ingresa password" id="pwd">
         <button type="submit" class="btn btn-primary">Ingresar</button>
