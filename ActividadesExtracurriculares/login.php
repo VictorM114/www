@@ -20,18 +20,21 @@
   </nav>
       <form>
       <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" class="form-control" placeholder="Ingresar email" id="email">
-        <label for="pwd">Password</label>
-        <input type="password" class="form-control" placeholder="Ingresa password" id="pwd">
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <h3>Bienvenido/Bienvenida!</h3>
+        <label for="usr"><b>Username:</b></label>
+        <input type="usr" class="form-control" placeholder="Ingresar usuario" id="usr">
+        <label for="pwd"><b>Password:</b></label>
+        <input type="password" class="form-control" placeholder="Ingresar password" id="pwd">
       </div>
-     
+        <div id="btnmedio">
+          <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
     </form>
     <!-- Footer, alineado en el centro-->
-    <div class="footer" align="center"> 
+    <!--Cambie el tag div por footer-->
+    <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
-    </div>
+</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

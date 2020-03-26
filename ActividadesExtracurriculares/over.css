@@ -1,6 +1,28 @@
+/*Esta es la clase que utilizamos en la formna de login
+probablemente la utilicemos luego por las dem'as formas*/
 .form-group{
     max-width: 400px;
     margin: 0 auto;
     margin-top: 200px;
     
 }
+/*Esto fue para separar el botón de ingresar*/
+.form-control {
+    margin-bottom: 3px;
+  }
+ #btnmedio{
+    text-align: center;
+ }
+/*Esta es la clase footer para poder centralizar el 
+footer y ponerlo fixed*/
+ .footer{
+    display: unset;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #172727;
+    color: white;
+   
+ }
