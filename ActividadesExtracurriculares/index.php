@@ -20,7 +20,8 @@
     <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
     Plataforma Actividades Extracurriculares
        </a> 
-       <button type="button" class="btn btn-primary btn-sm">Log In</button>
+       <a href = "login.php"><button type="button" class="btn btn-primary btn-sm">Log In</button></a> 
+       
   </nav>
 <!--Carousel para las imágenes en la pantalla de inicio, serán fotos de las actividades que hagan las asociaciones
     Se utilizó el framework bootstrap-->
