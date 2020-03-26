@@ -2,7 +2,7 @@
     25 de marzo de 2020
     Primer file, index del proyecto-->
 <!doctype html>
-<html lang="en">
+<html lang="en" lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,11 +20,11 @@
     <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
     Plataforma Actividades Extracurriculares
        </a> 
-       <button type="button" class="btn btn-primary btn-sm" href="/login.php">Log In</button>
+       <button type="button" class="btn btn-primary btn-sm">Log In</button>
   </nav>
 <!--Carousel para las imágenes en la pantalla de inicio, serán fotos de las actividades que hagan las asociaciones
     Se utilizó el framework bootstrap-->
-
+  <!--Un carousel es básicamente un slideshow-->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -64,9 +64,6 @@
 <div class="footer" align="center"> 
   <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
 </div>
-  <!--  <h1>Plataforma Actividades Extracurriculares</h1> -->
-  
-
     <!-- Image and text -->
 
     <!-- Optional JavaScript -->
