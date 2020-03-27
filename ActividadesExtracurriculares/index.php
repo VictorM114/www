@@ -96,7 +96,7 @@
 
 <!-- Footer, alineado en el centro-->
 <!--Cambie el tag div por footer-->
-<footer class="footer"> 
+<footer class="footer" id= idFooterIndex> 
   <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
 </footer>
     <!-- Image and text -->
