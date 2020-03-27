@@ -15,10 +15,11 @@ probablemente la utilicemos luego por las dem'as formas*/
  }
 /*Esta es la clase footer para poder centralizar el 
 footer y ponerlo fixed*/
+/*cambié position a sticky para que se vea encima de las fotos junto con display: inline-block*/
  .footer{
-    display: unset;
+    display: inline-block;
     text-align: center;
-    position: fixed;
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;

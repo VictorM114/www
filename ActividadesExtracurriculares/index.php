@@ -61,6 +61,9 @@
   </a>
 </div>-->
 
+<!--Carousel para las imágenes en la pantalla de inicio, serán fotos de las actividades que hagan las asociaciones
+    Se utilizó el framework bootstrap-->
+<!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
