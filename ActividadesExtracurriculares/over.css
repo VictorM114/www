@@ -26,3 +26,14 @@ footer y ponerlo fixed*/
     color: white;
    
  }
+ /*Clase para el carousel*/
+ .carousel-item img/*Encontré en stack overflow que podemos
+ elegir el item que es*/
+   {
+   border-radius: 60px;
+   background-size: contain;
+   height: auto;
+   width: auto;
+   }
+  
+  
