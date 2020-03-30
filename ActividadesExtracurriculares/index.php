@@ -65,6 +65,7 @@
     Se utilizó el framework bootstrap-->
 <!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
+<div class = "container">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -92,7 +93,7 @@
     <span class="sr-only">Siguiente</span>
   </a>
 </div>
-
+</div>
 
 <!-- Footer, alineado en el centro-->
 <!--Cambie el tag div por footer-->

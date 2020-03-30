@@ -27,7 +27,7 @@
         <input type="password" class="form-control" placeholder="Ingresar password" id="pwd">
       </div>
         <div id="btnmedio">
-        <a href = "afterlogin.php"><button type="submit" class="btn btn-primary">Ingresar</button></a>
+        <a href = "profile.php"><button type="submit" class="btn btn-primary">Ingresar</button></a>
         </div>
     </form>
     <!-- Footer, alineado en el centro-->
