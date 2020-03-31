@@ -47,6 +47,12 @@
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
+          <p>La asociación tiene número de solicitudes pendientes</p>
+          
+          </div>
+          <div class = "container">
+          <h2>Solicitudes Aprobadas</h2>
+          <p>Las siguientes solicitudes han sido aprobadas.</p>
           
           </div>
           <div class="container">

@@ -31,7 +31,8 @@ footer y ponerlo fixed*/
     display: inline-block
  }
  /*Clase para el carousel*/
- .carousel-item img/*Encontré en stack overflow que podemos
+ .carousel-item img
+ /*Encontré en stack overflow que podemos
  elegir el item que es*/
    {
    border-radius: 60px;
@@ -39,5 +40,3 @@ footer y ponerlo fixed*/
    height: auto;
    width: auto;
    }
-  
-  
