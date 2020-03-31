@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -27,7 +41,7 @@
         <input type="password" class="form-control" placeholder="Ingresar password" id="pwd">
       </div>
         <div id="btnmedio">
-        <a href = "profile.php"><button type="submit" class="btn btn-primary">Ingresar</button></a>
+        <button type="submit" value ="send" class="btn btn-primary">Ingresar</button>
         </div>
     </form>
     <!-- Footer, alineado en el centro-->
