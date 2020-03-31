@@ -1,7 +1,3 @@
-<?php
-//scon.php contiene la conexión del server
-  require_once('scon.php');
-?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
