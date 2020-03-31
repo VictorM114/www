@@ -1,16 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+//scon.php contiene la conexión del server
+  require_once('scon.php');
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
@@ -34,7 +24,7 @@ echo "Connected successfully";
   </nav>
       <form>
       <div class="form-group">
-        <h3>Bienvenido/Bienvenida!</h3>
+        <h3>Bienvenido/Bienvenida!</h3>       
         <label for="usr"><b>Username:</b></label>
         <input type="usr" class="form-control" placeholder="Ingresar usuario" id="usr">
         <label for="pwd"><b>Password:</b></label>
