@@ -97,7 +97,9 @@
 
 <!-- Footer, alineado en el centro-->
 <!--Cambie el tag div por footer-->
-<footer class="footer" id= idFooterIndex> 
+<footer class="footer"> 
+<!--Le quité el id ya que puse las fotos en un container, y la foto se actualiza de acuerdo
+al size pero no sobrepasa el footer ni la pantalla-->
   <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
 </footer>
     <!-- Image and text -->
