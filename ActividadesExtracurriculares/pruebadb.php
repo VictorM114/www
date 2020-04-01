@@ -10,6 +10,7 @@
     $dbName = "extracu";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbName);
+    
 
 // Check connection
 if ($conn->connect_error) {
@@ -19,6 +20,10 @@ echo "Connected successfully";
 ?>
 </head>
 <body>
+<?php 
+
+
+?>
 
 </body>
 </html>
