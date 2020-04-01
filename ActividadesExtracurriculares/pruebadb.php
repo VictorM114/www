@@ -1,4 +1,9 @@
-<?php
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probando el db</title>
+    <?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -12,3 +17,8 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 ?>
+</head>
+<body>
+
+</body>
+</html>

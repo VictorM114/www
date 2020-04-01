@@ -30,6 +30,7 @@
         <button type="submit" value ="send" class="btn btn-primary">Ingresar</button>
         </div>
     </form>
+
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
