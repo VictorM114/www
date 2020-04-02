@@ -1,3 +1,7 @@
+<?php 
+  include 'sconn.php';
+
+?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -17,8 +21,8 @@
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       Plataforma Actividades Extracurriculares
       </a> 
-  </nav>
-      <form>
+  </nav> 
+     <form>
       <div class="form-group">
         <h3>Bienvenido/Bienvenida!</h3>       
         <label for="usr"><b>Username:</b></label>
@@ -30,7 +34,6 @@
         <button type="submit" value ="send" class="btn btn-primary">Ingresar</button>
         </div>
     </form>
-
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
