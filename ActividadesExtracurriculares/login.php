@@ -1,7 +1,3 @@
-<?php 
-  include 'sconn.php';
-
-?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -22,16 +18,16 @@
       Plataforma Actividades Extracurriculares
       </a> 
   </nav> 
-     <form>
+     <form action="plogin.php" method="POST">
       <div class="form-group">
-        <h3>Bienvenido/Bienvenida!</h3>       
-        <label for="usr"><b>Username:</b></label>
-        <input type="usr" class="form-control" placeholder="Ingresar usuario" id="usr">
-        <label for="pwd"><b>Password:</b></label>
-        <input type="password" class="form-control" placeholder="Ingresar password" id="pwd">
+        <h3>Bienvenido/Bienvenida!</h3>      
+         
+        <b>Username:</b><input type="text" name="username" class="form-control" placeholder="Ingresar usuario">
+        <b>Password:</b><input type="password" name="password" class="form-control" placeholder="Ingresar password">
+        
       </div>
         <div id="btnmedio">
-        <button type="submit" value ="send" class="btn btn-primary">Ingresar</button>
+        <button type="submit" name="submit" value ="submit" class="btn btn-primary">Ingresar</button>
         </div>
     </form>
     <!-- Footer, alineado en el centro-->

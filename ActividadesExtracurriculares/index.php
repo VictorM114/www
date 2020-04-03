@@ -1,3 +1,7 @@
+<?php 
+   include 'sconn.php';
+
+?>
 <!-- Alice M. Romero Reyes
     25 de marzo de 2020
     Primer file, index del proyecto-->
