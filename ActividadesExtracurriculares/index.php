@@ -104,7 +104,7 @@
 <footer class="footer"> 
 <!--Le quité el id ya que puse las fotos en un container, y la foto se actualiza de acuerdo
 al size pero no sobrepasa el footer ni la pantalla-->
-  <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
+  <p>&copy Actividades Extracurriculares UPRP,<?php echo date("Y");?> &copy </p>
 </footer>
     <!-- Image and text -->
 

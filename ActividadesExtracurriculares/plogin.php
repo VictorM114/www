@@ -23,5 +23,6 @@ if ($row>1){ //Si el resultado del fect existe
 }
 else{//si no existe doy un script pero hay que cambiar esto como un reload.
     echo "<script>alert('username and password do not match')</script>";
+    
 }
 ?>

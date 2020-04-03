@@ -33,7 +33,7 @@
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
-      <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
+      <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>
 </footer>
 
     <!-- Optional JavaScript -->
