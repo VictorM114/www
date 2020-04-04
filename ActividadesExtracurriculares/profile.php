@@ -47,6 +47,12 @@
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
+          <p>La asociación tiene número de solicitudes pendientes</p>
+          
+          </div>
+          <div class = "container">
+          <h2>Solicitudes Aprobadas</h2>
+          <p>Las siguientes solicitudes han sido aprobadas.</p>
           
           </div>
           <div class="container">
@@ -70,14 +76,14 @@
               </tbody>
             </table>
           </div>
-
+    
 
 
      
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
-      <p>&copy Actividades Extracurriculares UPRP, 2020 &copy</p>
+      <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>
 </footer>
 
     <!-- Optional JavaScript -->
