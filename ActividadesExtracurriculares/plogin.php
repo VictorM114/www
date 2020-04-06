@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     else {
             #esta variable query utiliza el statement sql para verificar 
             #si existe el usuario
-            $query = "SELECT * FROM users WHERE userName='$username' AND userPass='$password' ";
+            $query = "SELECT * FROM users WHERE userName='$username' AND userPass='$password'";
             $result =mysqli_query($conn,$query);
 
             /*utilizo esta variable con la funcion de php
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                 header("location:profile.php");
             }
             else{
-                header("location:login.php?Invalid= Por favor ingresa los credenciales correctos.");
+                header("location:login.php?Invalid= Credenciales incorrectos, intenta de nuevo.");
             }
                 
     }
