@@ -20,14 +20,23 @@
   </nav> 
      <form action="plogin.php" method="POST">
       <div class="form-group">
-        <h3>Bienvenido/Bienvenida!</h3>      
-         
+        <h3>Bienvenido/Bienvenida!</h3>    
+        <?php if (@$_GET['Empty']==True) { ?>
+          <div class="alert-light text-danger"s><?php echo $_GET['Empty'];?></div>
+       <?php 
+          }
+          ?>  
+        <?php if (@$_GET['Invalid']==True) { ?>
+          <div class="alert-light text-danger"s><?php echo $_GET['Invalid'];?></div>
+       <?php 
+          }
+          ?>  
         <b>Username:</b><input type="text" name="username" class="form-control" placeholder="Ingresar usuario">
         <b>Password:</b><input type="password" name="password" class="form-control" placeholder="Ingresar password">
-        
       </div>
         <div id="btnmedio">
         <button type="submit" name="submit" value ="submit" class="btn btn-primary">Ingresar</button>
+
         </div>
     </form>
     <!-- Footer, alineado en el centro-->
