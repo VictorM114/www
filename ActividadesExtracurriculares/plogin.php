@@ -44,17 +44,13 @@ if (isset($_POST['submit'])) {
             }
             elseif($row['userType'] == 'admin'){
                 header("location:adminprofile.php");
-            }
-            //Si los credenciales estan mal, me da error.
-            elseif(($row['userName'] == $_POST['username']) && ($row['userPass'] != $_POST['password']))
-            {
+            }//Si los credenciales estan mal, me da error.
+            elseif($row['userPass'] != $_POST['password']){
                 header("location:login.php?Invalidpass= Contraseña incorrecta.");
             }
-            elseif(($row['userName'] != $_POST['username']) && ($row['userPass'] != $_POST['password']))
-                {
-                header("location:login.php?Userno= Usuario no existe.");
-                 }
-            }
-    }
+
+
+        }
+}
 
 ?>
