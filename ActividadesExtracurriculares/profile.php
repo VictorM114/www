@@ -39,7 +39,6 @@
               <a class="dropdown-item" href="#">Solicitud</a>
               <a class="dropdown-item" href="#">Solicitud</a>
               <a class="dropdown-item" href="#">Solicitud</a>
-
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
