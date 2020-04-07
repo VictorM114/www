@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -17,7 +18,7 @@
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-          Asociación Tal
+         <?php echo $_SESSION['Fname'];?>
         </span>
         <!-- Links -->
         <ul class="navbar-nav">
