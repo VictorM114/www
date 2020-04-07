@@ -22,15 +22,29 @@
       <div class="form-group">
         <h3>Bienvenido/Bienvenida!</h3>    
         <?php if (@$_GET['Empty']==True) { ?>
-          <div class="alert-light text-danger"s><?php echo $_GET['Empty'];?></div>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Empty'];?>
+          </div>
        <?php 
           }
           ?>  
-        <?php if (@$_GET['Invalid']==True) { ?>
-          <div class="alert-light text-danger"s><?php echo $_GET['Invalid'];?></div>
+        <?php if (@$_GET['Invalidpass']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Invalidpass'];?>
+          </div>
        <?php 
           }
-          ?>  
+          ?> 
+      <?php if (@$_GET['Userno']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Userno'];?>
+          </div>
+       <?php 
+          }
+          ?>
         <b>Username:</b><input type="text" name="username" class="form-control" placeholder="Ingresar usuario">
         <b>Password:</b><input type="password" name="password" class="form-control" placeholder="Ingresar password">
       </div>

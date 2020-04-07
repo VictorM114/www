@@ -30,22 +30,31 @@ if (isset($_POST['submit'])) {
             #si existe el usuario
             $query = "SELECT * FROM users WHERE userName='$username' AND userPass='$password'";
             $result =mysqli_query($conn,$query);
-
             /*utilizo esta variable con la funcion de php
             mysqliftcharray ya que las tablas en sql se 
             leen como arreglos(eso lei por ahi xd)*/
             $row=mysqli_fetch_array($result);
-
-            if ($row>1){ //Si el resultado del fecth existe
+            $_SESSION['Fname']=$row['fName'];
+              //Declaro la variable global session y como contenido es el nombre del usuario
+            //que vamos a utilizar en la pagina de profile
+            //Comparacion del tipo de usuario
+            if ($row['userType'] == 'user'){ 
                 //me dirijo a profile.php
-                $_SESSION['User']=$_POST['username'];
                 header("location:profile.php");
             }
-            else{
-                header("location:login.php?Invalid= Credenciales incorrectos, intenta de nuevo.");
+            elseif($row['userType'] == 'admin'){
+                header("location:adminprofile.php");
             }
-                
+            //Si los credenciales estan mal, me da error.
+            elseif(($row['userName'] == $_POST['username']) && ($row['userPass'] != $_POST['password']))
+            {
+                header("location:login.php?Invalidpass= Contraseña incorrecta.");
+            }
+            elseif(($row['userName'] != $_POST['username']) && ($row['userPass'] != $_POST['password']))
+                {
+                header("location:login.php?Userno= Usuario no existe.");
+                 }
+            }
     }
-}
 
 ?>

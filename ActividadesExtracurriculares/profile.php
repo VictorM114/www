@@ -18,7 +18,7 @@
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-         <?php echo $_SESSION['User'];?>
+         <?php echo $_SESSION['Fname'];?>
         </span>
         <!-- Links -->
         <ul class="navbar-nav">
