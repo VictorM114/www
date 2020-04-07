@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start();#comment?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
