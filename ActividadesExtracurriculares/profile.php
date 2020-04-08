@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+session_start();
+include 'sconn.php';
+?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -31,11 +34,11 @@
               <a class="dropdown-item" href="#">Carta Solicitud</a>
               <a class="dropdown-item" href="#">Préstamo de Salón</a>
               <a class="dropdown-item" href="#">Teatro General</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
+              <a class="dropdown-item" href="#">Solicitud de Servicios</a>
+              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
+              <a class="dropdown-item" href="#">Solicitud de Plantas</a>
+              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Solicitud</a>
               <a class="dropdown-item" href="#">Solicitud</a>
               <a class="dropdown-item" href="#">Solicitud</a>
@@ -69,11 +72,10 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Venta de Pizza</td>
-                  <td>jueves 34 de ogosto</td>
-                  <td>Decanato de Estudiantes</td>
-                </tr>
+                <?php 
+                
+                
+                ?>
               </tbody>
             </table>
           </div>
