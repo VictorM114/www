@@ -17,7 +17,7 @@
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-        Bienvenido <?php echo $_SESSION['Fname'];?>
+        Bienvenido/a <?php echo $_SESSION['Fname'];?>
         </span>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
