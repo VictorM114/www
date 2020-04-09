@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include 'sconn.php';
+    include 'sconn2.php';
 
 ?>
 <html lang="en">
@@ -20,8 +20,7 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Actividad</th>
-                  <th>Fecha</th>
+                  <th>Nombre</th>
                   <th>Lugar</th>
                   <th>Descripcion</th>
                   <th>Propósito</th>
@@ -30,12 +29,22 @@
               </thead>
               <tbody>
                 <?php 
-                    $sql = "SELECT actName, actDes, actProp, actDate, act Place, actTime FROM actividades;";
-                    $result =mysqli_query($conn,$sql);
-                    $row=mysql_fetch_array($result);
-                    
-                
-                
+                    $sql = "SELECT * FROM actividades;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                      #output
+                      while($row = $result->fetch_assoc()){
+                        echo "<tr>";
+                        echo "<td>" . $row['actName'] . "</td>";
+                        echo "<td>" . $row['actPlace'] . "</td>";
+                        echo "<td>" . $row['actDes'] . "</td>";
+                        echo "<td>" . $row['actProp'] . "</td>";
+                        echo "<td>" . $row['actTime'] . "</td>";
+                        echo "</tr>";
+                      }
+                    } else {
+                      echo "<h2>no tiene actividades pendientes </h2>";
+                    }
                 ?>
               </tbody>
             </table>
