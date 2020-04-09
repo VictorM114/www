@@ -23,8 +23,8 @@
     <form>
     <div class= "form-group">
     <h3> Registra tu asociación </h3>
-    <b>Nombre de la asociación: </b><input type:"text" name= "AsoName" class= "form-control" placeholder = "Ingresar nombre asocaciación">
-    <b>Año Académico: </b><input type: "text" name="Year" class ="form-control" placeholder = <?php echo date("Y");?>>
+    <b>Nombre de la asociación: </b><input type="text" name= "AsoName" class= "form-control" placeholder = "Ingresar nombre asocaciación">
+    <b>Año Académico: </b><input type= "text" name="Year" class ="form-control" placeholder = <?php echo date("Y");?>>
     <b>E-mail: </b> <input type= "email" name = "email" class = "form-control" placeholder = "Ingresa el e-mail de la asociación o presidente">
     <b>Username:</b><input type= "text" name="username" class="form-control" placeholder="Ingresar usuario">
     <b>Password:</b><input type= "password" name="password" class="form-control" placeholder="Ingresar password">
