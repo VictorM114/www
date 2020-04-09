@@ -75,6 +75,9 @@ include 'sconn.php';
               </thead>
               <tbody>
               <?php 
+                    /*Selecciona todo de actividades, une asociaciones donde el association ID de 
+                    ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
+                    el nombre completo del usuario (que es el mismo) */
                     $sql = "SELECT * FROM actividades
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
                             WHERE asocName ='".$_SESSION['Fname']."';";

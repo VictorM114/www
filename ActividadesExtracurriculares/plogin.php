@@ -13,7 +13,8 @@ $password = $_POST['password'];
 //Me gustaría hacer un switch aquí para que sea dependiendo que campoo esté vacío
 if (isset($_POST['submit'])) {
     if(empty($_POST['username']) && empty($_POST['password']))
-    {   #Empty luego de php? es una variable.
+    {   /*Empty luego de php? es una variable que se usa en GET en la pagina de 
+        login.*/
          header("location:login.php?Empty= Por favor completa ambos campos.");
     }
     elseif(!empty($_POST['username']) && empty($_POST['password']))
