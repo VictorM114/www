@@ -69,7 +69,7 @@
     Se utilizó el framework bootstrap-->
 <!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
-<div class = "container">
+<div class= "container">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
