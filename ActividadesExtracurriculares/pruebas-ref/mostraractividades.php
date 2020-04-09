@@ -32,7 +32,7 @@
                     $sql = "SELECT * FROM actividades;";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
-                      #output
+                      #output de las actividades en una tabla
                       while($row = $result->fetch_assoc()){
                         echo "<tr>";
                         echo "<td>" . $row['actName'] . "</td>";
