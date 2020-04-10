@@ -47,7 +47,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <button href="index.php" action="logout.php" type="button" class="btn btn-primary btn-sm">Log Out</button>
+         <a href="index.php"><button action="logout.php" type="button" class="btn btn-primary btn-sm">Log Out</button></a>
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
@@ -69,6 +69,7 @@ include 'sconn.php';
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
                             WHERE asocName ='".$_SESSION['Fname']."';";
                     $result = $conn->query($sql);
+
                     if ($result->num_rows > 0) {
                       #output de las actividades en una tabla
                       echo " <p>Estas son las actividades próximas de"; 
@@ -80,22 +81,32 @@ include 'sconn.php';
                             <th>Actividad</th>
                             <th>Lugar</th>
                             <th>Descripcion</th>
-                            <th>Prop</th>
-                            <th>Horario</th>
+                            <th>Propósito</th>
+                            <th>Fecha</th>
+                            <th>Horario Comienzo</th>
+                            <th>Horario de Cierre</h>
                           </tr>
                         </thead>
                         <tbody>';
                       while($row = $result->fetch_assoc()){
+                        $sqldate = $row['actDate'];
+                        $htmldate = date('D-d-M-Y',strtotime($sqldate));
+                        $sqltime1 = $row['horarioInicial'];
+                        $htmltime1 = date('h:i a', strtotime($sqltime1));
+                        $sqltime2 = $row['horarioFin'];
+                        $htmltime2 = date('h:i a', strtotime($sqltime2));
                         echo "<tr>";
                         echo "<td>" . $row['actName'] . "</td>";
                         echo "<td>" . $row['actPlace'] . "</td>";
                         echo "<td>" . $row['actDes'] . "</td>";
                         echo "<td>" . $row['actProp'] . "</td>";
-                        echo "<td>" . $row['actTime'] . "</td>";
+                        echo "<td>" . $htmldate . "</td>";
+                        echo "<td>" . $htmltime1 . "</td>";
+                        echo "<td>" . $htmltime2 . "</td>";
                         echo "</tr>";
                       }
                     } else {
-                      echo "<h2>" . $_SESSION['Fname'] . "no tiene actividades pendientes </h2>";
+                      echo "<h2>" . $_SESSION['Fname'] . "no tiene actividades pendientes. </h2>";
                     }
                 ?>
               </tbody>
