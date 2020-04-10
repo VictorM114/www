@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="over.css">
     <title>Admin Profile</title>
 </head>
+<!-- El nav se utiliza en todas las pantallas con el logo -->
 <body>
     <nav class="navbar navbar-expand-sm bg-light ">
     	   <a class="navbar-brand" href="index.php">
@@ -47,6 +48,7 @@
           </li>
          </ul>
   </nav>
+  <!-- Aquí empieza el código-->
 
   <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>
