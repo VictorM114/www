@@ -69,6 +69,17 @@
     Se utilizó el framework bootstrap-->
 <!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
+<div class ="container">
+<?php if (@$_GET['Empty']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Empty'];?>
+          </div>
+       <?php 
+          }
+          ?> 
+
+</div>
 <div class= "container">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
