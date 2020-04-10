@@ -1,13 +1,12 @@
 <!--Este código es el ejemplo para guardar información sometida desde un form a la base de datos-->
 <?php 
-
+   include 'sconn.php';
+   session_start();
 ?>
 <html>
-   
    <head>
       <title>Add New Record in MySQL Database</title>
    </head>
-   
    <body>
       <?php
          if(isset($_POST['add'])) {
