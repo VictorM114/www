@@ -1,6 +1,5 @@
 <?php 
    include 'sconn.php';
-
 ?>
 <!-- Alice M. Romero Reyes
     25 de marzo de 2020
@@ -24,8 +23,7 @@
     <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
     Plataforma Actividades Extracurriculares
        </a> 
-       <button type="button" class="btn btn-primary btn-sm">Log In</button> 
-       
+       <a href="login.php"><button type="button" class="btn btn-primary btn-sm">Log In</button></a> 
   </nav>
 <!--Carousel para las imágenes en la pantalla de inicio, serán fotos de las actividades que hagan las asociaciones
     Se utilizó el framework bootstrap-->
@@ -69,17 +67,7 @@
     Se utilizó el framework bootstrap-->
 <!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
-<div class ="container">
-<?php if (@$_GET['Empty']==True) { ?>
-          <div class="alert alert-danger alert-dismissible fade show">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <?php echo $_GET['Empty'];?>
-          </div>
-       <?php 
-          }
-          ?> 
 
-</div>
 <div class= "container">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">

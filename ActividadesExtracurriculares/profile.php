@@ -47,7 +47,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="index.php"><button action = "logout.php" type="button" class="btn btn-primary btn-sm">Log Out</button></a> 
+         <button href="index.php" action="logout.php" type="button" class="btn btn-primary btn-sm">Log Out</button>
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
