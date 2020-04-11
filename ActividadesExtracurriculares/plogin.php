@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
             #esta variable query utiliza el statement sql para verificar 
             #si existe el usuario
             $query = "SELECT * FROM users WHERE userName='$username' AND userPass='$password'";
-            $result =mysqli_query($conn,$query);
+            $result = mysqli_query($conn,$query);
             /*utilizo esta variable con la funcion de php
             mysqliftcharray ya que las tablas en sql se 
             leen como arreglos(eso lei por ahi xd)*/
