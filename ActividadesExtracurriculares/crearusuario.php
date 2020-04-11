@@ -1,3 +1,7 @@
+<?php 
+include 'sconn.php';
+session_start	();
+?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -18,21 +22,47 @@
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       Plataforma Actividades Extracurriculares
       </a> 
+      <a href = "login.php"><button type="button" class="btn btn-primary btn-sm">Log In</button></a> 
   </nav> 
   <!-- Aquí empieza el código-->
-    <form>
+    <form action = "register.php" method = "POST">
     <div class= "form-group">
     <h3> Registra tu asociación </h3>
+    <?php if (@$_GET['Created']==True) { ?>
+          <div class="alert alert-success alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Created'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+    <?php if (@$_GET['Failed']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Failed'];?>
+          </div>
+       <?php 
+          }
+          ?> 
+           <?php if (@$_GET['Empty']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Empty'];?>
+          </div>
+       <?php 
+          }
+          ?>
     <b>Nombre de la asociación: </b><input type="text" name= "AsoName" class= "form-control" placeholder = "Ingresar nombre asocaciación">
-    <b>Año Académico: </b><input type= "text" name="Year" class ="form-control" placeholder = <?php echo date("Y");?>>
     <b>E-mail: </b> <input type= "email" name = "email" class = "form-control" placeholder = "Ingresa el e-mail de la asociación o presidente">
     <b>Username:</b><input type= "text" name="username" class="form-control" placeholder="Ingresar usuario">
     <b>Password:</b><input type= "password" name="password" class="form-control" placeholder="Ingresar password">
+    <b>Consejero:</b><input type= "text" name="consejero" class="form-control" placeholder="Ingresar consejero">
+    <b>Departamento:</b><input type= "text" name="departamento" class="form-control" placeholder="Ingresar departamento">
 
     <div id="btnmedio">
         <button type="submit" name="submit" value ="submit" class="btn btn-primary">Crear</button>
-
-        </div>
+    </div>
+  </form>
 
     
     <!-- Footer, alineado en el centro-->

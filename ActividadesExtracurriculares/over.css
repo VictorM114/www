@@ -6,6 +6,12 @@ probablemente la utilicemos luego por las dem'as formas*/
     margin-top: 200px;
     
 }
+.form-group{
+   max-width: 400px;
+   margin: 0 auto;
+   margin-top: 200px;
+   
+}
 /*Esto fue para separar el botón de ingresar*/
 .form-control {
     margin-bottom: 3px;
@@ -28,7 +34,7 @@ footer y ponerlo fixed*/
  }
  #idFooterIndex{
     position: sticky;
-    display: inline-block
+    display: inline-block  
  }
  /*Clase para el carousel*/
  .carousel-item img
