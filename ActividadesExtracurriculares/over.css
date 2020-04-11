@@ -28,7 +28,7 @@ footer y ponerlo fixed*/
  }
  #idFooterIndex{
     position: sticky;
-    display: inline-block
+    display: inline-block;
  }
  /*Clase para el carousel*/
  .carousel-item img
