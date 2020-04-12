@@ -40,3 +40,24 @@ footer y ponerlo fixed*/
    height: auto;
    width: auto;
    }
+/*Clase para editar 
+la tabla que utilizamos en el profile*/
+   .table-bordered {
+      border: 1px solid #dee2e6;
+    }
+    
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #dee2e6;
+      
+    }
+    
+    .table-bordered thead th,
+    .table-bordered thead td {
+      border-bottom-width: 2px;
+    }
+    .table .thead-light th {
+      color: #000000;
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+    }
