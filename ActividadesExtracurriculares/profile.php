@@ -3,7 +3,7 @@ session_start();
 include 'sconn.php';
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
-<html lang="en">
+<html lang="en" lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,11 +16,11 @@ include 'sconn.php';
   </head>
   <body>
   <nav class="navbar navbar-expand-sm bg-light ">
-    	   <a class="navbar-brand" href="index.php">
+    	<a class="navbar-brand" href="index.php">
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-         <?php echo $_SESSION['Fname'];?>
+       <b><?php echo $_SESSION['Fname'];?></b>
         </span>
         <!-- Links -->
         <ul class="navbar-nav">
@@ -30,24 +30,21 @@ include 'sconn.php';
             </a>
             <!-- Dropdown -->
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Carta Solicitud</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="#">Préstamo de Salón</a>
+              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Teatro General</a>
               <a class="dropdown-item" href="#">Solicitud de Servicios</a>
-              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-
+              <a class="dropdown-item" href="#">Sala de Conferencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="index.php"><button action="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a>
+         <a href="index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
@@ -116,7 +113,7 @@ include 'sconn.php';
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>
-</footer>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
