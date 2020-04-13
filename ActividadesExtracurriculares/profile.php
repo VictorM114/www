@@ -20,7 +20,7 @@ include 'sconn.php';
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-       <b><?php echo $_SESSION['Fname'];?></b>
+         Bienvenido/a <?php echo $_SESSION['Fname'];?>
         </span>
         <!-- Links -->
         <ul class="navbar-nav">

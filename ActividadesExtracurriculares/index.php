@@ -20,17 +20,19 @@
   <body>
   <nav class="navbar navbar-light bg-light">
     	<a class="navbar-brand" href="#">
-    <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt=""> 
     Plataforma Actividades Extracurriculares
        </a> 
-       <a href="login.php"><button type="button" class="btn btn-primary btn-sm">Log In</button></a> 
+       <a href = "login.php"><button type="button" class="btn btn-primary btn-sm">Log In</button></a> 
   </nav>
+  
 <!--Carousel para las imágenes en la pantalla de inicio, serán fotos de las actividades que hagan las asociaciones
     Se utilizó el framework bootstrap-->
 <!--Un carousel es básicamente un slideshow-->
 <!--Slideshow con fade-->
 
-<div class= "container">
+<!-- Aquí empieza el código-->
+<div class = "container">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -50,7 +52,7 @@
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="carousel-control-prev-icon" aria-hidden="strue"></span>
     <span class="sr-only">Anterior</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
