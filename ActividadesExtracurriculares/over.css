@@ -1,16 +1,10 @@
 /*Esta es la clase que utilizamos en la formna de login
-probablemente la utilicemos luego por las dem'as formas*/
+probablemente la utilicemos luego por las demás formas*/
 .form-group{
     max-width: 400px;
     margin: 0 auto;
     margin-top: 200px;
     
-}
-.form-group{
-   max-width: 400px;
-   margin: 0 auto;
-   margin-top: 200px;
-   
 }
 /*Esto fue para separar el botón de ingresar*/
 .form-control {
@@ -19,6 +13,9 @@ probablemente la utilicemos luego por las dem'as formas*/
  #btnmedio{
     text-align: center;
  }
+ /*Clase para que las solicitudes no se queden dan 
+ abajo */
+
 /*Esta es la clase footer para poder centralizar el 
 footer y ponerlo fixed*/
 /*cambié position a sticky para que se vea encima de las fotos junto con display: inline-block*/

@@ -16,21 +16,24 @@ include '../sconn.php';
   </head>
   <body>
   <nav class="navbar navbar-expand-sm bg-light ">
-    	<a class="navbar-brand" href="index.php">
+    	<a class="navbar-brand" href="../index.php">
       <img src="../images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
         <span class="navbar-text">
-       <b><?php echo $_SESSION['Fname'];?></b>
+       <b>Bienvenido/a <?php echo $_SESSION['Fname'];?></b>
         </span>
         <!-- Links -->
         <ul class="navbar-nav">
+          <li>
+            <a class="nav-link" href="../profile.php"> Profile </a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Solicitudes
             </a>
             <!-- Dropdown -->
             <div class="dropdown-menu">
-              <a class="dropdown-item active" href="solicitudes/solicitud-general.php">Solicitud</a>
+              <a class="dropdown-item active " href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="#">Préstamo de Salón</a>
               <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Teatro General</a>
@@ -44,11 +47,38 @@ include '../sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
-          <div class = "container">
-  
+          
+          <form action="" method="POST">
+          <div class="form-group">
+          <h2>Información de actividad</h2>
+          <b>Nombre de la Actividad</b><input type="text" name= "" class= "form-control" placeholder = "Ingresar nombre de la actividad">
+          <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1">
+            <option>--</option>
+            <option>Promocionar la asociacion</option>
+            <option>Venta</option>
+            <option>Labor Comunitaria</option>
+            <option>Conferencia</option>
+            <option>Taller</option>
+            <option>Charla</option>
+            <option>Cortometraje</option>
+            <option>Actividad Extracurricular</option>
+            <option>Actividad a beneficio a la comunidad universitaria</option>
+            <option>Actividad de mejoramiento profesional</option>
+            <option>Convencion</option>
+          </select>
+          <b>Propósito:</b><input type= "text" name="" class="form-control" placeholder="Ingresar propósito de la actividad">
+          <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de la actividad">
+          <b>Horario de Inicio:</b><input type= "time" name="" class="form-control" placeholder="Hora de Inciio">
+          <b>Horario de Culminación:</b><input type= "time" name="" class="form-control" placeholder="Hora de Culminación">
+          <b>Lugar:</b><input type= "text" name="" class="form-control" placeholder="Lugar de la actividad">         
           </div>
+          <div id="btnmedio">
+            <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
+          </div>
+         
+          </form>
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
