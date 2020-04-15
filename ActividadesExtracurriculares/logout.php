@@ -1,10 +1,9 @@
 <?php
     session_start();
     session_unset();
-?>
-<?php 
-
-session_destroy();
-
+    session_destroy();
+    
+    header("location:index.php");
+    exit();
 ?>
     

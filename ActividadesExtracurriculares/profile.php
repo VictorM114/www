@@ -39,12 +39,18 @@ include 'sconn.php';
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
+              target="_blank">Solicitud Instalaciones de la Biblioteca</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
+              target="_blank">Solicitud de Fotografia y Sonido</a>
+              <a class="dropdown-item" href="">Solicitud de Transportación</a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
           <div class = "container">
           <h2>Solicitudes Pendientes</h2>
