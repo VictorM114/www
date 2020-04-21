@@ -41,7 +41,12 @@ include '../sconn.php';
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
+              target="_blank">Solicitud Instalaciones de la Biblioteca</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
+              target="_blank">Solicitud de Fotografia y Sonido</a>
+              <a class="dropdown-item" href="">Solicitud de Transportación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
@@ -50,9 +55,25 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
           
-          <form action="submit-s-general.php" method="POST">
+          <form action = "submitgeneral.php" method = "POST">
           <div class="form-group">
           <h2>Información de actividad</h2>
+          <?php if (@$_GET['Submited']==True) { ?>
+          <div class="alert alert-success alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Submited'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+          <?php if (@$_GET['Vacio']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Vacio'];?>
+          </div>
+       <?php 
+          }
+          ?>  
           <b>Nombre de la Actividad</b><input type="text" name= "ActName" class= "form-control" placeholder = "Ingresar nombre de la actividad">
           <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1" name ="ActDes">
             <option>--</option>

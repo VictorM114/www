@@ -38,13 +38,12 @@ include 'sconn.php';
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
               target="_blank">Solicitud de Fotografia y Sonido</a>
               <a class="dropdown-item" href="">Solicitud de Transportación</a>
-
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
@@ -53,7 +52,7 @@ include 'sconn.php';
          <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
           <div class = "container">
-          <h2>Solicitudes Pendientes</h2>
+          <h2>Solicitudes General</h2>
           <p>La asociación tiene número de solicitudes pendientes</p>
           </div>
           <div class = "container">
@@ -69,7 +68,7 @@ include 'sconn.php';
                     el nombre completo del usuario (que es el mismo) */
                     $sql = "SELECT * FROM actividades
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
-                            WHERE asocName ='".$_SESSION['Fname']."';";
+                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobado';";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -86,7 +85,8 @@ include 'sconn.php';
                             <th>Propósito</th>
                             <th>Fecha</th>
                             <th>Horario Comienzo</th>
-                            <th>Horario de Cierre</h>
+                            <th>Horario de Cierre</th>
+                            <th>Status de Solicitud</th>
                           </tr>
                         </thead>
                         <tbody>';
@@ -106,10 +106,11 @@ include 'sconn.php';
                         echo "<td>" . $htmldate . "</td>";
                         echo "<td>" . $htmltime1 . "</td>";
                         echo "<td>" . $htmltime2 . "</td>";
+                        echo "<td>" . $row['statusSol'] . "</td>";
                         echo "</tr>";
                       }
                     } else {
-                      echo "<h2>" . $_SESSION['Fname'] . "no tiene actividades pendientes. </h2>";
+                      echo "<h2>" . $_SESSION['Fname'] . " no tiene actividades pendientes. </h2>";
                     }
                 ?>
               </tbody>
