@@ -49,7 +49,8 @@ include '../sconn.php';
          </ul>
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
-          
+          <!-- Aquí empieza el código-->
+          <!--Form de las solicitudes-->
           <form action="" method="POST">
           <div class="form-group">
           <h2>Información de actividad</h2>
