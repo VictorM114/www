@@ -50,11 +50,11 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
           
-          <form action="" method="POST">
+          <form action="submit-s-general.php" method="POST">
           <div class="form-group">
           <h2>Información de actividad</h2>
-          <b>Nombre de la Actividad</b><input type="text" name= "" class= "form-control" placeholder = "Ingresar nombre de la actividad">
-          <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1">
+          <b>Nombre de la Actividad</b><input type="text" name= "ActName" class= "form-control" placeholder = "Ingresar nombre de la actividad">
+          <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1" name ="ActDes">
             <option>--</option>
             <option>Promocionar la asociacion</option>
             <option>Venta</option>
@@ -68,11 +68,11 @@ include '../sconn.php';
             <option>Actividad de mejoramiento profesional</option>
             <option>Convencion</option>
           </select>
-          <b>Propósito:</b><input type= "text" name="" class="form-control" placeholder="Ingresar propósito de la actividad">
-          <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de la actividad">
-          <b>Horario de Inicio:</b><input type= "time" name="" class="form-control" placeholder="Hora de Inciio">
-          <b>Horario de Culminación:</b><input type= "time" name="" class="form-control" placeholder="Hora de Culminación">
-          <b>Lugar:</b><input type= "text" name="" class="form-control" placeholder="Lugar de la actividad">         
+          <b>Propósito:</b><input type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad">
+          <b>Fecha:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de la actividad">
+          <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Inciio">
+          <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
+          <b>Lugar:</b><input type= "text" name="ActPlace" class="form-control" placeholder="Lugar de la actividad">         
           </div>
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
