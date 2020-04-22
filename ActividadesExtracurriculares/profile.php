@@ -110,7 +110,7 @@ include 'sconn.php';
                         echo "</tr>";
                       }
                     } else {
-                      echo "<h2>" . $_SESSION['Fname'] . " no tiene actividades pendientes. </h2>";
+                      echo "<h2>" . $_SESSION['Fname'] . " no tiene actividades programadas. </h2>";
                     }
                 ?>
               </tbody>
