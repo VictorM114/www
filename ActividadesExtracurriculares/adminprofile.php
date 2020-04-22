@@ -49,6 +49,7 @@
          <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
   <!-- Aquí empieza el código-->
+  
 
   <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>

@@ -51,7 +51,7 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
 <!--Aquí empieza el código-->
-<p class="container">Al completar este formulario me comprometo a cumplir con las siguientes estipulaciones: <br><br>
+<h4 class="container">Al completar este formulario me comprometo a cumplir con las siguientes estipulaciones: <br><br></h4>
 <ul class="container">
     <li> El solicitante será responsable por la seguridad de la propiedad: planta física, equipos y materiales, por lo que debe estar presente <br>
     durante la actividad y ser enlace con la Guardia universitaria. No puede mover sillas de un lugar a otro. Al concluir su actividad, debe <br>
@@ -72,7 +72,7 @@ include '../sconn.php';
     actividad.<br></li>
     <br>
     <li>La aprobación de salud esta solicitud estará a que la actividad no conflija con actividades del Decanato de Asuntos Académicos, las cuales tendrán prioridad.<br></li>
-</ul></p>
+</ul>
 <!--Form de las solicitudes-->
 <form action="" method="POST">
           <div class="form-group">
@@ -94,7 +94,7 @@ include '../sconn.php';
             <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
             <option>Repaso</option>
             <option>Reunión/taller/conferencia de facultad o administración</option>
-            <option>Otro</option>
+            <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
           </select>
           <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de la actividad">
           <b>Horario de Inicio:</b><input type= "time" name="" class="form-control" placeholder="Hora de Inciio">
