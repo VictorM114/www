@@ -74,6 +74,14 @@ include '../sconn.php';
        <?php 
           }
           ?>  
+          <?php if (@$_GET['Erorr']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Error'];?>
+          </div>
+       <?php 
+          }
+          ?> 
           <b>Nombre de la Actividad</b><input type="text" name= "ActName" class= "form-control" placeholder = "Ingresar nombre de la actividad">
           <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1" name ="ActDes">
             <option>--</option>
@@ -89,7 +97,7 @@ include '../sconn.php';
             <option>Actividad de mejoramiento profesional</option>
             <option>Convencion</option>
           </select>
-          <b>Propósito:</b><input type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad">
+          <b>Propósito:</b><textarea type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad"></textarea>
           <b>Fecha:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de la actividad">
           <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Inciio">
           <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">

@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-general.php?Submited=Solicitud enviada.');
         } else {
-            echo "Error:" . $sql . "<br>" . $conn->error;
+            header ('location:solicitud-general.php?Error=Error al someter solicitud.');
          }
     }
  

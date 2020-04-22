@@ -19,9 +19,9 @@ include 'sconn.php';
     	<a class="navbar-brand" href="index.php">
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       </a> 
-        <span class="navbar-text">
+        <span class="navbar-text"><b>
          Bienvenido/a <?php echo $_SESSION['Fname'];?>
-        </span>
+        </b></span>
         <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
@@ -50,34 +50,29 @@ include 'sconn.php';
           </li>
          </ul>
          <a><form action = "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
-  </nav>
+  </nav> 
+    <br>
+          <div id ="accordion">
           <div class = "container">
-          <h2>Solicitude General</h2>
-          <p>Las siguentes solicitudes están pendientes para aprobar.</p>
-
-          </div>
-          <div class = "container">
-          <h2>Solicitudes Aprobadas</h2>
-          <p>Las siguientes solicitudes han sido aprobadas.</p>
-          
-          </div>
-          <div class="container">
-            <h2>Actividades Próximas</h2>
-              <?php 
+          <div class ="card">
+            <div class ="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              <h2>Solicitudes Generales Pendientes</h2></a>
+              </div>
+              <div id="collapseOne" class="collapse" data-parent="#accordion">
+              <div class ="card-body">
+          <?php 
                     /*Selecciona todo de actividades, une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
                     el nombre completo del usuario (que es el mismo) */
                     $sql = "SELECT * FROM actividades
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
-                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobado';";
+                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'pendiente';";
                     $result = $conn->query($sql);
-
                     if ($result->num_rows > 0) {
-                      #output de las actividades en una tabla
-                      echo " <p>Estas son las actividades próximas de"; 
-                      echo " " . $_SESSION['Fname'] . ".</p>";            
-                      echo '<small>*Las actividades mostradas son de las próximas dos semanas*</small>
-                      <table class="table table-bordered">
+                      #output de las actividades en una tabla        
+                      echo '<h4>Las siguentes solicitudes están pendientes para aprobar.</h4>
+                        <table class="table table-bordered">
                         <thead class="thead-dark">
                           <tr>
                             <th>Actividad</th>
@@ -86,8 +81,7 @@ include 'sconn.php';
                             <th>Propósito</th>
                             <th>Fecha</th>
                             <th>Horario Comienzo</th>
-                            <th>Horario de Cierre</th>
-                            <th>Status de Solicitud</th>
+                            <th>Horario de Culmunación</th>
                           </tr>
                         </thead>
                         <tbody>';
@@ -107,16 +101,73 @@ include 'sconn.php';
                         echo "<td>" . $htmldate . "</td>";
                         echo "<td>" . $htmltime1 . "</td>";
                         echo "<td>" . $htmltime2 . "</td>";
-                        echo "<td>" . $row['statusSol'] . "</td>";
+                        #echo "<td>" . $row['statusSol'] . "</td>";
                         echo "</tr>";
                       }
                     } else {
-                      echo "<h2>" . $_SESSION['Fname'] . " no tiene actividades programadas. </h2>";
+                      echo "<h2>" . $_SESSION['Fname'] . " no ha sometido solicitudes por el momento. </h2>";
                     }
                 ?>
               </tbody>
             </table>
           </div>
+          </div>
+                  <div class ="card">
+                  <div class ="card-header">
+                  <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                  <h2>Solicitudes Generales Aprobadas</h2></a>
+                  </div>
+                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                  <div class ="card-body">
+                    <?php 
+                    $sql2 = "SELECT * FROM actividades
+                    INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
+                    WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobada';";
+                    $result2 = $conn->query($sql2);
+                    if ($result2->num_rows > 0) {
+                     #output de las actividades en una tabla        
+                      echo '<h4>Las siguientes solicitudes han sido aprobadas.</h4>
+                      <table class="table table-bordered">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>Actividad</th>
+                            <th>Lugar</th>
+                            <th>Descripcion</th>
+                            <th>Propósito</th>
+                            <th>Fecha</th>
+                            <th>Horario Comienzo</th>
+                            <th>Horario de Culminación</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>';
+                      while($row2 = $result2->fetch_assoc()){
+                        #Cambio de formato en las fechas SQL a fechas mas legibles
+                        $dbdate = $row2['actDate'];
+                        $beudate = date('D-d-M-Y',strtotime($dbdate));
+                        $time1 = $row2['horarioInicial'];
+                        $time1 = date('h:i a', strtotime($time1));
+                        $time2 = $row2['horarioFin'];
+                        $time2 = date('h:i a', strtotime($time2));
+                        echo "<tr>";
+                        echo "<td>" . $row2['actName'] . "</td>";
+                        echo "<td>" . $row2['actPlace'] . "</td>";
+                        echo "<td>" . $row2['actDes'] . "</td>";
+                        echo "<td>" . $row2['actProp'] . "</td>";
+                        echo "<td>" . $beudate . "</td>";
+                        echo "<td>" . $time1 . "</td>";
+                        echo "<td>" . $time2 . "</td>";
+                        #echo "<td>" . $row2['statusSol'] . "</td>";
+                        echo "</tr>";
+                      }
+                    } else {
+                      echo "<h2>" . $_SESSION['Fname'] . " no tiene solicitudes aprobadas por el momento. </h2>";
+                    }
+                    ?>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
