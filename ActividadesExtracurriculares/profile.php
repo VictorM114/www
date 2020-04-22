@@ -49,11 +49,12 @@ include 'sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a><form action = "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
           <div class = "container">
-          <h2>Solicitudes General</h2>
-          <p>La asociación tiene número de solicitudes pendientes</p>
+          <h2>Solicitude General</h2>
+          <p>Las siguentes solicitudes están pendientes para aprobar.</p>
+
           </div>
           <div class = "container">
           <h2>Solicitudes Aprobadas</h2>

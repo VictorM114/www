@@ -52,7 +52,7 @@ include '../sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
           
           <form action = "submitgeneral.php" method = "POST">
