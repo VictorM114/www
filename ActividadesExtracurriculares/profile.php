@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include 'functions.php';
 include 'sconn.php';
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
@@ -72,18 +73,8 @@ include 'sconn.php';
                         </div>
                         <div id="collapseOne" class="collapse" data-parent="#accordion">
                         <div class ="card-body">
-                      <h4>Las siguentes solicitudes están pendientes para aprobar.</h4>
-                        <table class="table table-bordered">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th>Actividad</th>
-                            <th>Lugar</th>
-                            <th>Fecha</th>
-                            <th>Horario Comienzo</th>
-                            <th>Horario de Culmunación</th>
-                          </tr>
-                        </thead>
-                        <tbody>';
+                      <h4>Las siguentes solicitudes están pendientes para aprobar.</h4>';
+                      tableHeader();
                       while($row = $result->fetch_assoc()){
                         #Cambio de formato en las fechas SQL a fechas mas legibles
                         $sqldate = $row['actDate'];
@@ -98,15 +89,14 @@ include 'sconn.php';
                         echo "<td>" . $htmldate . "</td>";
                         echo "<td>" . $htmltime1 . "</td>";
                         echo "<td>" . $htmltime2 . "</td>";
-                        #echo "<td>" . $row['statusSol'] . "</td>";
                         echo "</tr>";
                         echo "</tbody>
                               </table>
                               </div>
                               </div>";
                       }
-                    } 
-                ?>
+                    } ?>
+
                     <?php 
                     $sql2 = "SELECT * FROM actividades
                     INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
@@ -121,18 +111,8 @@ include 'sconn.php';
                             </div>
                             <div id="collapseTwo" class="collapse" data-parent="#accordion">
                             <div class ="card-body">
-                      <h4>Las siguientes solicitudes han sido aprobadas.</h4>
-                      <table class="table table-bordered">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th>Actividad</th>
-                            <th>Lugar</th>
-                            <th>Fecha</th>
-                            <th>Horario Comienzo</th>
-                            <th>Horario de Culminación</th>
-                          </tr>
-                        </thead>
-                        <tbody>';
+                      <h4>Las siguientes solicitudes han sido aprobadas.</h4>';
+                      tableHeader();
                       while($row2 = $result2->fetch_assoc()){
                         #Cambio de formato en las fechas SQL a fechas mas legibles
                         $dbdate = $row2['actDate'];
