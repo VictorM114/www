@@ -54,13 +54,7 @@ include 'sconn.php';
     <br>
           <div id ="accordion">
           <div class = "container">
-          <div class ="card">
-            <div class ="card-header">
-            <a class="card-link" data-toggle="collapse" href="#collapseOne">
-              <h2>Solicitudes Generales Pendientes</h2></a>
-              </div>
-              <div id="collapseOne" class="collapse" data-parent="#accordion">
-              <div class ="card-body">
+
           <?php
                    /*Selecciona todo de actividades, une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
@@ -71,7 +65,14 @@ include 'sconn.php';
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                       #output de las actividades en una tabla        
-                      echo '<h4>Las siguentes solicitudes están pendientes para aprobar.</h4>
+                      echo '<div class ="card">
+                      <div class ="card-header">
+                      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        <h2>Solicitudes Generales Pendientes</h2></a>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class ="card-body">
+                      <h4>Las siguentes solicitudes están pendientes para aprobar.</h4>
                         <table class="table table-bordered">
                         <thead class="thead-dark">
                           <tr>
@@ -100,21 +101,12 @@ include 'sconn.php';
                         #echo "<td>" . $row['statusSol'] . "</td>";
                         echo "</tr>";
                         echo "</tbody>
-                              </table>";
+                              </table>
+                              </div>
+                              </div>";
                       }
-                    } else {
-                      echo "<h3>" . $_SESSION['Fname'] . " no ha sometido solicitudes por el momento. </h3>";
-                    }
+                    } 
                 ?>
-          </div>
-          </div>
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                  <h2>Solicitudes Generales Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
                     <?php 
                     $sql2 = "SELECT * FROM actividades
                     INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
@@ -122,7 +114,14 @@ include 'sconn.php';
                     $result2 = $conn->query($sql2);
                     if ($result2->num_rows > 0) {
                      #output de las actividades en una tabla        
-                      echo '<h4>Las siguientes solicitudes han sido aprobadas.</h4>
+                      echo '<div class ="card">
+                            <div class ="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                            <h2>Solicitudes Generales Aprobadas</h2></a>
+                            </div>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class ="card-body">
+                      <h4>Las siguientes solicitudes han sido aprobadas.</h4>
                       <table class="table table-bordered">
                         <thead class="thead-dark">
                           <tr>
@@ -151,179 +150,14 @@ include 'sconn.php';
                         #echo "<td>" . $row2['statusSol'] . "</td>";
                         echo "</tr>";
                         echo "</tbody>
-                        </table>";
+                        </table>
+                        </div>
+                        </div>";
                       }
-                    } else {
-                      echo "<h3>" . $_SESSION['Fname'] . " no tiene solicitudes generales aprobadas por el momento. </h3>";
-                    }
+                    } 
                     ?>
-                  </div>
-                  </div>
-                  <!--espacio para el card-->
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseThree">
-                  <h2>Solicitudes de Prestamo de Salón Pendientes</h2></a>
-                  </div>
-                  <div id="collapseThree" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php?>
-                   
-                  </div>
-                  </div>
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                  <h2>Solicitudes de Prestamo de Salón Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseFour" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php?>
-                   
-                  </div>
-                  </div>
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseFive">
-                  <h2>Solicitudes de Servicio Prendiente</h2></a>
-                  </div>
-                  <div id="collapseFive" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseSix">
-                  <h2>Solicitudes de Servicio Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseSix" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseSeven">
-                  <h2>Solicitudes del Auditorio 225 pendiente</h2></a>
-                  </div>
-                  <div id="collapseSeven" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseEight">
-                  <h2>Solicitudes del Auditorio 225 aprobadas</h2></a>
-                  </div>
-                  <div id="collapseEight" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseNine">
-                  <h2>Solicitudes del Teatro General pendientes</h2></a>
-                  </div>
-                  <div id="collapseNine" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseTen">
-                  <h2>Solicitudes del Teatro General Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseTen" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseEleven">
-                  <h2>Solicitudes de Plantas Pendientes</h2></a>
-                  </div>
-                  <div id="collapseEleven" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseTwelve">
-                  <h2>Solicitudes de Plantas Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseTwelve" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseThirteen">
-                  <h2>Solicitudes de Vestíbulo Pendientes</h2></a>
-                  </div>
-                  <div id="collapseThirteen" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseFourteen">
-                  <h2>Solicitudes de Vestíbulo Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseFourteen" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseFifthteen">
-                  <h2>Solicitudes del Salón de Conferencias del D.E Pendientes</h2></a>
-                  </div>
-                  <div id="collapseFifthteen" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
-
-                  <div class ="card">
-                  <div class ="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseSixteen">
-                  <h2>Solicitudes del Salón de Conferencias del D.E Aprobadas</h2></a>
-                  </div>
-                  <div id="collapseSixteen" class="collapse" data-parent="#accordion">
-                  <div class ="card-body">
-                    <?php
-                    ?>
-                  </div>
-                  </div>
+                  
+ 
 
                   </div>
                   </div>
