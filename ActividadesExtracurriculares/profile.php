@@ -50,7 +50,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a><form action = "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
+         <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav> 
     <br>
           <div id ="accordion">
@@ -130,14 +130,13 @@ include 'sconn.php';
                         #echo "<td>" . $row2['statusSol'] . "</td>";
                         echo "</tr>";
                         echo "</tbody>
-                        </table>
-                        </div>
-                        </div>";
+                              </table>
+                              </div>
+                              </div>";
                       }
                     } 
                     ?>
-                  
- 
+
 
                   </div>
                   </div>

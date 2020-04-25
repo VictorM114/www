@@ -28,7 +28,5 @@ if (isset($_POST['submit'])) {
             header ('location:solicitud-general.php?Error=Error al someter solicitud.');
          }
     }
- 
-
 }
 ?>
