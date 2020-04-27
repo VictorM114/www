@@ -41,21 +41,54 @@ include '../sconn.php';
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
+              target="_blank">Solicitud Instalaciones de la Biblioteca</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
+              target="_blank">Solicitud de Fotografia y Sonido</a>
+              <a class="dropdown-item" href="">Solicitud de Transportación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
           </li>
          </ul>
-         <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
+<<<<<<< HEAD
           <!-- Aquí empieza el código-->
           <!--Form de las solicitudes-->
-          <form action="" method="POST">
+=======
+          
+          <form action = "submitgeneral.php" method = "POST">
+>>>>>>> Victor
           <div class="form-group">
           <h2>Información de actividad</h2>
-          <b>Nombre de la Actividad</b><input type="text" name= "" class= "form-control" placeholder = "Ingresar nombre de la actividad">
-          <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1">
+          <?php if (@$_GET['Submited']==True) { ?>
+          <div class="alert alert-success alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Submited'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+          <?php if (@$_GET['Vacio']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Vacio'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+          <?php if (@$_GET['Erorr']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Error'];?>
+          </div>
+       <?php 
+          }
+          ?> 
+          <b>Nombre de la Actividad</b><input type="text" name= "ActName" class= "form-control" placeholder = "Ingresar nombre de la actividad">
+          <b>Descripción (Selecciona Una)</b><select class="form-control" id="sel1" name ="ActDes">
             <option>--</option>
             <option>Promocionar la asociacion</option>
             <option>Venta</option>
@@ -69,11 +102,11 @@ include '../sconn.php';
             <option>Actividad de mejoramiento profesional</option>
             <option>Convencion</option>
           </select>
-          <b>Propósito:</b><input type= "text" name="" class="form-control" placeholder="Ingresar propósito de la actividad">
-          <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de la actividad">
-          <b>Horario de Inicio:</b><input type= "time" name="" class="form-control" placeholder="Hora de Inciio">
-          <b>Horario de Culminación:</b><input type= "time" name="" class="form-control" placeholder="Hora de Culminación">
-          <b>Lugar:</b><input type= "text" name="" class="form-control" placeholder="Lugar de la actividad">         
+          <b>Propósito:</b><textarea type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad"></textarea>
+          <b>Fecha:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de la actividad">
+          <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Inciio">
+          <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
+          <b>Lugar:</b><input type= "text" name="ActPlace" class="form-control" placeholder="Lugar de la actividad">         
           </div>
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
