@@ -27,18 +27,17 @@
             </a>
             <!-- Dropdown -->
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Carta Solicitud</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="#">Préstamo de Salón</a>
+              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Teatro General</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-              <a class="dropdown-item" href="#">Solicitud</a>
-        
+              <a class="dropdown-item" href="#">Solicitud de Servicios</a>
+              <a class="dropdown-item" href="#">Solicitud de Plantas</a>
+              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
+              <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="">Solicitud de Transportación</a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
@@ -47,8 +46,10 @@
             <a class="nav-link" href="#">Reportes</a>
           </li>
          </ul>
+         <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
   <!-- Aquí empieza el código-->
+  
 
   <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>

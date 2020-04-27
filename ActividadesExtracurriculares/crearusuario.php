@@ -18,7 +18,7 @@ session_start	();
   <body>
   <!-- El nav se utiliza en todas las pantallas con el logo -->
   <nav class="navbar navbar-light bg-light">
-    	  <a class="navbar-brand" href="#">
+    	  <a class="navbar-brand" href="index.php">
       <img src="images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
       Plataforma Actividades Extracurriculares
       </a> 
