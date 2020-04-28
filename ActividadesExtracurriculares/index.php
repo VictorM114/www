@@ -63,7 +63,7 @@
   </a>
 </div>
 </div>
-
+<br><br><br><br>
 <!-- Footer, alineado en el centro-->
 <!--Cambie el tag div por footer-->
 <footer class="footer"> 

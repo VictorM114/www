@@ -54,13 +54,10 @@ include '../sconn.php';
          </ul>
          <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
-<<<<<<< HEAD
           <!-- Aquí empieza el código-->
           <!--Form de las solicitudes-->
-=======
           
           <form action = "submitgeneral.php" method = "POST">
->>>>>>> Victor
           <div class="form-group">
           <h2>Información de actividad</h2>
           <?php if (@$_GET['Submited']==True) { ?>

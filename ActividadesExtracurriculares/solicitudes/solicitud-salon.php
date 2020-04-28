@@ -77,6 +77,30 @@ include '../sconn.php';
 <form action="" method="POST">
           <div class="form-group">
           <h2>Información de actividad</h2>
+          <?php if (@$_GET['Submited']==True) { ?>
+          <div class="alert alert-success alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Submited'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+          <?php if (@$_GET['Vacio']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Vacio'];?>
+          </div>
+       <?php 
+          }
+          ?>  
+          <?php if (@$_GET['Erorr']==True) { ?>
+          <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?php echo $_GET['Error'];?>
+          </div>
+       <?php 
+          }
+          ?> 
           <b>Nombre del solicitante</b><input type="text" name= "" class= "form-control" placeholder = "Ingresar nombre del solicitante">
           <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Correo electrónico:</b><input type= "email" name ="" class="form-control" placeholder="Ingresar su correo eléctronico">
@@ -104,8 +128,9 @@ include '../sconn.php';
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
           </div>
-         
+
           </form>
+          <br><br><br><br><br><br><br>
  <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
