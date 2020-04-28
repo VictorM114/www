@@ -55,7 +55,7 @@ include '../sconn.php';
          <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
           
-          <form action = "submitgeneral.php" method = "POST">
+          <form action = "submitteatro.php" method = "POST">
           <div class="form-group">
           <h2>Información de solicitud</h2>
           <?php if (@$_GET['Submited']==True) { ?>
