@@ -74,7 +74,7 @@ include '../sconn.php';
     <li>La aprobación de salud esta solicitud estará a que la actividad no conflija con actividades del Decanato de Asuntos Académicos, las cuales tendrán prioridad.<br></li>
 </ul>
 <!--Form de las solicitudes-->
-<form action="submitsalon.php" method="POST">
+        <form action = "submitsalon.php" method = "POST">
           <div class="form-group">
           <h2>Información de actividad</h2>
           <?php if (@$_GET['Submited']==True) { ?>
