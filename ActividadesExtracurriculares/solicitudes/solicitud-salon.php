@@ -101,10 +101,10 @@ include '../sconn.php';
        <?php 
           }
           ?> 
-          <b>Nombre del solicitante</b><input type="text" name= "" class= "form-control" placeholder = "Ingresar nombre del solicitante">
-          <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de solicitud">
-          <b>Correo electrónico:</b><input type= "email" name ="" class="form-control" placeholder="Ingresar su correo eléctronico">
-          <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1">
+          <b>Nombre del solicitante</b><input type="text" name= "nomSolicitante" class= "form-control" placeholder = "Ingresar nombre del solicitante">
+          <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
+          <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
+          <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1" name="funcionario">
             <option>--</option>
             <option>Facultad</option>
             <option>Administración</option>
@@ -112,7 +112,7 @@ include '../sconn.php';
             <option>Mentor/Tutor</option>
             <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique"> 
           </select>
-          <b>Propósito:</b><select class="form-control" id="sel1">
+          <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
             <option>ofrecer examen</option>
             <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
@@ -120,10 +120,10 @@ include '../sconn.php';
             <option>Reunión/taller/conferencia de facultad o administración</option>
             <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
           </select>
-          <b>Fecha:</b><input type= "date" name="" class="form-control" placeholder="Ingresar Fecha de la actividad">
-          <b>Horario de Inicio:</b><input type= "time" name="" class="form-control" placeholder="Hora de Inciio">
-          <b>Horario de Culminación:</b><input type= "time" name="" class="form-control" placeholder="Hora de Culminación">
-          <b>Salón solicitado:</b><input type= "text" name="" class="form-control" placeholder="Lugar de la actividad">         
+          <b>Fecha:</b><input type= "date" name="fechaAct" class="form-control" placeholder="Ingresar Fecha de la actividad">
+          <b>Horario de Inicio:</b><input type= "time" name="horaInicio" class="form-control" placeholder="Hora de Inciio">
+          <b>Horario de Culminación:</b><input type= "time" name="horaFinal" class="form-control" placeholder="Hora de Culminación">
+          <b>Salón solicitado:</b><input type= "text" name="salon" class="form-control" placeholder="Lugar de la actividad">         
           </div>
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
