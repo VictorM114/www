@@ -37,8 +37,8 @@ include 'sconn.php';
               <a class="dropdown-item" href="solicitudes/solicitud-teatro.php">Teatro General</a>
               <a class="dropdown-item" href="solicitudes/solicitud-servicios.php">Solicitud de Servicios</a>
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
-              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
-              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
