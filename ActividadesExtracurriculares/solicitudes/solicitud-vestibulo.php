@@ -54,7 +54,32 @@ include '../sconn.php';
          </ul>
          <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
-          
+  <div class ="container">
+  <div id="accordion">
+<div class="card">
+  <div class="card-header">
+    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+    <h3>Al firmar este documento me comprometo a cumplir con las siguentes estipulaciones</h3>
+    </a>
+  </div>
+  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+    <div class="card-body">
+    <ul>
+              <li>El solicitante será responsable por la seguridad de la propiedad: planta física, mesas, sillas, entre otros.
+                  Además, debe mantener organizada el área y entregarla en orden y limpia.</li>
+              <li>El solicitante será responsable de solicitar a la Oficina de Recursos Físicos todo servicio de movimiento de sillas, mesas y plantas, entre otros.</li>
+              <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con actividades del Decanato de
+                  Asuntos Académicos, las cuales tendrán prioridad.</li>
+              <li>Las actividades deberán comenzar y concluir a la hora solicitada. Una vez aprobada la solicitud, NO se harán cambios de horario. 
+                  La notificación de la cancelación de la misma debe hacerse con por lo menos un día de anticipación.</li>
+              <li>Las solicitudes se harán por escrito por lo menos con una semana de anticipación. Deberá estar completa en todas sus partes. 
+                  La autorización será confirmada cuando el(la) Decano(a) de Asuntos Académicos firme el visto bueno. Se enviará copia de la solicitud donde se le notificará la decisión tomada.</li>
+              <li>Si la solicitud corresponde a una asociación estudiantil, la misma debe tener el visto bueno del consejero o del Supervisor de Actividades Extracurriculares.</li>
+            </ul>
+    </div>
+  </div>
+</div>
+</div>
           <form action = "submitvestibulo.php" method = "POST">
           <div class="form-group">
           <h2>Información de solicitud</h2>
