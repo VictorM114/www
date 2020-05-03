@@ -51,7 +51,36 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
 <!--Aquí empieza el código-->
-
+<!--Lista de recordatorio-->
+<div class="container">
+<div id="accordion">
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+      <h3>RECORDATORIO</h3>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+       <ol>
+          <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con <br>
+          actividades de naturaleza académica y administrativa de nuestro Recinto, las cuales <br>
+          tendrán prioridad.<br></li>
+          <br>
+          <li>Solamente se concederá autorización de uso si la actividad es oficial.<br></li>
+          <br>
+          <li>El solicitante será responsable por las plantas y se compromete a sufragar el costo <br>
+          de las mismas en caso de que se extravíen o las dañen.<br></li>
+          <br>
+          <li>Fuera del horario regular de trabajo no se prestarán plantas a menos que el<br>
+          solicitante provea la transportación y realice arreglos de antemano.<br></li>
+          <br>
+          <li>La aprobación de la autorización de las plantas se les informará personalmente, por
+          escrito o por teléfono.<br></li>
+          </ol>
+      </div>
+    </div>
+  </div>
 <!--Form de las solicitudes-->
 <!--código PHP-->
         <form action = "submitplantas.php" method = "POST">
@@ -104,26 +133,7 @@ include '../sconn.php';
           </div>
           </form>
           <br><br>
-          <!--Lista de recordatorio-->
-          <h3 class="container">RECORDATORIO</h3>
-          <ol class="container">
-          <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con <br>
-          actividades de naturaleza académica y administrativa de nuestro Recinto, las cuales <br>
-          tendrán prioridad.<br></li>
-          <br>
-          <li>Solamente se concederá autorización de uso si la actividad es oficial.<br></li>
-          <br>
-          <li>El solicitante será responsable por las plantas y se compromete a sufragar el costo <br>
-          de las mismas en caso de que se extravíen o las dañen.<br></li>
-          <br>
-          <li>Fuera del horario regular de trabajo no se prestarán plantas a menos que el<br>
-          solicitante provea la transportación y realice arreglos de antemano.<br></li>
-          <br>
-          <li>La aprobación de la autorización de las plantas se les informará personalmente, por
-          escrito o por teléfono.<br></li>
-          </ol>
-          <br><br>
-                
+                                  
  <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 

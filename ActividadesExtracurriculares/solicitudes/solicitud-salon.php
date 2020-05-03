@@ -39,7 +39,7 @@ include '../sconn.php';
               <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Teatro General</a>
               <a class="dropdown-item" href="#">Solicitud de Servicios</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-plantas.php">Solicitud de Plantas</a>
+              <a class="dropdown-item" href="solicitud-plantas.php">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Sala de Conferencias</a>
@@ -51,8 +51,17 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
 <!--Aquí empieza el código-->
-<h4 class="container">Al completar este formulario me comprometo a cumplir con las siguientes estipulaciones: <br><br></h4>
-<ul class="container">
+<div class="container">
+<div id="accordion">
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+      <h3 class="container">Al completar este formulario me comprometo a cumplir con las siguientes estipulaciones: </h3>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+      <ul>
     <li> El solicitante será responsable por la seguridad de la propiedad: planta física, equipos y materiales, por lo que debe estar presente <br>
     durante la actividad y ser enlace con la Guardia universitaria. No puede mover sillas de un lugar a otro. Al concluir su actividad, debe <br>
     apagar las luces, equipo y aires y dejar todo en completo orden y limpio.<br></li>
@@ -73,6 +82,10 @@ include '../sconn.php';
     <br>
     <li>La aprobación de salud esta solicitud estará a que la actividad no conflija con actividades del Decanato de Asuntos Académicos, las cuales tendrán prioridad.<br></li>
 </ul>
+      </div>
+    </div>
+  </div>
+
 <!--Form de las solicitudes-->
         <form action = "submitsalon.php" method = "POST">
           <div class="form-group">

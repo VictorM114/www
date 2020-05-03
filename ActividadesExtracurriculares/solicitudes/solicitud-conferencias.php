@@ -56,8 +56,17 @@ include '../sconn.php';
 <!--código PHP-->
 
 <!--Compromiso-->
-          <h3 class="container">Al completar esta solicitud <b>el solicitante se compromete a:</b></h3>
-          <ul class="container">
+<div class="container">
+<div id="accordion">
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+      <h3 class="container">Al completar esta solicitud <b>el solicitante se compromete a:</b></h3>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="card-body">
+          <ul>
           <li>Velar por la seguridad e integridad de las facilidades y de la propiedad: plantas física, equipos,<br>
           materiales, entre otros. Además, matendrá organizadas las mesas y las sillas al concluir su actividad<br>
           y entregarlo en completo orden y limpio. No se removerán sillas de un lugar a otro, sin previa autorización.<br></li>
@@ -75,6 +84,10 @@ include '../sconn.php';
           <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con actividades del Decanata de Asuntos<br>
           Estudiantiles, las cuales tendrán prioridad.</li>
           </ul>
+      </div>
+    </div>
+  </div>
+         
         <form action = "submitconferencias.php" method = "POST">
           <div class="form-group">
           <h2>Solicitud de Uso del Patio Interior y/o Sala de Conferencias</h2>
