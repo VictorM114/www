@@ -56,13 +56,13 @@ include '../sconn.php';
   </nav>
   <div class ="container">
   <div id="accordion">
-<div class="card">
+  <div class="card">
   <div class="card-header">
     <a class="card-link" data-toggle="collapse" href="#collapseOne">
     <h3>Al firmar este documento me comprometo a cumplir con las siguentes estipulaciones</h3>
     </a>
   </div>
-  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
     <div class="card-body">
     <ul>
               <li>El solicitante será responsable por la seguridad de la propiedad: planta física, mesas, sillas, entre otros.
@@ -75,14 +75,15 @@ include '../sconn.php';
               <li>Las solicitudes se harán por escrito por lo menos con una semana de anticipación. Deberá estar completa en todas sus partes. 
                   La autorización será confirmada cuando el(la) Decano(a) de Asuntos Académicos firme el visto bueno. Se enviará copia de la solicitud donde se le notificará la decisión tomada.</li>
               <li>Si la solicitud corresponde a una asociación estudiantil, la misma debe tener el visto bueno del consejero o del Supervisor de Actividades Extracurriculares.</li>
-            </ul>
+    </ul>
+    </div>
     </div>
   </div>
-</div>
-</div>
+  </div>
+  </div>
           <form action = "submitvestibulo.php" method = "POST">
           <div class="form-group">
-          <h2>Información de solicitud</h2>
+          <h2>Solicitud de Vestibulo</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>

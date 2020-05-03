@@ -54,10 +54,31 @@ include '../sconn.php';
          </ul>
          <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
-          
+  <div class ="container">
+  <div id="accordion">
+  <div class="card">
+  <div class="card-header">
+    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+    <h3>Aviso Importante: </h3>
+    </a>
+  </div>
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
+    <div class="card-body">
+    <ul>
+        <p>Es requisito traer la tarjeta de identificación estudiantil para recoger y entregar el equipo y material prestado. 
+           El equipo y/o materiales aquí descrito(s) es para uso dentro de las instalaciones de la Universidad de Puerto Rico en Ponce. 
+           Se le delega toda la responsabilidad en el (la) solicitante, quien pasará a ser custodio(a) del equipo y/o materiales por el tiempo estipulado, y debe velar y cuidar por su buen funcionamiento.
+           Asimismo, el equipo y/o materiales deberá(n) ser devuelto(s) al finalizar la actividad a la Oficina de Actividades Extracurriculares en las mismas condiciones y buen estado en que se le fue entregado. 
+           En caso de que la actividad sea fuera del horario regular de trabajo, debe notificarlo y entregarlo(s) en la mañana siguiente.</p>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
           <form action ="submitprestamoequipo.php" method = "POST">
           <div class="form-group">
-          <h2>Información de solicitud</h2>
+          <h2>Préstamo de Equipo</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>

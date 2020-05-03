@@ -54,7 +54,43 @@ include '../sconn.php';
          </ul>
          <a><form action = "../logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
-          
+  <div class ="container">
+  <div id="accordion">
+  <div class="card">
+  <div class="card-header">
+    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+    <h3>Al firmar este documento me comprometo a cumplir con las siguentes estipulaciones</h3>
+    </a>
+  </div>
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
+    <div class="card-body">
+    <ul>
+              <li>El solicitante será responsable por la seguridad de la propiedad, planta física, equipos, materiales, entre otros; 
+                    por lo que deberá estar presente mientras dure la actividad y ser enlace con la Guardia Universitaria.  
+                    Además, debe mantener organizadas las sillas en forma de filas al concluir su actividad y entregarlo en completo orden y limpio.  
+                    No se removerán sillas a áreas externas, sin previa autorización.</li>
+              <li>El usuario será responsable de solicitar a la Oficina de Recursos Físicos todo servicio de movimiento de sillas, mesas, tarimas, entre otros.</li>
+              <li>El usuario solicitará al Departamento de Audiovisual el servicio de equipo, grabaciones y fotografía, en caso que la actividad amerite este servicio.</li>
+              <li><strong>El solicitante deberá comunicarse con la Guardia Universitaria para abrir y cerrar la instalación, prender y apagar el acondicionador de aire y luces, 
+                  cuando la actividad se lleve a cabo fuera del horario regular. De igual forma, le notificará a la Guardia si es necesario apoyo extraordinario.</strong></li>
+              <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con actividades de naturaleza académica y administrativa de nuestro Colegio, las cuales tendrán prioridad.</li>
+              <li>El sistema de acondicionador de aire no se utilizará durante ensayos, clases, preparación y decoración sin previa autorización.</li>
+              <li>El uso del sistema de luces (luminotecnia) será exclusivamente para obras de teatro profesional y estudiantil que cuenten con el personal técnico cualificado, previa aprobación del (la) Decano(a).  Aún así, 
+                  no se podrá alterar la posición de las luces, ni desmontarse alguno de sus elementos.</li>
+              <li>El uso de los camerinos está reservado para los actores, por lo que bajo ninguna circunstancia podrá utilizarse como almacén o algún otro fin.  No se podrá taladrar ni perforar en las áreas del escenario.</li>
+              <li>El usuario será responsable de recoger los desperdicios de refrigerios, almuerzos y cenas, una vez concluida la actividad.</li>
+              <li>Las actividades deberán comenzar y concluir a la hora solicitada.  
+                  Una vez aprobada la solicitud, NO se harán cambios de horario.  Las cancelaciones de actividades deberán hacerse por escrito con, por lo menos, una semana de anticipación, tanto a la Oficina de Actividades Extracurriculares, 
+                  como a aquellas otras áreas de trabajo a las que se solicitó algún servicio relacionado al evento.</li>
+              <li> 	La solicitud oficial se hará por escrito con a lo más cuatro semanas de anticipación.  La autorización será confirmada cuando la Oficina del (la) Decano(a) dé el visto bueno.  Se enviará copia de la solicitud en un término
+               no mayor de tres días después del periodo establecido para fijar fecha en el calendario.</li>
+              <li> 	El Teatro no se considerará reservado hasta que se apruebe este documento, por lo que de no recibirse el mismo se podrá reservar su fecha a otro solicitante.</li>
+    </ul>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div> 
           <form action = "submitteatro.php" method = "POST">
           <div class="form-group">
           <h2>Información de solicitud</h2>
@@ -99,7 +135,7 @@ include '../sconn.php';
           <b>Fecha de uso:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de uso del Teatro">
           <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Inciio">
           <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
-          <b>Cantidad de personas</b><input type="text" name="cantPers" class="form-control" placeholder="Ingrese la cantidad de personas">
+          <b>Cantidad de personas</b><input type="text" name="cantPers" class="form-control" placeholder="Ingrese la cantidad de personas. Max(450)">
             </div>
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
