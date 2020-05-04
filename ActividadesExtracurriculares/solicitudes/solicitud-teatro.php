@@ -11,7 +11,7 @@ include '../sconn.php';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link href="../over.css" rel="stylesheet" >
+    <link href="../over.css" rel="stylesheet">
     <title>Solicitud Teatro General</title>
   </head>
   <body>
@@ -31,16 +31,16 @@ include '../sconn.php';
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Solicitudes
             </a>
-            <!-- Dropdown -->
+            <!-- Dropdown con todas las solicitudes -->
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
+              <a class="dropdown-item" href="solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitud-salon.php">Préstamo de Salón</a>
               <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item active" href="#">Teatro General</a>
-              <a class="dropdown-item" href="#">Solicitud de Servicios</a>
+              <a class="dropdown-item" href="solicitud-servicios.php">Solicitud de Servicios</a>
               <a class="dropdown-item" href="#">Solicitud de Plantas</a>
-              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
-              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
+              <a class="dropdown-item" href="solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
@@ -90,7 +90,7 @@ include '../sconn.php';
     </div>
   </div>
   </div>
-  </div> 
+  </div>
           <form action = "submitteatro.php" method = "POST">
           <div class="form-group">
           <h2>Información de solicitud</h2>

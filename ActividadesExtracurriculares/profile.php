@@ -29,7 +29,7 @@ include 'sconn.php';
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Solicitudes
             </a>
-            <!-- Dropdown -->
+            <!-- Dropdown con todas las solicitudes -->
             <div class="dropdown-menu">
               <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitudes/solicitud-salon.php">Préstamo de Salón</a>
@@ -40,6 +40,9 @@ include 'sconn.php';
               <a class="dropdown-item" href="solicitudes/solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="solicitudes/solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
+              <!--Estas solicitudes son las solicitudes que son externas a la plataforma
+              estan en google forms y se tienen que escribir el target blank para que 
+              abran en otro tab-->
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
@@ -57,7 +60,7 @@ include 'sconn.php';
           <div class = "container">
 
           <?php
-                   /*Selecciona todo de actividades, une asociaciones donde el association ID de 
+                   /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
                     el nombre completo del usuario (que es el mismo) */
                     $sql = "SELECT * FROM actividades
