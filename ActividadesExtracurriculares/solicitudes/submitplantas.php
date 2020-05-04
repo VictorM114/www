@@ -14,7 +14,7 @@ $horaFin = $_POST['hourFin'];
 
 
 if (isset($_POST['submit'])) {
-    if(empty($fullname) or empty($nombre)){
+    if(empty($nombre)){
         header ('location:solicitud-plantas.php?Vacio=Completa los campos.');
     }
     elseif(empty($fecha) or empty($funcionario))

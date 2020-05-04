@@ -17,7 +17,7 @@ $uso = $_POST['uso'];
 
 
 if (isset($_POST['submit'])) {
-    if(empty($fullname) or empty($nombre)){
+    if(empty($nombre)){
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     elseif(empty($fecha) or empty($email))

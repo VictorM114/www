@@ -13,7 +13,7 @@ $horaFin = $_POST['horaFinal'];
 $salon = $_POST['salon']; 
 
 if (isset($_POST['submit'])) {
-    if(empty($fullname) or empty($fecha)){
+    if(empty($fecha)){
         header ('location:solicitud-salon.php?Vacio=Completa los campos.');
     }
     elseif(empty($email) or empty($funcionario))
