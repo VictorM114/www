@@ -101,6 +101,8 @@ include '../sconn.php';
       </div>
     </div>
   </div>
+ </div>
+ </div>
          <!--Form de las solicitudes-->
          <!--código PHP-->
         <form action = "submitauditorio.php" method = "POST">
@@ -139,7 +141,7 @@ include '../sconn.php';
             <option>Administración</option>
             <option>Asociación Estudiantil</option>
             <option>Mentor/Tutor</option>
-            <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique"> 
+            <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique">
           </select>
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
