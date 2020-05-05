@@ -63,7 +63,7 @@ session_start	();
         <button type="submit" name="submit" value ="submit" class="btn btn-primary">Crear</button>
     </div>
   </form>
-
+  <br><br><br>
     
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->

@@ -13,7 +13,7 @@ include '../sconn.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="../over.css" rel="stylesheet" >
-    <title>Solicitud de Salón</title>
+    <title>Solicitud de Uso del Patio Interior y/o Sala de Conferencias</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-sm bg-light ">
@@ -36,13 +36,13 @@ include '../sconn.php';
             <div class="dropdown-menu">
               <a class="dropdown-item active " href="solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitud-salon.php">Préstamo de Salón</a>
-              <a class="dropdown-item" href="solicitud-auditorio.php">Solicitud del Auditorio 225</a>
+              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="#">Teatro General</a>
               <a class="dropdown-item" href="#">Solicitud de Servicios</a>
               <a class="dropdown-item" href="solicitud-plantas.php">Solicitud de Plantas</a>
               <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias</a>
+              <a class="dropdown-item" href="solicitud-conferencias.php">Sala de Conferencias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
@@ -51,45 +51,46 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
 <!--Aquí empieza el código-->
+
+<!--Form de las solicitudes-->
+<!--código PHP-->
+
+<!--Compromiso-->
 <div class="container">
 <div id="accordion">
 <div class="card">
     <div class="card-header">
       <a class="card-link" data-toggle="collapse" href="#collapseOne">
-      <h3 class="container">Al completar este formulario me comprometo a cumplir con las siguientes estipulaciones: </h3>
+      <h3 class="container">Al completar esta solicitud <b>el solicitante se compromete a:</b></h3>
       </a>
     </div>
     <div id="collapseOne" class="collapse show" data-parent="#accordion">
       <div class="card-body">
-      <ul>
-    <li> El solicitante será responsable por la seguridad de la propiedad: planta física, equipos y materiales, por lo que debe estar presente <br>
-    durante la actividad y ser enlace con la Guardia universitaria. No puede mover sillas de un lugar a otro. Al concluir su actividad, debe <br>
-    apagar las luces, equipo y aires y dejar todo en completo orden y limpio.<br></li>
-    <br>
-    <li>Cada Departamento tiene instrucciones específicas sobre el uso y conservación de los salones y sus equipos tales como: puertas con cerraduda <br>
-    aire, proyector, pantalla, televisor. Por esta razón, una vez aprobada la solicitud por el Decano (a), debe dialogar con el Director(a) donde <br>
-    está adscrito el salón con antelación a su actividad para realizar los arreglos correspondientes.<br></li>
-    <br>
-    <li>El solicitante deberá comunicarse con la Guardia universitaria para abrir y cerrar el salón, encender y apagar las luces y aire cuando la actividad<br>
-    se lleve a cabo fuera del horario regular.<br></li>
-    <br>
-    <li>Las actividades deberán comenzar y concluir a la hora autorizada. Una vez aprobada la solicitud, NO puede hacer cambios de día ni horario. <br>
-    La notificación de la cancelación de la misma debe hacerse con, por lo menos, un día de anticipación.<br></li>
-    <br>
-    <li>La autorización será confirmada cuando el(la) Decano(a) de Asuntos Académicos firme el visto bueno. El solicitante podrá buscar copia de la solicitud<br>
-    en el Decanato donde se le notificará la decisión tomada y entregará copia autorizada al Departamento donde está adscrito el salón antes del día de la<br>
-    actividad.<br></li>
-    <br>
-    <li>La aprobación de salud esta solicitud estará a que la actividad no conflija con actividades del Decanato de Asuntos Académicos, las cuales tendrán prioridad.<br></li>
-</ul>
+          <ul>
+          <li>Velar por la seguridad e integridad de las facilidades y de la propiedad: plantas física, equipos,<br>
+          materiales, entre otros. Además, matendrá organizadas las mesas y las sillas al concluir su actividad<br>
+          y entregarlo en completo orden y limpio. No se removerán sillas de un lugar a otro, sin previa autorización.<br></li>
+          <br>
+          <li>Notificar a la Guardia Universitaria sobre la culminación de la actividad cuando ésta se llevea cabo<br>
+          fuera del horario regular para que cierre la Sala.<br></li>
+          <br>
+          <li>El solicitante será responsable por las plantas y se compromete a sufragar el costo <br>
+          de las mismas en caso de que se extravíen o las dañen.<br></li>
+          <br>
+          <li>Completar la solicitud en todas sus partes <b> por escrito </b>por los menos con <b>dos semanas</b> de anticipación.<br>
+          <b>No se aceptaran solicitudes sin las firmas correspondientes.</b> Una vez aprobada la solicitud <b>NO</b> de harán<br>
+          cambios de horario. La notificación de la cancelación de la misma debe hacerse con por lo menos un día de anticipación</li>
+          <br>
+          <li>La aprobación de esta solicitud estará sujeta a que la actividad no conflija con actividades del Decanata de Asuntos<br>
+          Estudiantiles, las cuales tendrán prioridad.</li>
+          </ul>
       </div>
     </div>
   </div>
-
-<!--Form de las solicitudes-->
-        <form action = "submitsalon.php" method = "POST">
+         
+        <form action = "submitconferencias.php" method = "POST">
           <div class="form-group">
-          <h2>Información de actividad</h2>
+          <h2>Solicitud de Uso del Patio Interior y/o Sala de Conferencias</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -114,9 +115,13 @@ include '../sconn.php';
        <?php 
           }
           ?> 
-          <b>Nombre del solicitante</b><input type="text" name= "nomSolicitante" class= "form-control" placeholder = "Ingresar nombre del solicitante">
+          <!--Campos del form-->
+          <b>Nombre del solicitante</b><input type="text" name="nombre" class= "form-control" placeholder = "Ingresar nombre del solicitante">
           <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
+          <b>Fecha de uso:</b><input type= "date" name="fechaUso" class="form-control" placeholder="Ingresar fecha de uso">
+          <b>Horario de Inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
+          <b>Horario de Culminación:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
           <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1" name="funcionario">
             <option>--</option>
             <option>Facultad</option>
@@ -125,25 +130,37 @@ include '../sconn.php';
             <option>Mentor/Tutor</option>
             <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique"> 
           </select>
+          <b>Departamento/Oficina/Nombre Asociación/ Especifique</b><input type="text" name="areaTrabajo" class= "form-control" placeholder = "Conteste la que aplique">
+          <b>Teléfono</b><input type="text" name="telefono" class= "form-control" placeholder = "teléfono o celular">
+          <b>Extensión</b><input type="text" name="extension" class= "form-control" placeholder = "conteste si aplica">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
-            <option>ofrecer examen</option>
-            <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
-            <option>Repaso</option>
-            <option>Reunión/taller/conferencia de facultad o administración</option>
+            <option>Reunión Asociación Estudiantil</option>
+            <option>Conferencia Asociación Estudiantil</option>
+            <option>Actividad Asociación Estudiantil</option>
+            <option>Reunión Facultad o Administración</option>
+            <option>Conferencia Facultad o Administración</option>
+            <option>Actividad Facultad o Administración</option>
             <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
           </select>
-          <b>Fecha:</b><input type= "date" name="fechaAct" class="form-control" placeholder="Ingresar Fecha de la actividad">
-          <b>Horario de Inicio:</b><input type= "time" name="horaInicio" class="form-control" placeholder="Hora de Inciio">
-          <b>Horario de Culminación:</b><input type= "time" name="horaFinal" class="form-control" placeholder="Hora de Culminación">
-          <b>Salón solicitado:</b><input type= "text" name="salon" class="form-control" placeholder="Lugar de la actividad">         
+          <b>Uso de equipo audiovisual:</b><select class="form-control" id="sel1" name="uso">
+
+            <option>--</option>
+            <option>Si (deberá ser solicitado en la Oficina del Decano de estudiantes)<br>
+            (El uso solo aplica a la Sala de Conferencias)</option>
+            <option>No</option>
+          </select>
+                  
           </div>
+          <br><br>
           <div id="btnmedio">
             <button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button>
           </div>
-
           </form>
-          <br><br><br><br><br>
+          <br><br>
+          <
+          <br><br>
+                
  <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
