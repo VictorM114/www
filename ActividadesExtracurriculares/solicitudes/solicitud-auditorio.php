@@ -96,7 +96,7 @@ include '../sconn.php';
           <li>La autorización será confirmada cuando el (la) Decano(a) de Asuntos Académicos firme el visto bueno. Se enviará copia de<br>
           la solicitud donde se le notificará la decisión tomada.</li>
           <br>
-          <li>La capacidad del Auditorio es de <b>225</b> personas.</li>
+          <li>La capacidad del Auditorio es de <u><b>225</b></u> personas.</li>
           </ul>
       </div>
     </div>
@@ -152,12 +152,11 @@ include '../sconn.php';
             <option>Actividad Facultad o Administración</option>
             <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
           </select>
-          <b>Horario de Inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
-          <b>Horario de Culminación:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
+          <b>Horario inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
+          <b>Horario de conclusión:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
           <b>Cantidad de personas </b><input type="text" name="cantidad" class= "form-control" placeholder = "Ingrese cantidad de personas">
-          <b>Departamento/Oficina/Nombre Asociación/ Especifique</b><input type="text" name="departamento" class= "form-control" placeholder = "Conteste la que aplique">
+          <b>Departamento/Oficina</b><input type="text" name="departamento" class= "form-control" placeholder = "Conteste la que aplique">
           <b>Fecha de uso:</b><input type= "date" name="fechaUso" class="form-control" placeholder="Ingresar fecha de uso">
-          
           </div>
           <br><br>
           <div id="btnmedio">

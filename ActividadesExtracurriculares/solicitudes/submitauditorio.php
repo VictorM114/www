@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-auditorio.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO auditorio225 (associationID, nombre, fecha, funcionario, email, proposito, horaIni, horaFin, cantidad, departamento, fechaUso)
+        $sql = "INSERT INTO auditorio (associationID, nombre, fecha, funcionario, email, proposito, horaIni, horaFin, cantidad, departamento, fechaUso)
         VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', $funcionario', '$email', '$proposito', '$horaIni', '$horaFin','$cantidad', '$departamento', '$fechaUso')";
         
         if ($conn->query($sql) === TRUE) {
