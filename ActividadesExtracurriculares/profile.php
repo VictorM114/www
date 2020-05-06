@@ -33,13 +33,13 @@ include 'sconn.php';
             <div class="dropdown-menu">
               <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitudes/solicitud-salon.php">Préstamo de Salón</a>
-              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-auditorio.php">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="solicitudes/solicitud-teatro.php">Teatro General</a>
               <a class="dropdown-item" href="solicitudes/solicitud-servicios.php">Solicitud de Servicios</a>
-              <a class="dropdown-item" href="#">Solicitud de Plantas</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-plantas.php">Solicitud de Plantas</a>
               <a class="dropdown-item" href="solicitudes/solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
               <a class="dropdown-item" href="solicitudes/solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias del D.E.</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-conferencias.php">Sala de Conferencias del D.E.</a>
               <!--Estas solicitudes son las solicitudes que son externas a la plataforma
               estan en google forms y se tienen que escribir el target blank para que 
               abran en otro tab-->
@@ -47,7 +47,7 @@ include 'sconn.php';
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
               target="_blank">Solicitud de Fotografia y Sonido</a>
-              <a class="dropdown-item" href="">Solicitud de Transportación</a>
+              <a class="dropdown-item" href="#">Solicitud de Transportación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
@@ -56,9 +56,9 @@ include 'sconn.php';
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav> 
     <br>
-          <div id ="accordion">
+  
           <div class = "container">
-
+          <h2>Solicitudes Pendientes y/o Aprobadas</h2>
           <?php
                    /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
@@ -68,15 +68,7 @@ include 'sconn.php';
                             WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'pendiente';";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
-                      #output de las actividades en una tabla        
-                      echo '<div class ="card">
-                      <div class ="card-header">
-                      <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        <h2>Solicitudes Generales Pendientes</h2></a>
-                        </div>
-                        <div id="collapseOne" class="collapse" data-parent="#accordion">
-                        <div class ="card-body">
-                      <h4>Las siguentes solicitudes están pendientes para aprobar.</h4>';
+                     echo "<h4>Las siguentes solicitudes están pendientes para aprobar.</h4>";
                       tableHeader();
                       while($row = $result->fetch_assoc()){
                         #Cambio de formato en las fechas SQL a fechas mas legibles
@@ -94,55 +86,10 @@ include 'sconn.php';
                         echo "<td>" . $htmltime2 . "</td>";
                         echo "</tr>";
                         echo "</tbody>
-                              </table>
-                              </div>
-                              </div>";
+                              </table>";
                       }
                     } ?>
 
-                    <?php 
-                    $sql2 = "SELECT * FROM actividades
-                    INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
-                    WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobada';";
-                    $result2 = $conn->query($sql2);
-                    if ($result2->num_rows > 0) {
-                     #output de las actividades en una tabla        
-                      echo '<div class ="card">
-                            <div class ="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                            <h2>Solicitudes Generales Aprobadas</h2></a>
-                            </div>
-                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                            <div class ="card-body">
-                      <h4>Las siguientes solicitudes han sido aprobadas.</h4>';
-                      tableHeader();
-                      while($row2 = $result2->fetch_assoc()){
-                        #Cambio de formato en las fechas SQL a fechas mas legibles
-                        $dbdate = $row2['actDate'];
-                        $beudate = date('D-d-M-Y',strtotime($dbdate));
-                        $time1 = $row2['horarioInicial'];
-                        $time1 = date('h:i a', strtotime($time1));
-                        $time2 = $row2['horarioFin'];
-                        $time2 = date('h:i a', strtotime($time2));
-                        echo "<tr>";
-                        echo "<td>" . $row2['actName'] . "</td>";
-                        echo "<td>" . $row2['actPlace'] . "</td>";
-                        echo "<td>" . $beudate . "</td>";
-                        echo "<td>" . $time1 . "</td>";
-                        echo "<td>" . $time2 . "</td>";
-                        #echo "<td>" . $row2['statusSol'] . "</td>";
-                        echo "</tr>";
-                        echo "</tbody>
-                              </table>
-                              </div>
-                              </div>";
-                      }
-                    } 
-                    ?>
-
-
-                  </div>
-                  </div>
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
