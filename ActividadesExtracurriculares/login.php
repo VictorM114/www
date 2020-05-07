@@ -21,7 +21,7 @@
   <!-- Aquí empieza el código-->
   </nav> 
      <form action="plogin.php" method="POST">
-      <div class="form-group">
+      <div class="form-login">
         <h3>Bienvenido/Bienvenida!</h3>    
         <?php if (@$_GET['Empty']==True) { ?>
           <div class="alert alert-danger alert-dismissible fade show">
