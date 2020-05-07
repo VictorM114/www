@@ -67,28 +67,37 @@ include 'sconn.php';
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
                             WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'pendiente';";
                     $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                     echo "<h4>Las siguentes solicitudes están pendientes para aprobar.</h4>";
-                      tableHeader();
-                      while($row = $result->fetch_assoc()){
-                        #Cambio de formato en las fechas SQL a fechas mas legibles
-                        $sqldate = $row['actDate'];
-                        $htmldate = date('D-d-M-Y',strtotime($sqldate));
-                        $sqltime1 = $row['horarioInicial'];
-                        $htmltime1 = date('h:i a', strtotime($sqltime1));
-                        $sqltime2 = $row['horarioFin'];
-                        $htmltime2 = date('h:i a', strtotime($sqltime2));
-                        echo "<tr>";
-                        echo "<td>" . $row['actName'] . "</td>";
-                        echo "<td>" . $row['actPlace'] . "</td>";
-                        echo "<td>" . $htmldate . "</td>";
-                        echo "<td>" . $htmltime1 . "</td>";
-                        echo "<td>" . $htmltime2 . "</td>";
-                        echo "</tr>";
-                        echo "</tbody>
-                              </table>";
-                      }
-                    } ?>
+                    $i = 1;
+                    while($row = mysqli_fetch_assoc($result)){
+                      $nombre[$i] = $row['actName'];
+                      $fecha[$i] = $row['actDate'];
+                      $lugar[$i] = $row['actPlace'];
+                      $incio[$i] = $row['horarioInicial'];
+                      $final[$i] = $row['horarioFin'];
+                      $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                      $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                      $final[$i] = date('h:i a', strtotime($final[$i]));
+                      $i++;
+
+                    }
+                    if($result->num_rows > 0){
+                    echo "<h3>Estas son las solicitudes pentiendes a aprobar.</h3>";
+                    tableheader();
+                    for($i=1; $i <=count($nombre); $i++)
+                    {
+                      echo "<tr>
+                            <td>$nombre[$i]</td>
+                            <td>$fecha[$i]</td>
+                            <td>$lugar[$i]</td>
+                            <td>$incio[$i]</td>
+                            <td>$final[$i]</td>
+                             </tr>";  
+                    }
+                    echo "</tbody>
+                          </table>";
+                        }
+
+                     ?>
 
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
