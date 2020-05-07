@@ -59,7 +59,7 @@ include 'sconn.php';
   
           <div class = "container">
             <div class = "jumbotron">
-          <h2>Solicitudes Pendientes y/o Aprobadas</h2>
+          <h2 style: align="center">Solicitudes Pendientes y/o Aprobadas</h2>
           </div>
           <?php
                    /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
