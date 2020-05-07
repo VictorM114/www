@@ -58,7 +58,9 @@ include 'sconn.php';
     <br>
   
           <div class = "container">
+            <div class = "jumbotron">
           <h2>Solicitudes Pendientes y/o Aprobadas</h2>
+          </div>
           <?php
                    /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
@@ -78,17 +80,17 @@ include 'sconn.php';
                       $incio[$i] = date('h:i a', strtotime($incio[$i]));
                       $final[$i] = date('h:i a', strtotime($final[$i]));
                       $i++;
-
                     }
                     if($result->num_rows > 0){
-                    echo "<h3>Estas son las solicitudes pentiendes a aprobar.</h3>";
+                      echo "<h3>Solicitud Principal</h3>";
+                    echo "<h4>Estas son las solicitudes pentiendes a aprobar.</h4>";
                     tableheader();
                     for($i=1; $i <=count($nombre); $i++)
                     {
                       echo "<tr>
                             <td>$nombre[$i]</td>
-                            <td>$fecha[$i]</td>
                             <td>$lugar[$i]</td>
+                            <td>$fecha[$i]</td>
                             <td>$incio[$i]</td>
                             <td>$final[$i]</td>
                              </tr>";  
@@ -98,7 +100,717 @@ include 'sconn.php';
                         }
 
                      ?>
+              <?php
+                   /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
+                    ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
+                    el nombre completo del usuario (que es el mismo) */
+                    $sql = "SELECT * FROM actividades
+                            INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
+                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobada';";
+                    $result = $conn->query($sql);
+                    $i = 1;
+                    while($row = mysqli_fetch_assoc($result)){
+                      $nombre[$i] = $row['actName'];
+                      $fecha[$i] = $row['actDate'];
+                      $lugar[$i] = $row['actPlace'];
+                      $incio[$i] = $row['horarioInicial'];
+                      $final[$i] = $row['horarioFin'];
+                      $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                      $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                      $final[$i] = date('h:i a', strtotime($final[$i]));
+                      $i++;
 
+                    }
+                    if($result->num_rows > 0){
+                      echo "<h3>Solicitud Principal</h3>";
+                    echo "<h4>Estas son las solicitudes que han sido aprobadas.</h4>";
+                    tableheader();
+                    for($i=1; $i <=count($nombre); $i++)
+                    {
+                      echo "<tr>
+                            <td>$nombre[$i]</td>
+                            <td>$lugar[$i]</td>
+                            <td>$fecha[$i]</td>
+                            <td>$incio[$i]</td>
+                            <td>$final[$i]</td>
+                             </tr>";  
+                    }
+                    echo "</tbody>
+                          </table>";
+                        }
+
+                     ?>
+                     <?php 
+                          $sql = "SELECT * FROM salones
+                          INNER JOIN asociaciones ON salones.associationID = asociaciones.associationID
+                          WHERE asocName ='".$_SESSION['Fname']."'AND estatus = 'pendiente';";
+                           $result = $conn->query($sql);
+                           $i = 1;
+                           while($row = mysqli_fetch_assoc($result)){
+                             $proposito[$i] = $row['proposito'];
+                             $fecha[$i] = $row['fechaAct'];
+                             $salon[$i] = $row['salon'];
+                             $incio[$i] = $row['horaInicio'];
+                             $final[$i] = $row['horaFinal'];
+                             $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                             $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                             $final[$i] = date('h:i a', strtotime($final[$i]));
+                             $i++;
+       
+                           }
+                           if($result->num_rows > 0){
+                             echo "<h3>Solicitud Prestamo de Salón</h3>";
+                             echo "<h4>Estas son las solicitudes pendientes para aprobar.</h4>";
+                             echo '<table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th>Propósito</th>
+                                        <th>Fecha</th>
+                                        <th>Salón</th>
+                                        <th>Horario Comienzo</th>
+                                        <th>Horario de Culmunación</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>';
+                             for($i=1; $i<=count($proposito); $i++){
+                              echo "<tr>
+                                    <td>$proposito[$i]</td>
+                                    <td>$fecha[$i]</td>
+                                    <td>$salon[$i]</td>
+                                    <td>$incio[$i]</td>
+                                    <td>$final[$i]</td>
+                                    </tr>";  
+                             }
+                             echo "</tbody>
+                                  </table>"; 
+                           }
+                     ?>
+                    <?php 
+                          $sql = "SELECT * FROM salones
+                          INNER JOIN asociaciones ON salones.associationID = asociaciones.associationID
+                          WHERE asocName ='".$_SESSION['Fname']."'AND estatus = 'aprobada';";
+                           $result = $conn->query($sql);
+                           $i = 1;
+                           while($row = mysqli_fetch_assoc($result)){
+                             $proposito[$i] = $row['proposito'];
+                             $fecha[$i] = $row['fechaAct'];
+                             $salon[$i] = $row['salon'];
+                             $incio[$i] = $row['horaInicio'];
+                             $final[$i] = $row['horaFinal'];
+                             $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                             $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                             $final[$i] = date('h:i a', strtotime($final[$i]));
+                             $i++;
+       
+                           }
+                           if($result->num_rows > 0){
+                             echo "<h3>Solicitud Prestamo de Salón</h3>";
+                             echo "<h4>Estas son las solicitudes de préstamo de salón aprobdas.</h4>";
+                             echo '<table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th>Propósito</th>
+                                        <th>Fecha</th>
+                                        <th>Salón</th>
+                                        <th>Horario Comienzo</th>
+                                        <th>Horario de Culmunación</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>';
+                             for($i=1; $i<=count($proposito); $i++){
+                              echo "<tr>
+                                    <td>$proposito[$i]</td>
+                                    <td>$fecha[$i]</td>
+                                    <td>$salon[$i]</td>
+                                    <td>$incio[$i]</td>
+                                    <td>$final[$i]</td>
+                                    </tr>";  
+                             }
+                             echo "</tbody>
+                                  </table>"; 
+                           }
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM solicitudesservicio
+                        INNER JOIN asociaciones ON solicitudesservicio.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                         $result = $conn->query($sql);
+                         $i = 1;
+                         while($row = mysqli_fetch_assoc($result)){
+                           $servicio[$i] = $row['servicioDes'];
+                           $fecha[$i] = $row['actDate'];
+                           $lugar[$i] = $row['actPlace'];
+                           $incio[$i] = $row['actIni'];
+                           $final[$i] = $row['actFin'];
+                           $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                           $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                           $final[$i] = date('h:i a', strtotime($final[$i]));
+                           $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de Servicios</h3>";
+                            echo "<h4>Estas son las solicitudes de servicios pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                   <thead class="thead-dark">
+                                     <tr>
+                                       <th>Servicio</th>
+                                       <th>Fecha</th>
+                                       <th>Lugar</th>
+                                       <th>Horario Comienzo</th>
+                                       <th>Horario de Culmunación</th>
+                                     </tr>
+                                   </thead>
+                                   <tbody>';
+                            for($i=1; $i<=count($servicio); $i++){
+                             echo "<tr>
+                                   <td>$servicio[$i]</td>
+                                   <td>$fecha[$i]</td>
+                                   <td>$lugar[$i]</td>
+                                   <td>$incio[$i]</td>
+                                   <td>$final[$i]</td>
+                                   </tr>";  
+                            }
+                            echo "</tbody>
+                                 </table>";                             
+                          }
+                     ?>
+                    <?php 
+                        $sql = "SELECT * FROM solicitudesservicio
+                        INNER JOIN asociaciones ON solicitudesservicio.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                         $result = $conn->query($sql);
+                         $i = 1;
+                         while($row = mysqli_fetch_assoc($result)){
+                           $servicio[$i] = $row['servicioDes'];
+                           $fecha[$i] = $row['actDate'];
+                           $lugar[$i] = $row['actPlace'];
+                           $incio[$i] = $row['actIni'];
+                           $final[$i] = $row['actFin'];
+                           $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                           $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                           $final[$i] = date('h:i a', strtotime($final[$i]));
+                           $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de Servicios</h3>";
+                            echo "<h4>Estas son las solicitudes de servicios aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                   <thead class="thead-dark">
+                                     <tr>
+                                       <th>Servicio</th>
+                                       <th>Fecha</th>
+                                       <th>Lugar</th>
+                                       <th>Horario Comienzo</th>
+                                       <th>Horario de Culmunación</th>
+                                     </tr>
+                                   </thead>
+                                   <tbody>';
+                            for($i=1; $i<=count($servicio); $i++){
+                             echo "<tr>
+                                   <td>$servicio[$i]</td>
+                                   <td>$fecha[$i]</td>
+                                   <td>$lugar[$i]</td>
+                                   <td>$incio[$i]</td>
+                                   <td>$final[$i]</td>
+                                   </tr>";  
+                            }
+                            echo "</tbody>
+                                 </table>";                             
+                          }
+                     ?>
+                     <?php 
+                     $sql = "SELECT * FROM actividadesteatro
+                     INNER JOIN asociaciones ON actividadesteatro.associationID = asociaciones.associationID
+                     WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                     $result = $conn->query($sql);
+                     $i = 1;
+                     while($row = mysqli_fetch_assoc($result)){
+                       $proposito[$i] = $row['actProp'];
+                       $fecha[$i] = $row['actDate'];
+                       $cantidadPer[$i] = $row['cantPer'];
+                       $incio[$i] = $row['actIni'];
+                       $final[$i] = $row['actFin'];
+                       $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                       $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                       $final[$i] = date('h:i a', strtotime($final[$i]));
+                       $i++; }
+                      if($result->num_rows > 0){
+                        echo "<h3>Solicitud del Teatro General</h3>";
+                        echo "<h4>Estas son las solicitudes del Teatro pendientes.</h4>";
+                        echo '<table class="table table-bordered">
+                               <thead class="thead-dark">
+                                 <tr>
+                                   <th>Proposito</th>
+                                   <th>Fecha</th>
+                                   <th>Cantidad de Personas</th>
+                                   <th>Horario Comienzo</th>
+                                   <th>Horario de Culmunación</th>
+                                 </tr>
+                               </thead>
+                               <tbody>';
+                        for($i=1; $i<=count($proposito); $i++){
+                         echo "<tr>
+                               <td>$proposito[$i]</td>
+                               <td>$fecha[$i]</td>
+                               <td>$cantidadPer[$i]</td>
+                               <td>$incio[$i]</td>
+                               <td>$final[$i]</td>
+                               </tr>";  
+                        }
+                        echo "</tbody>
+                             </table>"; }
+                     ?>
+                     <?php 
+                     $sql = "SELECT * FROM actividadesteatro
+                     INNER JOIN asociaciones ON actividadesteatro.associationID = asociaciones.associationID
+                     WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                     $result = $conn->query($sql);
+                     $i = 1;
+                     while($row = mysqli_fetch_assoc($result)){
+                       $proposito[$i] = $row['actProp'];
+                       $fecha[$i] = $row['actDate'];
+                       $cantidadPer[$i] = $row['cantPer'];
+                       $incio[$i] = $row['actIni'];
+                       $final[$i] = $row['actFin'];
+                       $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                       $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                       $final[$i] = date('h:i a', strtotime($final[$i]));
+                       $i++; }
+                      if($result->num_rows > 0){
+                        echo "<h3>Solicitud del Teatro General</h3>";
+                        echo "<h4>Estas son las solicitudes del Teatro aprobada.</h4>";
+                        echo '<table class="table table-bordered">
+                               <thead class="thead-dark">
+                                 <tr>
+                                   <th>Proposito</th>
+                                   <th>Fecha</th>
+                                   <th>Cantidad de Personas</th>
+                                   <th>Horario Comienzo</th>
+                                   <th>Horario de Culmunación</th>
+                                 </tr>
+                               </thead>
+                               <tbody>';
+                        for($i=1; $i<=count($proposito); $i++){
+                         echo "<tr>
+                               <td>$proposito[$i]</td>
+                               <td>$fecha[$i]</td>
+                               <td>$cantidadPer[$i]</td>
+                               <td>$incio[$i]</td>
+                               <td>$final[$i]</td>
+                               </tr>";  
+                        }
+                        echo "</tbody>
+                             </table>"; }
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM actividadesvestibulo
+                        INNER JOIN asociaciones ON actividadesvestibulo.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['propAct'];
+                          $fecha[$i] = $row['actDate'];
+                          $incio[$i] = $row['actIni'];
+                          $final[$i] = $row['actFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud del Vestibulo</h3>";
+                            echo "<h4>Estas son las solicitudes del Vestibulo pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                   <?php 
+                        $sql = "SELECT * FROM actividadesvestibulo
+                        INNER JOIN asociaciones ON actividadesvestibulo.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['propAct'];
+                          $fecha[$i] = $row['actDate'];
+                          $incio[$i] = $row['actIni'];
+                          $final[$i] = $row['actFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud del Vestibulo</h3>";
+                            echo "<h4>Estas son las solicitudes del Vestibulo aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; }                    
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM auditorio
+                        INNER JOIN asociaciones ON auditorio.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['fechaUso'];
+                          $incio[$i] = $row['horaIni'];
+                          $final[$i] = $row['horaFin'];
+                          $cantidadPer[$i] = $row['cantidad'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud del auditorio 225</h3>";
+                            echo "<h4>Estas son las solicitudes del Auditorio 225 pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Cantidad de Personas</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$cantidadPer[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM auditorio
+                        INNER JOIN asociaciones ON auditorio.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['fechaUso'];
+                          $incio[$i] = $row['horaIni'];
+                          $final[$i] = $row['horaFin'];
+                          $cantidadPer[$i] = $row['cantidad'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud del auditorio 225</h3>";
+                            echo "<h4>Estas son las solicitudes del Auditorio 225 aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Cantidad de Personas</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$cantidadPer[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM conferencia
+                        INNER JOIN asociaciones ON conferencia.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['fechaUso'];
+                          $incio[$i] = $row['horaIni'];
+                          $final[$i] = $row['horaFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de la sala de conferencias</h3>";
+                            echo "<h4>Estas son las solicitudes de la sala de conferencias pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>   
+                     <?php 
+                        $sql = "SELECT * FROM conferencia
+                        INNER JOIN asociaciones ON conferencia.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['fechaUso'];
+                          $incio[$i] = $row['horaIni'];
+                          $final[$i] = $row['horaFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de la sala de conferencias</h3>";
+                            echo "<h4>Estas son las solicitudes de la sala de conferencias aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM plantas
+                        INNER JOIN asociaciones ON plantas.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND estatus = 'pendiente';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['dateUso'];
+                          $incio[$i] = $row['hourIni'];
+                          $final[$i] = $row['hourFIn'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de plantas</h3>";
+                            echo "<h4>Estas son las solicitudes de plantas pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?> 
+                     <?php 
+                        $sql = "SELECT * FROM plantas
+                        INNER JOIN asociaciones ON plantas.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND estatus = 'aprobada';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $proposito[$i] = $row['proposito'];
+                          $fecha[$i] = $row['dateUso'];
+                          $incio[$i] = $row['hourIni'];
+                          $final[$i] = $row['hourFIn'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud de plantas</h3>";
+                            echo "<h4>Estas son las solicitudes de plantas aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                     <?php 
+                        $sql = "SELECT * FROM prestamoequipo
+                        INNER JOIN asociaciones ON prestamoequipo.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $nombre[$i] = $row['actName'];
+                          $proposito[$i] = $row['propAct'];
+                          $fecha[$i] = $row['actDate'];
+                          $incio[$i] = $row['actIni'];
+                          $final[$i] = $row['actFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud Prestamo de Equipo</h3>";
+                            echo "<h4>Estas son las solicitudes de prestamo de equipo pendientes.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Actividad</th>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$nombre[$i]</td>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>
+                      <?php 
+                        $sql = "SELECT * FROM prestamoequipo
+                        INNER JOIN asociaciones ON prestamoequipo.associationID = asociaciones.associationID
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
+                        $result = $conn->query($sql);
+                        $i = 1;
+                        while($row = mysqli_fetch_assoc($result)){
+                          $nombre[$i] = $row['actName'];
+                          $proposito[$i] = $row['propAct'];
+                          $fecha[$i] = $row['actDate'];
+                          $incio[$i] = $row['actIni'];
+                          $final[$i] = $row['actFin'];
+                          $fecha[$i] = date('D-d-M-Y', strtotime($fecha[$i]));
+                          $incio[$i] = date('h:i a', strtotime($incio[$i]));
+                          $final[$i] = date('h:i a', strtotime($final[$i]));
+                          $i++; }
+                          if($result->num_rows > 0){
+                            echo "<h3>Solicitud Prestamo de Equipo</h3>";
+                            echo "<h4>Estas son las solicitudes de prestamo de equipo aprobadas.</h4>";
+                            echo '<table class="table table-bordered">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      <th>Actividad</th>
+                                      <th>Proposito</th>
+                                      <th>Fecha</th>
+                                      <th>Horario Comienzo</th>
+                                      <th>Horario de Culmunación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>';
+                            for($i=1; $i<=count($proposito); $i++){
+                            echo "<tr>
+                                  <td>$nombre[$i]</td>
+                                  <td>$proposito[$i]</td>
+                                  <td>$fecha[$i]</td>
+                                  <td>$incio[$i]</td>
+                                  <td>$final[$i]</td>
+                                  </tr>";  
+                            }
+                            echo "</tbody>
+                                </table>"; 
+                          }                    
+                     ?>                          
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
