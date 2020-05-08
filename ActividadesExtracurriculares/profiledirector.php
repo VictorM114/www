@@ -31,16 +31,23 @@ include 'sconn.php';
             </a>
             <!-- Dropdown -->
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
-              <a class="dropdown-item" href="#">Préstamo de Salón</a>
-              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
-              <a class="dropdown-item" href="#">Teatro General</a>
-              <a class="dropdown-item" href="#">Solicitud de Servicios</a>
+            <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-salon.php">Préstamo de Salón</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-auditorio.php">Solicitud del Auditorio 225</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-teatro.php">Teatro General</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-servicios.php">Solicitud de Servicios</a>
               <a class="dropdown-item" href="solicitudes/solicitud-plantas.php">Solicitud de Plantas</a>
-              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
-              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="#">Sala de Conferencias</a>
-              <a class="dropdown-item" href="">Solicitud de Transportación</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-conferencias.php">Sala de Conferencias del D.E.</a>
+              <!--Estas solicitudes son las solicitudes que son externas a la plataforma
+              estan en google forms y se tienen que escribir el target blank para que 
+              abran en otro tab-->
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
+              target="_blank">Solicitud Instalaciones de la Biblioteca</a>
+              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
+              target="_blank">Solicitud de Fotografia y Sonido</a>
+              <a class="dropdown-item" href="#">Solicitud de Transportación</a>
 
           </li>
           <li class="nav-item">
