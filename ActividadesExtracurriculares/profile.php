@@ -59,7 +59,7 @@ include 'sconn.php';
   
           <div class = "container">
             <div class = "jumbotron">
-          <h2 style: align="center">Solicitudes Pendientes y/o Aprobadas</h2>
+          <h2>Solicitudes Pendientes y/o Aprobadas</h2>
           </div>
           <?php
                    /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
@@ -389,13 +389,13 @@ include 'sconn.php';
                                </thead>
                                <tbody>';
                         for($i=1; $i<=count($proposito); $i++){
-                         echo "<tr>
+                         echo '<tr>
                                <td>$proposito[$i]</td>
                                <td>$fecha[$i]</td>
                                <td>$cantidadPer[$i]</td>
                                <td>$incio[$i]</td>
                                <td>$final[$i]</td>
-                               </tr>";  
+                               </tr>';  
                         }
                         echo "</tbody>
                              </table>"; }
@@ -765,7 +765,8 @@ include 'sconn.php';
                                   </tr>";  
                             }
                             echo "</tbody>
-                                </table>"; 
+                                </table>
+                                <br><br>"; 
                           }                    
                      ?>
                       <?php 
@@ -808,7 +809,8 @@ include 'sconn.php';
                                   </tr>";  
                             }
                             echo "</tbody>
-                                </table>"; 
+                                </table>
+                                <br><br>"; 
                           }                    
                      ?>                          
     <!-- Footer, alineado en el centro-->
