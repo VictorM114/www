@@ -24,6 +24,7 @@ function tableActividades(){
       <th>Horario Inicio</th>
       <th>Horario Fin</th>
       <th>Lugar</th>
+      <th>Estatus</th>
     </tr>
   </thead>
   <tbody>';
@@ -40,6 +41,7 @@ function tableSalones(){
       <th>Horario Inicio</th>
       <th>Horario Fin</th>
       <th>Funcionario</th>
+      <th>Estatus</th>
     </tr>
   </thead>
   <tbody>';
@@ -56,6 +58,7 @@ function tableVestibulo(){
       <th>Fecha</th>
       <th>Horario Inicio</th>
       <th>Horario Fin</th>
+      <th>Estatus</th>
     </tr>
   </thead>
   <tbody>';

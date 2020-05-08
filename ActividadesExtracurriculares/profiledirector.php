@@ -50,7 +50,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Reportes</a>
           </li>
          </ul>
-         <a><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
+         <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
   <!-- Aquí empieza el código-->
   <div class = "container">
@@ -90,9 +90,14 @@ include 'sconn.php';
             <td>$actdate[$i]</td>
             <td>$actIni[$i]</td>
             <td>$actFin[$i]</td>
-            <td>$actPlace[$i]</td>;
-          
-            </tr>";
+            <td>$actPlace[$i]</td>";
+            echo '<td><div class = "form-check">
+            <label class = "form-check-label">
+            <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
+            </label>
+            </div></td>
+            
+            </tr>';
              
     }
     echo "</tbody>
@@ -124,7 +129,7 @@ include 'sconn.php';
 
      if($result->num_rows > 0){
       echo "<h3>Solicitudes de salón en espera de aprobación.</h3>";
-      tableActividades();
+      tableSalones();
       for($i=1; $i <=count($salon); $i++)
       {
         echo "<tr>
@@ -133,10 +138,14 @@ include 'sconn.php';
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>
-              <td>$horaInicio[$i]</td>
               <td>$horaFin[$i]</td>
-              <td>$funcionario[$i]</td>
-              </tr>";
+              <td>$funcionario[$i]</td>"; 
+              echo '<td><div class = "form-check">
+            <label class = "form-check-label">
+            <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
+            </label>
+            </div></td>
+              </tr>';
       }
       echo "</tbody>
             </table>";
@@ -177,18 +186,22 @@ include 'sconn.php';
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>
-              <td>$horaFin[$i]</td>
-              </tr>";
+              <td>$horaFin[$i]</td>";
+              echo '<td><div class = "form-check">
+            <label class = "form-check-label">
+            <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
+            </label>
+            </div></td>
+              </tr>';
       }
       echo "</tbody>
             </table>";
     }
    }
-  
-
+ 
   ?>
   </div>
-
+ <br><br><br>
 
   <footer class="footer"> 
       <p>&copy Actividades Extracurriculares UPRP, <?php echo date("Y");?> &copy </p>
