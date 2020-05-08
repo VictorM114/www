@@ -3,19 +3,23 @@ probablemente la utilicemos luego por las demás formas*/
 .form-group{
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 200px;
-    
 }
-/*Esto fue para separar el botón de ingresar*/
+/*Esto fue para separar los botones de someter*/
 .form-control {
     margin-bottom: 3px;
   }
  #btnmedio{
     text-align: center;
  }
- /*Clase para que las solicitudes no se queden dan 
- abajo */
-
+ /*Clase para el form del login que quede en el centro de la pagina */
+ .form-login{
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 200px;
+ }
+ .form-login h3{
+  text-align: center;
+ }
 /*Esta es la clase footer para poder centralizar el 
 footer y ponerlo fixed*/
 /*cambié position a sticky para que se vea encima de las fotos junto con display: inline-block*/
@@ -54,9 +58,25 @@ la tabla que utilizamos en el profile*/
     .table-bordered thead th,
     .table-bordered thead td {
       border-bottom-width: 2px;
+      text-align: center;
     }
     .table .thead-light th {
       color: #000000;
       background-color: #e9ecef;
       border-color: #dee2e6;
+    }
+    .jumbotron {
+      padding: 1.5rem 1.5rem;
+      margin-bottom: 1rem;
+      background-color: #e9ecef;
+      border-radius: 0.3rem;
+    }
+    .jumbotron h2{
+      text-align: center;
+    }
+    .container h3{
+      text-align: center;
+      text-decoration: underline;
+      padding: 8px;
+      border-radius: 0.3rem;
     }
