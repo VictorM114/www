@@ -83,7 +83,7 @@ include 'sconn.php';
                     }
                     if($result->num_rows > 0){
                       echo "<h3>Solicitud Principal</h3>";
-                    echo "<h4>Estas son las solicitudes pentiendes a aprobar.</h4>";
+                    echo "<h4>Estas son las solicitudes pendiendes a aprobar.</h4>";
                     tableheader();
                     for($i=1; $i <=count($nombre); $i++)
                     {

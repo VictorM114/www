@@ -33,14 +33,14 @@ include '../sconn.php';
             </a>
             <!-- Dropdown -->
             <div class="dropdown-menu">
-              <a class="dropdown-item active " href="solicitudes/solicitud-general.php">Solicitud</a>
+              <a class="dropdown-item active " href="solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitud-salon.php">Préstamo de Salón</a>
-              <a class="dropdown-item" href="#">Solicitud del Auditorio 225</a>
+              <a class="dropdown-item" href="solicitud-auditorio.php">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="solicitud-auditorio.php">Teatro General</a>
-              <a class="dropdown-item" href="#">Solicitud de Servicios</a>
+              <a class="dropdown-item" href="solicitud-servicios.php">Solicitud de Servicios</a>
               <a class="dropdown-item" href="solicitud-plantas.php">Solicitud de Plantas</a>
-              <a class="dropdown-item" href="#">Solicitud de Préstamo de Equipo</a>
-              <a class="dropdown-item" href="#">Solicitud de Vestíbulo</a>
+              <a class="dropdown-item" href="solicitud-pestamoequipo.php">Solicitud de Préstamo de Equipo</a>
+              <a class="dropdown-item" href="solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
               <a class="dropdown-item" href="solicitud-conferencias.php">Sala de Conferencias del D.E.</a>
               <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
               target="_blank">Solicitud Instalaciones de la Biblioteca</a>
