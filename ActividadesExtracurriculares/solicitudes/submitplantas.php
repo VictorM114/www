@@ -5,6 +5,7 @@ $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nombre'];
 $fecha = $_POST['fecha'];
 $funcionario = $_POST['funcionario'];
+$otroFun = $_POST['otroFun'];
 $proposito = $_POST['proposito'];
 $cantidad = $_POST['cantidad'];
 $fechaAct = $_POST['dateUso'];
@@ -34,8 +35,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-plantas.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO plantas (associationID, nombre, fecha, funcionario, proposito, cantidad, dateUso, lugar, hourIni, hourFin)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$funcionario', '$proposito', '$cantidad', '$fechaAct', '$lugar', '$horaInicio','$horaFin')";
+        $sql = "INSERT INTO plantas (associationID, nombre, fecha, funcionario, otroFun, proposito, cantidad, dateUso, lugar, hourIni, hourFin)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$funcionario', '$otroFun', '$proposito', '$cantidad', '$fechaAct', '$lugar', '$horaInicio','$horaFin')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-plantas.php?Submited=Solicitud enviada.');

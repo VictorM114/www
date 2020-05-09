@@ -128,16 +128,18 @@ include '../sconn.php';
             <option>Administración</option>
             <option>Asociación Estudiantil</option>
             <option>Mentor/Tutor</option>
-            <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique"> 
+            <option>Otros</option>
           </select>
+          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
             <option>ofrecer examen</option>
             <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
             <option>Repaso</option>
             <option>Reunión/taller/conferencia de facultad o administración</option>
-            <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
+            <option>Otro</option>
           </select>
+          <b>Especifique:</b><input type= "text" name="otroProp" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Fecha:</b><input type= "date" name="fechaAct" class="form-control" placeholder="Ingresar Fecha de la actividad">
           <b>Horario de Inicio:</b><input type= "time" name="horaInicio" class="form-control" placeholder="Hora de Inciio">
           <b>Horario de Culminación:</b><input type= "time" name="horaFinal" class="form-control" placeholder="Hora de Culminación">

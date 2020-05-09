@@ -133,8 +133,9 @@ include '../sconn.php';
             <option>Administración</option>
             <option>Asociación Estudiantil</option>
             <option>Mentor/Tutor</option>
-            <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique"> 
+            <option>Otros</option> 
           </select>
+          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Departamento/Oficina/Nombre Asociación/ Especifique</b><input type="text" name="areaTrabajo" class= "form-control" placeholder = "Conteste la que aplique">
           <b>Teléfono</b><input type="text" name="telefono" class= "form-control" placeholder = "teléfono o celular">
           <b>Extensión</b><input type="text" name="extension" class= "form-control" placeholder = "conteste si aplica">
@@ -146,10 +147,10 @@ include '../sconn.php';
             <option>Reunión Facultad o Administración</option>
             <option>Conferencia Facultad o Administración</option>
             <option>Actividad Facultad o Administración</option>
-            <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
+            <option>Otro</option>
           </select>
+          <b>Especifique:</b><input type= "text" name="otroProp" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Uso de equipo audiovisual:</b><select class="form-control" id="sel1" name="uso">
-
             <option>--</option>
             <option>Si (deberá ser solicitado en la Oficina del Decano de estudiantes)<br>
             (El uso solo aplica a la Sala de Conferencias)</option>
