@@ -38,7 +38,7 @@
           </div>
        <?php 
           }
-          ?> 
+          ?>
         <b>Username:</b><input type="text" name="username" class="form-control" placeholder="Ingresar usuario">
         <b>Password:</b><input type="password" name="password" class="form-control" placeholder="Ingresar password">
       </div>
