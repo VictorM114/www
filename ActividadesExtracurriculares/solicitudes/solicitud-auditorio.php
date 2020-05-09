@@ -146,8 +146,9 @@ include '../sconn.php';
             <option>Administración</option>
             <option>Asociación Estudiantil</option>
             <option>Mentor/Tutor</option>
-            <option>Otros</option><input type= "text" name="" class="form-control" placeholder="especifique">
+            <option>Otros</option>
           </select>
+          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
@@ -157,8 +158,9 @@ include '../sconn.php';
             <option>Reunión Facultad o Administración</option>
             <option>Conferencia Facultad o Administración</option>
             <option>Actividad Facultad o Administración</option>
-            <option>Otro</option><input type= "text" name="" class="form-control" placeholder="especifique">
+            <option>Otro</option>
           </select>
+          <b>Especifique:</b><input type= "text" name="otroProp" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Horario inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
           <b>Horario de conclusión:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
           <b>Cantidad de personas </b><input type="text" name="cantidad" class= "form-control" placeholder = "Ingrese cantidad de personas">

@@ -9,10 +9,12 @@ $fechaUso = $_POST['fechaUso'];
 $horaInicio = $_POST['horaIni'];
 $horaFin = $_POST['horaFin'];
 $funcionario = $_POST['funcionario'];
+$otroFun = $_POST['otroFun'];
 $areaTrabajo = $_POST['areaTrabajo'];
 $telefono = $_POST['telefono'];
 $extension = $_POST['extension'];
 $proposito = $_POST['proposito'];
+$otroProp = $_POST['otroProp'];
 $uso = $_POST['uso'];
 
 
@@ -41,8 +43,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, funcionario, areaTrabajo, telefono, extension, proposito, uso )
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$funcionario', '$areaTrabajo', '$telefono ', '$extension', '$proposito', '$uso')";
+        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, funcionario, otroFun, areaTrabajo, telefono, extension, proposito, otroProp, uso)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$funcionario', '$otroFun','$areaTrabajo', '$telefono ', '$extension', '$proposito', '$otroProp', '$uso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-conferencias.php?Submited=Solicitud enviada.');
