@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
                 header("location:profiledirector.php");
             }//Si los credenciales estan mal, me da error.
             elseif($row['userPass'] != $_POST['password']){
-                header("location:login.php?Invalidpass= Contraseña incorrecta.");
+                header("location:login.php?Invalidpass= Contraseña o usuario incorrecta/o.");
             }
 
 
