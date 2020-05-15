@@ -57,7 +57,10 @@
          </ul>
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav> 
-
+  <div class = "container">
+            <div class = "jumbotron">
+          <h2>Aquí podrás someter los documentos de Acreditación</h2>
+          </div>
 
   
 

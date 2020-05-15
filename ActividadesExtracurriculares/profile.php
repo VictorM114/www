@@ -346,7 +346,7 @@ include 'sconn.php';
                                  </tr>
                                </thead>
                                <tbody>';
-                        for($i=1; $i<=count($proposito); $i++){
+                        for($i=1; $i<=count($cantidadPer); $i++){
                          echo "<tr>
                                <td>$proposito[$i]</td>
                                <td>$fecha[$i]</td>

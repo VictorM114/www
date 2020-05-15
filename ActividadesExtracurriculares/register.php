@@ -5,7 +5,9 @@ session_start();
 $asoname = $_POST['AsoName'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$email = $_POST['email'];
+$email - $_POST['email'];
+$departamento = $_POST['departamento'];
+$consejero = $_POST['consejero'];
 
 if (isset($_POST['submit'])) {
     if(empty($username) or empty($password))
@@ -18,7 +20,7 @@ if (isset($_POST['submit'])) {
     }
     else {
         $sql = "INSERT INTO users (fName, userName, userPass, userType, email)
-        VALUES ('$asoname','$username','$password','user','$email')";
+        VALUES ('$asoname','$username','$password','user','$email');";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:crearusuario.php?Created=Usuario creado satisfactoriamente.');
