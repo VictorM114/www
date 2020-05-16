@@ -5,7 +5,7 @@ session_start();
 $asoname = $_POST['AsoName'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$email - $_POST['email'];
+$email = $_POST['email'];
 $departamento = $_POST['departamento'];
 $consejero = $_POST['consejero'];
 
@@ -19,10 +19,12 @@ if (isset($_POST['submit'])) {
         header("location:crearusuario.php?Empty= Por favor completa todos los campos.");
     }
     else {
-        $sql = "INSERT INTO users (fName, userName, userPass, userType, email)
-        VALUES ('$asoname','$username','$password','user','$email')";
-        
-        if ($conn->query($sql) === TRUE) {
+        $sql = "INSERT INTO users (fName, userName, userPass, userType)
+                VALUES ('$asoname','$username','$password','user'); 
+                INSERT INTO asociaciones (asocName, asocDept, asocCons) 
+                VALUES ('$asoname','$departamento','$consejero');";
+
+        if (mysqli_multi_query($conn,$sql)) {
             header ('location:crearusuario.php?Created=Usuario creado satisfactoriamente.');
         } else {
             header ('location:crearusuario.php?Failed=Error al crear usuario.');
