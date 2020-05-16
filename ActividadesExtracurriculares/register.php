@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     }
     else {
         $sql = "INSERT INTO users (fName, userName, userPass, userType, email)
-        VALUES ('$asoname','$username','$password','user','$email');";
+        VALUES ('$asoname','$username','$password','user','$email')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:crearusuario.php?Created=Usuario creado satisfactoriamente.');
