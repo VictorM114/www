@@ -57,6 +57,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Reportes</a>
           </li>
          </ul>
+         <a href = "crearadmin.php"><button type="button" class="btn btn-primary btn-sm">Registrar Administrador</button></a> 
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
   <!-- Aquí empieza el código-->
