@@ -52,11 +52,11 @@ session_start	();
        <?php 
           }
           ?>
-    <b>Nombre: </b><input type="text" name="fName" class= "form-control" placeholder = "Ingresar nombre">
-    <b>E-mail: </b> <input type= "email" name ="email" class = "form-control" placeholder = "Ingrese su e-mail">
-    <b>Username:</b><input type= "text" name="userName" class="form-control" placeholder="Ingresar usuario">
+    <b>Nombre: </b><input type="text" name= "fName" class= "form-control" placeholder = "Ingrese su nombre">
+    <b>E-mail: </b> <input type= "email" name = "email" class = "form-control" placeholder = "Ingresa su e-mail">
+    <b>Username:</b><input type= "text" name="userName" class="form-control" placeholder="Ingrese usuario">
     <b>Password:</b><input type= "password" name="userPass" class="form-control" placeholder="Ingresar password">
-    <b>Cargo:</b><input type= "text" name="cargoUsario" class="form-control" placeholder="Ingresar cargo">
+    <b>Cargo:</b><input type= "text" name="cargoUsuario" class="form-control" placeholder="Ingrese el cargo que ocupa">
 
    <br> <div id="btnmedio">
         <button type="submit" name="submit" value ="submit" class="btn btn-primary">Registrar</button>
