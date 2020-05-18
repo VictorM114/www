@@ -20,10 +20,10 @@ if (isset($_POST['submit'])) {
     }
     else {
         $sql = "INSERT INTO users (fName, userName, userPass, userType, email)
-        VALUES ('$asoname','$username','$password','user','$email')
-        INSERT INTO asociaciones (asocName, asocDept, asocCons)
-        VALUES ('$asoname', '$departamento', '$consejero');";
-        
+                VALUES ('$asoname','$username','$password','user','$email'); 
+                INSERT INTO asociaciones (asocName, asocDept, asocCons) 
+                VALUES ('$asoname','$departamento','$consejero');";
+
         if (mysqli_multi_query($conn,$sql)) {
             header ('location:crearusuario.php?Created=Usuario creado satisfactoriamente.');
         } else {
