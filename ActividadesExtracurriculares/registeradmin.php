@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         if ($conn->query($sql) === TRUE) {
             header ('location:crearadmin.php?Created=Usuario creado satisfactoriamente.');
         } else {
-            header ('location:crearadmin.php?Failed=Error al crear usuario.');
+            header ('location:crearadmin.php?Failed=Error al crear usuario.' . $conn->error);
         }  
     }
 }
