@@ -78,10 +78,9 @@ include 'sconn.php';
     $actIni[$i] = $row['horarioInicial'];
     $actFin[$i] = $row['horarioFin'];
     $actPlace[$i] = $row['actPlace'];
-    /*$actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
+    $actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
     $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
-    $actFin[$i]= date('h:i a', strtotime($actFin));
-    */
+    $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
     $i++;
   }
   //Solicitud de actividades para aprobar
@@ -110,11 +109,11 @@ include 'sconn.php';
     }
     echo "</tbody>
           </table>";
-    echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
+   // echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
     
   }
   ?>
-
+  <!--Solicitud de salones-->
   <?php 
   $sql = "SELECT * FROM salones
   INNER JOIN asociaciones ON salones.associationID = asociaciones.associationID
@@ -128,18 +127,15 @@ include 'sconn.php';
      $fechaAct[$i] = $row['fecha'];
      $horaInicio[$i] = $row['horaInicio'];
      $horaFin[$i] = $row['horaFinal'];
-     $funcionario[$i] = $row['funcionario'];
-
-     /*$actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
-     $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
-     $actFin[$i]= date('h:i a', strtotime($actFin));
-     */
+     $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
+     $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
+     $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
      $i++;
 
      if($result->num_rows > 0){
       echo "<h3>Solicitudes de salón en espera de aprobación.</h3>";
       tableSalones();
-      for($i=1; $i <=count($salon); $i++)
+      for($i=1; $i <=count($horaFin); $i++)
       {
         echo "<tr>
               <td>$asociacion[$i]</td>
@@ -147,8 +143,7 @@ include 'sconn.php';
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>
-              <td>$horaFin[$i]</td>
-              <td>$funcionario[$i]</td>"; 
+              <td>$horaFin[$i]</td>";
               echo '<td><form action="aprobar.php"> <div class = "form-check">
             <label class = "form-check-label">
             <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
@@ -158,13 +153,14 @@ include 'sconn.php';
           </div>
               </tr>'; 
       }
-      echo '<button type="submit" class="btn btn-primary">Submit</button>';
+      //echo '<button type="submit" class="btn btn-primary">Submit</button>';
       echo "</tbody>
             </table>";
     }
    }
   ?>
 
+<!--Solicitud de vestíbulo-->
   <?php 
   $sql = "SELECT * FROM actividadesvestibulo
   INNER JOIN asociaciones ON actividadesvestibulo.associationID = asociaciones.associationID
@@ -174,27 +170,24 @@ include 'sconn.php';
    while($row = mysqli_fetch_assoc($result)){
      $asociacion[$i] = $row['asocName'];
      $nombre[$i] = $row['nombreSol'];
-     $tipo[$i] = $row['tipoSol'];
      $proposito[$i] = $row['propAct'];
      $fechaAct[$i] = $row['actDate'];
      $horaInicio[$i] = $row['actIni'];
      $horaFin[$i] = $row['actFin'];
      
-     /*$actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
-     $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
-     $actFin[$i]= date('h:i a', strtotime($actFin));
-     */
+     $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
+     $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
+     $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
      $i++;
 
      if($result->num_rows > 0){
-      echo "<h3>Solicitudes de salón en espera de aprobación.</h3>";
+      echo "<h3>Solicitudes de vestíbulo en espera de aprobación.</h3>";
       tableVestibulo();
-      for($i=1; $i <=count($tipo); $i++)
+      for($i=1; $i <=count($nombre); $i++)
       {
         echo "<tr>
               <td>$asociacion[$i]</td>
               <td>$nombre[$i]</td>
-              <td>$tipo[$i]</td>
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>

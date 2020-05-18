@@ -35,12 +35,11 @@ function tableSalones(){
   <thead class="thead-dark">
     <tr>
       <th>Asociación</th>
-      <th>Salon</th>
+      <th>Salón</th>
       <th>Propósito</th>
       <th>Fecha</th>
       <th>Horario Inicio</th>
       <th>Horario Fin</th>
-      <th>Funcionario</th>
       <th>Estatus</th>
     </tr>
   </thead>
@@ -53,7 +52,6 @@ function tableVestibulo(){
     <tr>
       <th>Asociación</th>
       <th>Solicitante</th>
-      <th>Tipo</th>
       <th>Propósito</th>
       <th>Fecha</th>
       <th>Horario Inicio</th>
