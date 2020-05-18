@@ -57,6 +57,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Reportes</a>
           </li>
          </ul>
+         <a href = "crearadmin.php"><button type="button" class="btn btn-primary btn-sm">Registrar Administrador</button></a> 
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav>
   <!-- Aquí empieza el código-->
@@ -83,7 +84,7 @@ include 'sconn.php';
     */
     $i++;
   }
-  
+  //Solicitud de actividades para aprobar
   if($result->num_rows > 0){
     echo "<h3>Solicitudes de actividad en espera de aprobación.</h3>";
     tableActividades();
@@ -98,18 +99,19 @@ include 'sconn.php';
             <td>$actIni[$i]</td>
             <td>$actFin[$i]</td>
             <td>$actPlace[$i]</td>";
-            echo '<td><div class = "form-check">
+            echo '<td><form action="aprobar.php" method = "POST">
+            <div class = "form-check">
             <label class = "form-check-label">
             <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
             </label>
             </div></td>
             
-            </tr>';
-             
+            </tr>';    
     }
     echo "</tbody>
           </table>";
-  
+    echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
+    
   }
   ?>
 
@@ -147,13 +149,16 @@ include 'sconn.php';
               <td>$horaInicio[$i]</td>
               <td>$horaFin[$i]</td>
               <td>$funcionario[$i]</td>"; 
-              echo '<td><div class = "form-check">
+              echo '<td><form action="aprobar.php"> <div class = "form-check">
             <label class = "form-check-label">
             <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
             </label>
             </div></td>
-              </tr>';
+            </form>
+          </div>
+              </tr>'; 
       }
+      echo '<button type="submit" class="btn btn-primary">Submit</button>';
       echo "</tbody>
             </table>";
     }
