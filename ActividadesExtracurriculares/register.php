@@ -19,8 +19,8 @@ if (isset($_POST['submit'])) {
         header("location:crearusuario.php?Empty= Por favor completa todos los campos.");
     }
     else {
-        $sql = "INSERT INTO users (fName, userName, userPass, userType)
-                VALUES ('$asoname','$username','$password','user'); 
+        $sql = "INSERT INTO users (fName, userName, userPass, userType, email)
+                VALUES ('$asoname','$username','$password','user','$email'); 
                 INSERT INTO asociaciones (asocName, asocDept, asocCons) 
                 VALUES ('$asoname','$departamento','$consejero');";
 
