@@ -7,7 +7,7 @@ function tableHeader(){
         <th>Lugar</th>
         <th>Fecha</th>
         <th>Horario Comienzo</th>
-        <th>Horario de Culmunación</th>
+        <th>Horario de Culminación</th>
       </tr>
     </thead>
     <tbody>';

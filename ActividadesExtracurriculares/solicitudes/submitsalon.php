@@ -5,7 +5,6 @@ $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nomSolicitante'];
 $fecha = $_POST['fecha'];
 $email = $_POST['email'];
-$otroFun = $_POST['otroFun'];
 $proposito = $_POST['proposito'];
 $otroProp = $_POST['otroProp'];
 $fechaAct = $_POST['fechaAct'];
@@ -34,8 +33,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-salon.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO salones (associationID, nomSolicitante, fecha, email, otroFun, proposito, otroProp, fechaAct, horaInicio, horaFinal, salon)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$email', '$otroFun', '$proposito', '$otroProp', '$fechaAct', '$horaInicio', '$horaFin','$salon')";
+        $sql = "INSERT INTO salones (associationID, nomSolicitante, fecha, email, proposito, otroProp, fechaAct, horaInicio, horaFinal, salon)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$email', '$proposito', '$otroProp', '$fechaAct', '$horaInicio', '$horaFin','$salon')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-salon.php?Submited=Solicitud enviada.');
