@@ -127,15 +127,6 @@ include '../sconn.php';
           <b>Fecha de uso:</b><input type= "date" name="fechaUso" class="form-control" placeholder="Ingresar fecha de uso">
           <b>Horario de Inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
           <b>Horario de Culminación:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
-          <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1" name="funcionario">
-            <option>--</option>
-            <option>Facultad</option>
-            <option>Administración</option>
-            <option>Asociación Estudiantil</option>
-            <option>Mentor/Tutor</option>
-            <option>Otros</option> 
-          </select>
-          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Departamento/Oficina/Nombre Asociación/ Especifique</b><input type="text" name="areaTrabajo" class= "form-control" placeholder = "Conteste la que aplique">
           <b>Teléfono</b><input type="text" name="telefono" class= "form-control" placeholder = "teléfono o celular">
           <b>Extensión</b><input type="text" name="extension" class= "form-control" placeholder = "conteste si aplica">
@@ -144,9 +135,6 @@ include '../sconn.php';
             <option>Reunión Asociación Estudiantil</option>
             <option>Conferencia Asociación Estudiantil</option>
             <option>Actividad Asociación Estudiantil</option>
-            <option>Reunión Facultad o Administración</option>
-            <option>Conferencia Facultad o Administración</option>
-            <option>Actividad Facultad o Administración</option>
             <option>Otro</option>
           </select>
           <b>Especifique:</b><input type= "text" name="otroProp" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">

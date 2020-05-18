@@ -4,7 +4,6 @@ session_start();
 $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nombre'];
 $fecha = $_POST['fecha'];
-$funcionario = $_POST['funcionario'];
 $otroFun = $_POST['otroFun'];
 $email = $_POST['email'];
 $proposito = $_POST['proposito'];
@@ -20,7 +19,7 @@ if (isset($_POST['submit'])) {
     if(empty($nombre) or empty($fecha)){
         header ('location:solicitud-auditorio.php?Vacio=Completa los campos.');
     }
-    elseif(empty($funcionario) or empty($email))
+    elseif(empty($email))
     {
         header ('location:solicitud-auditorio.php?Vacio=Completa los campos.');
     }
@@ -37,8 +36,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-auditorio.php?Vacio=Completa los campos.');
     }
     else{
-    $sql = "INSERT INTO auditorio (associationID, nombre, fecha, funcionario, otroFun, email, proposito, otroProp, horaIni, horaFin, cantidad, departamento, fechaUso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombre', '$fecha', '$funcionario', '$otroFun', '$email', '$proposito', '$otroProp', '$horaIni', '$horaFin', '$cantidad', '$departamento', '$fechaUso')";
+    $sql = "INSERT INTO auditorio (associationID, nombre, fecha, otroFun, email, proposito, otroProp, horaIni, horaFin, cantidad, departamento, fechaUso)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombre', '$fecha', '$otroFun', '$email', '$proposito', '$otroProp', '$horaIni', '$horaFin', '$cantidad', '$departamento', '$fechaUso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-auditorio.php?Submited=Solicitud enviada.');

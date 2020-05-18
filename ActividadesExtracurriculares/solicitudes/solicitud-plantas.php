@@ -118,14 +118,6 @@ include '../sconn.php';
           <!--Campos del form-->
           <b>Nombre del solicitante</b><input type="text" name="nombre" class= "form-control" placeholder = "Ingresar nombre del solicitante">
           <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
-          <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1" name="funcionario">
-            <option>--</option>
-            <option>Facultad</option>
-            <option>Administración</option>
-            <option>Asociación Estudiantil</option>
-            <option>Otros</option>
-          </select>
-          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Propósito:</b><input type= "text" name="proposito" class="form-control" placeholder="propósito">
           <b>Cantidad de Plantas:</b><input type="text" name="cantidad" class="form-control" placeholder="">
           <b>Fecha de uso:</b><input type= "date" name="dateUso" class="form-control" placeholder="Ingresar fecha de uso">

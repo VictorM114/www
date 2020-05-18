@@ -121,12 +121,6 @@ include '../sconn.php';
           <b>Nombre del Solicitante</b><input type="text" name="nombreSol" class="form-control" placeholder="Ingresar su nombre">
           <b>Número de teléfono del solicitante: </b><input type="text" name="numTel" class="form-control" placeholder="Ingresar su número de teléfono">
           <b>Correo electrónico del solicitante: </b><input type="text" name="email" class="form-control" placeholder="Ingresar su e-mail @upr.edu">
-          <b>Tipo de solicitante: </b><select class="form-control" id="sel1" name="solTipo">
-            <option>Estudiante</option>
-            <option>Facultad</option>
-            <option>No docente</option>  
-            <option>Administración</option>
-            </select>
           <b>Uso de equipo audiovisual**</b><select class="form-control" id="sel1" name="audioVi">
             <option>Si</option>
             <option>No</option>

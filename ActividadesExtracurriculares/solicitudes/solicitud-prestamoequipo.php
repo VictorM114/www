@@ -104,11 +104,6 @@ include '../sconn.php';
           }
           ?> 
           <b>Nombre del Solicitante</b><input type="text" name="nombreSol" class="form-control" placeholder="Ingresar su nombre">
-          <b>Tipo de solicitante: </b><select class="form-control" id="sel1" name="solTipo">
-            <option>Estudiante</option>
-            <option>Facultad</option>
-            <option>No docente</option>  
-            </select>
           <b>Número de estudiante</b><input type="text" name="numEstudiante" class="form-control" placeholder="Ingresar su número de estudiante">
           <b>Descripción del Equipo y/o materiales en préstamo: </b><textarea type="text" name="desEquipo" class="form-control" placeholder="Ingrese los materiales que necesita"></textarea>
           <b>Nombre de la actividad: </b><input type="text" name="nomActividad" class="form-control" placeholder="Ingresar el nombre de la actividad">

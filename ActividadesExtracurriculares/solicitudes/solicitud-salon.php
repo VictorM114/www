@@ -122,21 +122,11 @@ include '../sconn.php';
           <b>Nombre del solicitante</b><input type="text" name= "nomSolicitante" class= "form-control" placeholder = "Ingresar nombre del solicitante">
           <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
-          <b>Funcionario: (Selecciona Una)</b><select class="form-control" id="sel1" name="funcionario">
-            <option>--</option>
-            <option>Facultad</option>
-            <option>Administración</option>
-            <option>Asociación Estudiantil</option>
-            <option>Mentor/Tutor</option>
-            <option>Otros</option>
-          </select>
-          <b>Especifique:</b><input type= "text" name="otroFun" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
             <option>ofrecer examen</option>
             <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
             <option>Repaso</option>
-            <option>Reunión/taller/conferencia de facultad o administración</option>
             <option>Otro</option>
           </select>
           <b>Especifique:</b><input type= "text" name="otroProp" class="form-control" placeholder="complete este campo si seleccionó otro en la opción anterior">

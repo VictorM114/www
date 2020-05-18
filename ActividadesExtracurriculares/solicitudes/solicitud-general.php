@@ -96,7 +96,6 @@ include '../sconn.php';
             <option>Cortometraje</option>
             <option>Actividad Extracurricular</option>
             <option>Actividad a beneficio a la comunidad universitaria</option>
-            <option>Actividad de mejoramiento profesional</option>
             <option>Convencion</option>
           </select>
           <b>Propósito:</b><textarea type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad"></textarea>
