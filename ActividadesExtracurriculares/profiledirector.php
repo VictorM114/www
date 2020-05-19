@@ -54,7 +54,7 @@ include 'sconn.php';
             <a class="nav-link" href="#">Acreditación</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Reportes</a>
+            <a class="nav-link" href="reportes.php">Reportes</a>
           </li>
          </ul>
          <a href = "crearadmin.php"><button type="button" class="btn btn-primary btn-sm">Registrar Administrador</button></a> 
