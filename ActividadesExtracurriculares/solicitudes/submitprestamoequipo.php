@@ -11,6 +11,7 @@ $propact = $_POST['ActProp'];
 $actdate = $_POST['ActDate'];
 $actIni = $_POST['ActIni'];
 $actFin = $_POST['ActFin'];
+$today = date("Y-m-d");
 
 
 if (isset($_POST['submit'])) {

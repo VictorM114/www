@@ -8,7 +8,7 @@ $actIni = $_POST['ActIni'];
 $actFin = $_POST['ActFin'];
 $actPlace = $_POST['ActPlace'];
 $descripcion = $_POST['servicioDes'];
-
+$today = date("Y-m-d");
 
 if (isset($_POST['submit'])) {
     if(empty($nombreSol)){

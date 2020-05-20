@@ -3,7 +3,7 @@ include '../sconn.php';
 session_start();
 $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nombre'];
-$fecha = $_POST['fecha'];
+$today = date("Y-m-d");
 $otroFun = $_POST['otroFun'];
 $email = $_POST['email'];
 $proposito = $_POST['proposito'];
@@ -16,7 +16,7 @@ $fechaUso = $_POST['fechaUso'];
 
 
 if (isset($_POST['submit'])) {
-    if(empty($nombre) or empty($fecha)){
+    if(empty($nombre)){
         header ('location:solicitud-auditorio.php?Vacio=Completa los campos.');
     }
     elseif(empty($email))
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     }
     else{
     $sql = "INSERT INTO auditorio (associationID, nombre, fecha, otroFun, email, proposito, otroProp, horaIni, horaFin, cantidad, departamento, fechaUso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombre', '$fecha', '$otroFun', '$email', '$proposito', '$otroProp', '$horaIni', '$horaFin', '$cantidad', '$departamento', '$fechaUso')";
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombre', '$today', '$otroFun', '$email', '$proposito', '$otroProp', '$horaIni', '$horaFin', '$cantidad', '$departamento', '$fechaUso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-auditorio.php?Submited=Solicitud enviada.');

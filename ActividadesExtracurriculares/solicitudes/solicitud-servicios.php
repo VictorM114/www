@@ -57,7 +57,7 @@ include '../sconn.php';
           
           <form action = "submitservicios.php" method = "POST">
           <div class="form-group">
-          <h2>Información de solicitud</h2>
+          <h2>Solicitud de Servicios</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -83,7 +83,7 @@ include '../sconn.php';
           }
           ?> 
           <b>Nombre del Solicitante</b><input type="text" name="nombreSol" class="form-control" placeholder="Ingresar su nombre">
-          <b>Fecha de uso:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de uso del Teatro">
+          <b>Fecha de la Actividad:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de uso del Teatro">
           <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Incio">
           <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
           <b>Lugar:</b><input type ="text" name="ActPlace" class ="form-control" placeholder="Lugar de la actividad">

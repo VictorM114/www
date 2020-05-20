@@ -3,7 +3,7 @@ include '../sconn.php';
 session_start();
 $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nombre'];
-$fecha = $_POST['fecha'];
+$today = date("Y-m-d");
 $otroFun = $_POST['otroFun'];
 $proposito = $_POST['proposito'];
 $cantidad = $_POST['cantidad'];
@@ -15,10 +15,6 @@ $horaFin = $_POST['hourFin'];
 
 if (isset($_POST['submit'])) {
     if(empty($nombre)){
-        header ('location:solicitud-plantas.php?Vacio=Completa los campos.');
-    }
-    elseif(empty($fecha))
-    {
         header ('location:solicitud-plantas.php?Vacio=Completa los campos.');
     }
     elseif(empty($proposito) or empty($cantidad))
@@ -35,7 +31,7 @@ if (isset($_POST['submit'])) {
     }
     else{
         $sql = "INSERT INTO plantas (associationID, nombre, fecha, otroFun, proposito, cantidad, dateUso, lugar, hourIni, hourFin)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$otroFun', '$proposito', '$cantidad', '$fechaAct', '$lugar', '$horaInicio','$horaFin')";
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today', '$otroFun', '$proposito', '$cantidad', '$fechaAct', '$lugar', '$horaInicio','$horaFin')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-plantas.php?Submited=Solicitud enviada.');

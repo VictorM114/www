@@ -94,8 +94,8 @@ include '../sconn.php';
 <!--Form de las solicitudes-->
         <form action = "submitsalon.php" method = "POST">
           <div class="form-group">
-          <h2>Información de actividad</h2>
           <?php if (@$_GET['Submited']==True) { ?>
+          <h2>Solicitud de Salón</h2>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <?php echo $_GET['Submited'];?>
@@ -120,7 +120,6 @@ include '../sconn.php';
           }
           ?> 
           <b>Nombre del solicitante</b><input type="text" name= "nomSolicitante" class= "form-control" placeholder = "Ingresar nombre del solicitante">
-          <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
