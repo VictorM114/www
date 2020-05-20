@@ -109,7 +109,7 @@ include 'sconn.php';
     }
     echo "</tbody>
           </table>";
-   // echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
+   echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
     
   }
   ?>
