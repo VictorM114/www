@@ -1,3 +1,6 @@
+<!-- Alice M. Romero Reyes
+    Pagina de solicitud de auditorio
+    contiene la solicitud de auditorio y las instrucciones guardadas en un card-->
 <?php 
 session_start();
 include '../sconn.php';
@@ -16,6 +19,7 @@ include '../sconn.php';
     <title>Solicitud del Auditorio 225</title>
   </head>
   <body>
+  <!--comienza el nav bar-->
   <nav class="navbar navbar-expand-sm bg-light ">
     	<a class="navbar-brand" href="../index.php">
       <img src="../images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">

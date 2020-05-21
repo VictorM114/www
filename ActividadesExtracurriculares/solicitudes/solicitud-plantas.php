@@ -1,3 +1,6 @@
+<!-- Alice M. Romero Reyes
+    Pagina de solicitud de plants
+    contiene la solicitud de plantas y las instrucciones guardadas en un card-->
 <?php 
 session_start();
 include '../sconn.php';
@@ -16,6 +19,7 @@ include '../sconn.php';
     <title>Solicitud de Plantas</title>
   </head>
   <body>
+  <!--comienza el nav bar-->
   <nav class="navbar navbar-expand-sm bg-light ">
     	<a class="navbar-brand" href="../index.php">
       <img src="../images/logo.jfif" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -56,7 +60,7 @@ include '../sconn.php';
          <a href="../index.php"><button action ="logout.php" type="button" class="btn btn-primary btn-sm">Salir</button></a> 
   </nav>
 <!--Aquí empieza el código-->
-<!--Lista de recordatorio-->
+<!--Lista de recordatorio, está dentro de un card con la clase container-->
 <div class="container">
 <div id="accordion">
 <div class="card">

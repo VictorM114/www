@@ -1,3 +1,5 @@
+<!--Alice M. Romero Reyes
+    Validación de los campos de la página de crear usuario-->
 <?php 
 include 'sconn.php';
 session_start(); 
