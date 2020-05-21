@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
-    elseif(empty($areaTrabajo) or empty($telefono))
+    elseif(empty($telefono))
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     }
     else{
         $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, areaTrabajo, telefono, extension, proposito, otroProp, uso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun','$areaTrabajo', '$telefono ', '$extension', '$proposito', '$otroProp', '$uso')";
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun','$telefono', '$proposito', '$otroProp', '$uso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-conferencias.php?Submited=Solicitud enviada.');
