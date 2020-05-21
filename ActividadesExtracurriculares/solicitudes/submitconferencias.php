@@ -36,8 +36,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, areaTrabajo, telefono, extension, proposito, otroProp, uso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun','$telefono', '$proposito', '$otroProp', '$uso')";
+        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, telefono, proposito, otroProp, uso)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$telefono', '$proposito', '$otroProp', '$uso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-conferencias.php?Submited=Solicitud enviada.');
