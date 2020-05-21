@@ -3,7 +3,7 @@ include '../sconn.php';
 session_start();
 $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nomSolicitante'];
-$fecha = $_POST['fecha'];
+$today = date("Y-m-d");
 $email = $_POST['email'];
 $proposito = $_POST['proposito'];
 $otroProp = $_POST['otroProp'];
@@ -13,10 +13,10 @@ $horaFin = $_POST['horaFinal'];
 $salon = $_POST['salon']; 
 
 if (isset($_POST['submit'])) {
-    if(empty($fecha)){
+    if(empty($email)){
         header ('location:solicitud-salon.php?Vacio=Completa los campos.');
     }
-    elseif(empty($email))
+    elseif(empty($salon))
     {
         header ('location:solicitud-salon.php?Vacio=Completa los campos.');
     }
@@ -28,13 +28,9 @@ if (isset($_POST['submit'])) {
     {
         header ('location:solicitud-salon.php?Vacio=Completa los campos.');
     }
-    elseif(empty($salon))
-    {
-        header ('location:solicitud-salon.php?Vacio=Completa los campos.');
-    }
     else{
         $sql = "INSERT INTO salones (associationID, nomSolicitante, fecha, email, proposito, otroProp, fechaAct, horaInicio, horaFinal, salon)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha', '$email', '$proposito', '$otroProp', '$fechaAct', '$horaInicio', '$horaFin','$salon')";
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today', '$email', '$proposito', '$otroProp', '$fechaAct', '$horaInicio', '$horaFin','$salon')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-salon.php?Submited=Solicitud enviada.');

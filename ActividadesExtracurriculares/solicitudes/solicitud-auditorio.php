@@ -139,7 +139,6 @@ include '../sconn.php';
           ?> 
           <!--Campos del form-->
           <b>Nombre del solicitante</b><input type="text" name="nombre" class= "form-control" placeholder = "Ingresar nombre del solicitante">
-          <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>

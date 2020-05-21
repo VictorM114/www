@@ -3,7 +3,7 @@ include '../sconn.php';
 session_start();
 $fullname = $_SESSION['Fname'];
 $nombre = $_POST['nombre'];
-$fecha = $_POST['fecha'];
+$today = date("Y-m-d");
 $email = $_POST['email'];
 $fechaUso = $_POST['fechaUso'];
 $horaInicio = $_POST['horaIni'];
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     if(empty($nombre)){
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
-    elseif(empty($fecha) or empty($email))
+    elseif(empty($horaFin) or empty($email))
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
@@ -40,8 +40,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, telefono, proposito, otroProp, uso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun', '$telefono ', '$proposito', '$otroProp', '$uso')";
+        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, areaTrabajo, telefono, extension, proposito, otroProp, uso)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$today' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun','$areaTrabajo', '$telefono ', '$extension', '$proposito', '$otroProp', '$uso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-conferencias.php?Submited=Solicitud enviada.');

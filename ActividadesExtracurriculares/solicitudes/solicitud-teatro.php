@@ -93,7 +93,7 @@ include '../sconn.php';
   </div>
           <form action = "submitteatro.php" method = "POST">
           <div class="form-group">
-          <h2>Información de solicitud</h2>
+          <h2>Solicitud del Teatro General</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>

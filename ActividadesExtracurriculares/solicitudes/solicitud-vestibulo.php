@@ -111,7 +111,7 @@ include '../sconn.php';
           <b>Nombre del Solicitante</b><input type="text" name="nombreSol" class="form-control" placeholder="Ingresar su nombre">
           <b>E-Mail</b><input type ="email" name="emailSol" class = "form-control" placeholder="Favor ingresar su email">
           <b>Propósito:</b><textarea type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de uso"></textarea>
-          <b>Fecha de uso:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de uso del Teatro">
+          <b>Fecha de Uso:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de uso del Teatro">
           <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Incio">
           <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
           <div id="btnmedio">

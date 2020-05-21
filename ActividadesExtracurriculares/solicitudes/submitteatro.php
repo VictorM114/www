@@ -11,6 +11,7 @@ $actdate = $_POST['ActDate'];
 $actIni = $_POST['ActIni'];
 $actFin = $_POST['ActFin'];
 $cantidadPer = $_POST['cantPers'];
+$today = date("Y-m-d");
 
 
 if (isset($_POST['submit'])) {
@@ -23,8 +24,8 @@ if (isset($_POST['submit'])) {
     }
     
     else{
-        $sql = "INSERT INTO actividadesTeatro (associationID, nombreSol, numTel, emailSol, audioVi, actProp, actDate, actIni, actFin, cantPer)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$numTel', '$emailSol', '$audioVi', '$propact', '$actdate', '$actIni', '$actFin', '$cantidadPer')";
+        $sql = "INSERT INTO actividadesTeatro (associationID, nombreSol, numTel, emailSol, audioVi, actProp, actDate, actIni, actFin, cantPer, fecha)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$numTel', '$emailSol', '$audioVi', '$propact', '$actdate', '$actIni', '$actFin', '$cantidadPer', '$today')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-teatro.php?Submited=Solicitud enviada.');

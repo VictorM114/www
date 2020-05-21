@@ -59,7 +59,7 @@ include '../sconn.php';
           
           <form action = "submitgeneral.php" method = "POST">
           <div class="form-group">
-          <h2>Información de actividad</h2>
+          <h2>Solicitud Principal</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -99,7 +99,7 @@ include '../sconn.php';
             <option>Convencion</option>
           </select>
           <b>Propósito:</b><textarea type= "text" name="ActProp" class="form-control" placeholder="Ingresar propósito de la actividad"></textarea>
-          <b>Fecha:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de la actividad">
+          <b>Fecha de la Actividad:</b><input type= "date" name="ActDate" class="form-control" placeholder="Ingresar Fecha de la actividad">
           <b>Horario de Inicio:</b><input type= "time" name="ActIni" class="form-control" placeholder="Hora de Inciio">
           <b>Horario de Culminación:</b><input type= "time" name="ActFin" class="form-control" placeholder="Hora de Culminación">
           <b>Lugar:</b><input type= "text" name="ActPlace" class="form-control" placeholder="Lugar de la actividad">         

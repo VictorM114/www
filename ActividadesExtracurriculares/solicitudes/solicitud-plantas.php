@@ -90,7 +90,7 @@ include '../sconn.php';
 <!--código PHP-->
         <form action = "submitplantas.php" method = "POST">
           <div class="form-group">
-          <h2>Información de actividad</h2>
+          <h2>Solicitud de Plantas</h2>
           <?php if (@$_GET['Submited']==True) { ?>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -117,7 +117,6 @@ include '../sconn.php';
           ?> 
           <!--Campos del form-->
           <b>Nombre del solicitante</b><input type="text" name="nombre" class= "form-control" placeholder = "Ingresar nombre del solicitante">
-          <b>Fecha:</b><input type= "date" name="fecha" class="form-control" placeholder="Ingresar Fecha de solicitud">
           <b>Propósito:</b><input type= "text" name="proposito" class="form-control" placeholder="propósito">
           <b>Cantidad de Plantas:</b><input type="text" name="cantidad" class="form-control" placeholder="">
           <b>Fecha de uso:</b><input type= "date" name="dateUso" class="form-control" placeholder="Ingresar fecha de uso">
