@@ -26,39 +26,18 @@ include 'sconn.php';
         </span>
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Solicitudes Pendientes
-            </a>
-            <!-- Dropdown 
-            <div class="dropdown-menu">
-            <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-salon.php">Préstamo de Salón</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-auditorio.php">Solicitud del Auditorio 225</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-teatro.php">Teatro General</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-servicios.php">Solicitud de Servicios</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-plantas.php">Solicitud de Plantas</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-prestamoequipo.php">Solicitud de Préstamo de Equipo</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-vestibulo.php">Solicitud de Vestíbulo</a>
-              <a class="dropdown-item" href="solicitudes/solicitud-conferencias.php">Sala de Conferencias del D.E.</a>
-              Estas solicitudes son las solicitudes que son externas a la plataforma
-              estan en google forms y se tienen que escribir el target blank para que 
-              abran en otro tab
-              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc0DxMjDzRctM5T3T_sDlKFg55HwqU1VcLIB7HpU-LwHBLDUg/viewform"
-              target="_blank">Solicitud Instalaciones de la Biblioteca</a>
-              <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSf_i6Gkc6-WIBYzzkSUb6oVEDQyK6-noJla60MQYHFKRlMvSw/viewform"
-              target="_blank">Solicitud de Fotografia y Sonido</a>
-              <a class="dropdown-item" href="#">Solicitud de Transportación</a>
-
-          </li>
-          <li class="nav-item">-->
+                      
+          <li class="nav-item">
             <a class="nav-link" href="#">Acreditación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reportes.php">Reportes</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="crearadmin.php">Registrar Administrador</a>
+          </li><a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
          </ul>
-         <a href = "crearadmin.php"><button type="button" class="btn btn-primary btn-sm">Registrar Administrador</button></a> 
-         <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
+         
   </nav>
   <!-- Aquí empieza el código-->
   <div class = "container">
@@ -78,6 +57,7 @@ include 'sconn.php';
     $actIni[$i] = $row['horarioInicial'];
     $actFin[$i] = $row['horarioFin'];
     $actPlace[$i] = $row['actPlace'];
+    $fecha[$i] = $row['submitDate'];
     $actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
     $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
     $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
@@ -97,19 +77,21 @@ include 'sconn.php';
             <td>$actdate[$i]</td>
             <td>$actIni[$i]</td>
             <td>$actFin[$i]</td>
-            <td>$actPlace[$i]</td>";
+            <td>$actPlace[$i]</td>
+            <td>$fecha[$i]</td>";
             echo '<td><form action="aprobar.php" method = "POST">
             <div class = "form-check">
             <label class = "form-check-label">
-            <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
-            </label>
+            <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+            </label
+
             </div></td>
             
             </tr>';    
     }
     echo "</tbody>
           </table>";
-   // echo '<button type="submit" class="btn btn-primary">Submit</button></form>';
+   echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
     
   }
   ?>
@@ -127,15 +109,17 @@ include 'sconn.php';
      $fechaAct[$i] = $row['fecha'];
      $horaInicio[$i] = $row['horaInicio'];
      $horaFin[$i] = $row['horaFinal'];
+     $fecha[$i] = $row['fecha'];
      $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
      $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
      $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
+     
      $i++;
-
+   }
      if($result->num_rows > 0){
       echo "<h3>Solicitudes de salón en espera de aprobación.</h3>";
       tableSalones();
-      for($i=1; $i <=count($horaFin); $i++)
+      for($i=1; $i <=count($salon); $i++)
       {
         echo "<tr>
               <td>$asociacion[$i]</td>
@@ -143,7 +127,8 @@ include 'sconn.php';
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>
-              <td>$horaFin[$i]</td>";
+              <td>$horaFin[$i]</td>
+              <td>$fecha[$i]</td>";
               echo '<td><form action="aprobar.php"> <div class = "form-check">
             <label class = "form-check-label">
             <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
@@ -156,8 +141,8 @@ include 'sconn.php';
       //echo '<button type="submit" class="btn btn-primary">Submit</button>';
       echo "</tbody>
             </table>";
+            
     }
-   }
   ?>
 
 <!--Solicitud de vestíbulo-->
@@ -174,12 +159,12 @@ include 'sconn.php';
      $fechaAct[$i] = $row['actDate'];
      $horaInicio[$i] = $row['actIni'];
      $horaFin[$i] = $row['actFin'];
-     
+     $fecha[$i] = $row['fecha'];
      $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
      $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
      $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
      $i++;
-
+   }
      if($result->num_rows > 0){
       echo "<h3>Solicitudes de vestíbulo en espera de aprobación.</h3>";
       tableVestibulo();
@@ -191,7 +176,8 @@ include 'sconn.php';
               <td>$proposito[$i]</td>
               <td>$fechaAct[$i]</td>
               <td>$horaInicio[$i]</td>
-              <td>$horaFin[$i]</td>";
+              <td>$horaFin[$i]</td>
+              <td>$fecha[$i]</td>";
               echo '<td><div class = "form-check">
             <label class = "form-check-label">
             <input type = "checkbox" class = "form-check-input" value = "" > Aprobar
@@ -202,9 +188,118 @@ include 'sconn.php';
       echo "</tbody>
             </table>";
     }
-   }
- 
   ?>
+
+  <?php 
+    /*Aquí se mostraran todas las actividades que deben ser aprobadas por el director de actividades extracurricuales*/
+    $sql = "SELECT * FROM solicitudesservicio
+            INNER JOIN asociaciones ON solicitudesservicio.associationID = asociaciones.associationID
+            WHERE statusSol = 'pendiente';";
+    $result = $conn->query($sql);
+    $i = 1;
+    while($row = mysqli_fetch_assoc($result)){
+      $asociacion[$i] = $row['asocName'];
+      $nombreSol[$i] = $row['nombreSol'];
+      $servicioDes[$i] = $row['servicioDes'];
+      $actDate[$i] = $row['actDate'];
+      $actIni[$i] = $row['actIni'];
+      $actFin[$i] = $row['actFin'];
+      $actPlace[$i] = $row['actPlace'];
+      $fecha[$i] = $row['fecha'];
+      $actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
+      $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
+      $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
+      $i++;
+    }
+    //Mostrar la información de la solicitud de servicios para que se pueda aprobar
+    if($result->num_rows > 0){
+      echo "<h3>Solicitudes de servicio en espera de aprobación.</h3>";
+      tableServicios();
+      for($i=1; $i <=count($nombreSol); $i++)
+      {
+        echo "<tr>
+              <td>$asociacion[$i]</td>
+              <td>$nombreSol[$i]</td>
+              <td>$servicioDes[$i]</td>
+              <td>$actDate[$i]</td>
+              <td>$actIni[$i]</td>
+              <td>$actFin[$i]</td>
+              <td>$actPlace[$i]</td>
+              <td>$fecha[$i]</td>";
+              echo '<td><form action="aprobar.php" method = "POST">
+              <div class = "form-check">
+              <label class = "form-check-label">
+              <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+              </label
+  
+              </div></td>
+              
+              </tr>';    
+      }
+      echo "</tbody>
+            </table>";
+     echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
+      
+    }
+    ?>
+
+<?php 
+    /*Aquí se mostraran todas las actividades que deben ser aprobadas por el director de actividades extracurricuales*/
+    $sql = "SELECT * FROM auditorio
+            INNER JOIN asociaciones ON auditorio.associationID = asociaciones.associationID
+            WHERE statusSol = 'pendiente';";
+    $result = $conn->query($sql);
+    $i = 1;
+    while($row = mysqli_fetch_assoc($result)){
+      $asociacion[$i] = $row['asocName'];
+      $nombreSol[$i] = $row['nombre'];
+      $email[$i] = $row['email'];
+      $proposito[$i] = $row['proposito'];  
+      $actIni[$i] = $row['horaIni'];
+      $actFin[$i] = $row['horaFin'];
+      $cantidad[$i] = $row['cantidad'];
+      $departamento[$i] = $row['departamento'];
+      $fechaUso[$i] = $row['fechaUso'];
+      $fecha[$i] = $row['fecha'];
+      $fechaUso[$i] = date('D-d-M-Y', strtotime($fechaUso[$i]));
+      $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
+      $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
+      $i++;
+    }
+    //Mostrar la información de la solicitud de servicios para que se pueda aprobar
+    if($result->num_rows > 0){
+      echo "<h3>Solicitudes de Auditorio 225 en espera de aprobación.</h3>";
+      tableAuditorio();
+      for($i=1; $i <=count($nombreSol); $i++)
+      {
+        echo "<tr>
+              <td>$asociacion[$i]</td>
+              <td>$nombreSol[$i]</td>
+              <td>$email[$i]</td>
+              <td>$proposito[$i]</td>
+              <td>$actIni[$i]</td>
+              <td>$actFin[$i]</td>
+              <td>$cantidad[$i]</td>
+              <td>$departamento[$i]</td>
+              <td>$fechaUso[$i]</td>
+              <td>$actPlace[$i]</td>
+              <td>$fecha[$i]</td>";
+              echo '<td><form action="aprobar.php" method = "POST">
+              <div class = "form-check">
+              <label class = "form-check-label">
+              <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+              </label
+  
+              </div></td>
+              
+              </tr>';    
+      }
+      echo "</tbody>
+            </table>";
+     echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
+      
+    }
+    ?>
   </div>
  <br><br><br>
 
