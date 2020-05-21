@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
     }
     
     else{
-        $sql = "INSERT INTO actividadesvestibulo (associationID, nombreSol, emailSol, propAct, actDate, actIni, actFin)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$emailSol', '$propact', '$actdate', '$actIni', '$actFin')";
+        $sql = "INSERT INTO actividadesvestibulo (associationID, nombreSol, emailSol, propAct, actDate, actIni, actFin, fecha)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$emailSol', '$propact', '$actdate', '$actIni', '$actFin', '$today')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-vestibulo.php?Submited=Solicitud enviada.');

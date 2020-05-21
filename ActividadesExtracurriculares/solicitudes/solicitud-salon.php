@@ -95,7 +95,6 @@ include '../sconn.php';
         <form action = "submitsalon.php" method = "POST">
           <div class="form-group">
           <?php if (@$_GET['Submited']==True) { ?>
-          <h2>Solicitud de Salón</h2>
           <div class="alert alert-success alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <?php echo $_GET['Submited'];?>
@@ -118,7 +117,8 @@ include '../sconn.php';
           </div>
        <?php 
           }
-          ?> 
+          ?>
+          <h2>Solicitud de Salón</h2>
           <b>Nombre del solicitante</b><input type="text" name= "nomSolicitante" class= "form-control" placeholder = "Ingresar nombre del solicitante">
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">

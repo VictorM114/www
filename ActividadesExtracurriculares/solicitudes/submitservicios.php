@@ -20,8 +20,8 @@ if (isset($_POST['submit'])) {
     }
     
     else{
-        $sql = "INSERT INTO solicitudesservicio (associationID, nombreSol, servicioDes, actDate, actIni, actFin, actPlace)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$descripcion', '$actdate', '$actIni', '$actFin', '$actPlace')";
+        $sql = "INSERT INTO solicitudesservicio (associationID, nombreSol, servicioDes, actDate, actIni, actFin, actPlace, fecha)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'), '$nombreSol', '$descripcion', '$actdate', '$actIni', '$actFin', '$actPlace','$today')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-servicios.php?Submited=Solicitud enviada.');
