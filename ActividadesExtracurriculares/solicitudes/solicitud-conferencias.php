@@ -127,9 +127,7 @@ include '../sconn.php';
           <b>Fecha de uso:</b><input type= "date" name="fechaUso" class="form-control" placeholder="Ingresar fecha de uso">
           <b>Horario de Inicio:</b><input type= "time" name="horaIni" class="form-control" placeholder="Hora de Inicio">
           <b>Horario de Culminación:</b><input type= "time" name="horaFin" class="form-control" placeholder="Hora de Culminación">
-          <b>Departamento/Oficina/Nombre Asociación/ Especifique</b><input type="text" name="areaTrabajo" class= "form-control" placeholder = "Conteste la que aplique">
           <b>Teléfono</b><input type="text" name="telefono" class= "form-control" placeholder = "teléfono o celular">
-          <b>Extensión</b><input type="text" name="extension" class= "form-control" placeholder = "conteste si aplica">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
             <option>Reunión Asociación Estudiantil</option>

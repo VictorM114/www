@@ -9,9 +9,7 @@ $fechaUso = $_POST['fechaUso'];
 $horaInicio = $_POST['horaIni'];
 $horaFin = $_POST['horaFin'];
 $otroFun = $_POST['otroFun'];
-$areaTrabajo = $_POST['areaTrabajo'];
 $telefono = $_POST['telefono'];
-$extension = $_POST['extension'];
 $proposito = $_POST['proposito'];
 $otroProp = $_POST['otroProp'];
 $uso = $_POST['uso'];
@@ -33,7 +31,7 @@ if (isset($_POST['submit'])) {
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
-    elseif(empty($areaTrabajo) or empty($telefono))
+    elseif(empty($telefono))
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
@@ -42,8 +40,8 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     else{
-        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, areaTrabajo, telefono, extension, proposito, otroProp, uso)
-        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun','$areaTrabajo', '$telefono ', '$extension', '$proposito', '$otroProp', '$uso')";
+        $sql = "INSERT INTO conferencia (associationID, nombre, fecha, email, fechaUso, horaIni, horaFin, otroFun, telefono, proposito, otroProp, uso)
+        VALUES ((SELECT associationID FROM asociaciones WHERE asocName = '$fullname'),'$nombre', '$fecha' ,'$email','$fechaUso' ,'$horaInicio','$horaFin', '$otroFun', '$telefono ', '$proposito', '$otroProp', '$uso')";
         
         if ($conn->query($sql) === TRUE) {
             header ('location:solicitud-conferencias.php?Submited=Solicitud enviada.');
