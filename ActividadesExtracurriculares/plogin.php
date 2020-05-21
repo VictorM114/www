@@ -1,5 +1,6 @@
 <?php 
-/* Este documento es como un documento 
+/*Víctor M. Ayala Hernández
+Este documento es como un documento 
 de autenticacion, desde la pantalla de login me 
 conecto al server para verificar si
 el usuerio que someto en el login existe */

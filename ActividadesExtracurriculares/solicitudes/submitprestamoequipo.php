@@ -1,6 +1,8 @@
 <?php 
 include '../sconn.php';
 session_start();
+//Víctor M. Ayala Hernández
+//Variables para utilizar en el query de INSERT
 $fullname = $_SESSION['Fname'];
 $nombreSol = $_POST['nombreSol'];
 $numEst = $_POST['numEstudiante'];
