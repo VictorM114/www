@@ -1,4 +1,7 @@
 <?php 
+/*Víctor M. Ayala Hernández 
+  En esta pantalla los usuarios podrán someter la solicitud para
+  poder separar el teatro general */
 session_start();
 include '../sconn.php';
 ?>

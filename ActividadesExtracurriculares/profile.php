@@ -1,4 +1,7 @@
-<?php 
+<?php
+/*Víctor M. Ayala Hernández
+  Esta pantalla es el profile de la asociación que le mostrará todas las solicitudes
+  pendientes y/o aprobadas. Además podrá acceder a las solicitudes de la plataforma. */ 
 session_start();
 include 'functions.php';
 include 'sconn.php';

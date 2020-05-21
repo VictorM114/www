@@ -1,3 +1,5 @@
+<!--Víctor M. Ayala Hernández
+Esta es la pantalla en dónde los usuarios podrán ingresar a la plataforma -->
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
   <head>
@@ -22,7 +24,9 @@
   </nav> 
      <form action="plogin.php" method="POST">
       <div class="form-login">
-        <h3>¡Bienvenido/Bienvenida!</h3>    
+        <h3>¡Bienvenido/Bienvenida!</h3>   
+        <!--Este código se utiliza para hacer una alerta cuando el usuario 
+        tenga algunos campos vacíos--> 
         <?php if (@$_GET['Empty']==True) { ?>
           <div class="alert alert-danger alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -30,7 +34,9 @@
           </div>
        <?php 
           }
-          ?>  
+          ?>
+          <!--Este código se utiliza para hacer una alerta cuando el usuario ingrese
+            la contraseña incorrecta -->  
         <?php if (@$_GET['Invalidpass']==True) { ?>
           <div class="alert alert-danger alert-dismissible fade show">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -39,6 +45,7 @@
        <?php 
           }
           ?>
+          <!--Formulario para que el usuario ingrese sus credenciales-->
         <b>Username:</b><input type="text" name="username" class="form-control" placeholder="Ingresar usuario">
         <b>Password:</b><input type="password" name="password" class="form-control" placeholder="Ingresar password">
       </div>

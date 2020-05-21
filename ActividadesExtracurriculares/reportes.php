@@ -2,6 +2,9 @@
     session_start();
     include 'functions.php';
     include 'sconn.php';
+    /*Víctor M. Ayala Hernández 
+      En esta pantalla los usuarios que tengan los privilegios podrán
+      generar algunos reportes. */
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">

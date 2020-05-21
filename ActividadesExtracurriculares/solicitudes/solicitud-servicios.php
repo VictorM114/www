@@ -1,4 +1,7 @@
 <?php 
+/*Víctor M. Ayala Hernández 
+  En esta pantalla los usuarios podrán someter la solicitud 
+  de servicios que normalmente se utiliza para  */
 session_start();
 include '../sconn.php';
 ?>

@@ -1,4 +1,8 @@
 <?php 
+/*Víctor M. Ayala Hernández 
+  En esta pantalla los usuarios podrán someter la solicitud 
+  de prestamo de equipo que se utiliza para solicitar un proyector y 
+  una pizarra en la Oficina de Actividades Extracurriculares*/
 session_start();
 include '../sconn.php';
 ?>

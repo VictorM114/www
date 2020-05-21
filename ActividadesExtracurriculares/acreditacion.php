@@ -2,6 +2,9 @@
     session_start();
     include 'functions.php';
     include 'sconn.php';
+    /*Víctor M. Ayala Hernández 
+  En esta pantalla los usuarios podrán someter los documentos para 
+  poder acreditar la asociacion */
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">

@@ -1,4 +1,7 @@
-<?php 
+<?php
+/*Víctor M. Ayala Hernández 
+  En esta pantalla los usuarios podrán someter la solicitud 
+  del vestibulo para separar un espacio  */ 
 session_start();
 include '../sconn.php';
 ?>
