@@ -1,3 +1,6 @@
+<!-- Alice M. Romero Reyes
+    Pagina de submitconferencias
+    contiene el query para validar que no se dejen los campos de la solicitud vacía y se haga el método post para guardar.-->
 <?php 
 include '../sconn.php';
 session_start();
@@ -24,6 +27,10 @@ if (isset($_POST['submit'])) {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }
     elseif(empty($fechaUso) or empty($horaInicio))
+    {
+        header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
+    }
+    elseif(empty($horaFin))
     {
         header ('location:solicitud-conferencias.php?Vacio=Completa los campos.');
     }

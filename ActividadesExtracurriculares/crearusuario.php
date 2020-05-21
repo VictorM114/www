@@ -1,3 +1,6 @@
+<!-- Alice M. Romero Reyes
+    Esta página se utiliza para que los estudiantes registren sus asociaciones para que puedan 
+    someter solicitudes, está conectada a register.php-->
 <?php 
 include 'sconn.php';
 session_start	();

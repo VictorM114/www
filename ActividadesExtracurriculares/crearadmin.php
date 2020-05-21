@@ -1,3 +1,6 @@
+<!-- Alice M. Romero Reyes
+    Esta página se utiliza para que el director/a pueda registrar nuevos administradores a la
+    página, ya sean decanos, secretarias o directores. Está conectada a registeradmin.php-->
 <?php 
 include 'sconn.php';
 session_start	();

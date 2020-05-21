@@ -1,3 +1,7 @@
+<!-- Alice M. Romero Reyes
+    Pagina de Profile del director
+    en esta el director/a verá todas las solicitudes que deben ser aprobas por el/ella-->
+
 <?php 
 session_start();
 include 'functions.php';
@@ -36,10 +40,10 @@ include 'sconn.php';
           <li class="nav-item">
             <a class="nav-link" href="crearadmin.php">Registrar Administrador</a>
           </li><a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
-         </ul>
-         
+         </ul>  
   </nav>
   <!-- Aquí empieza el código-->
+  <!-- Todas las solicitudes están divididas por tablas para que sea más cómodo a la vista del aprobador/a-->
   <div class = "container">
   <?php 
   /*Aquí se mostraran todas las actividades que deben ser aprobadas por el director de actividades extracurricuales*/
@@ -63,7 +67,7 @@ include 'sconn.php';
     $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
     $i++;
   }
-  //Solicitud de actividades para aprobar
+  //Solicitud de actividades para aprobar, esta se buscan en la tabla de actividades, donde el estaus de solicitud sea pendiente.
   if($result->num_rows > 0){
     echo "<h3>Solicitudes de actividad en espera de aprobación.</h3>";
     tableActividades();
@@ -95,7 +99,7 @@ include 'sconn.php';
     
   }
   ?>
-  <!--Solicitud de salones-->
+  <!--Solicitud de salones para aprobar, se busca en la tabla de salones donde el estaus de solicitud sea pendiente-->
   <?php 
   $sql = "SELECT * FROM salones
   INNER JOIN asociaciones ON salones.associationID = asociaciones.associationID
@@ -110,6 +114,7 @@ include 'sconn.php';
      $horaInicio[$i] = $row['horaInicio'];
      $horaFin[$i] = $row['horaFinal'];
      $fecha[$i] = $row['fecha'];
+     //Formato de la hora y fecha
      $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
      $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
      $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
@@ -145,7 +150,7 @@ include 'sconn.php';
     }
   ?>
 
-<!--Solicitud de vestíbulo-->
+<!--Solicitud de vestíbulo, se busca en la tabla de la solicitud de vestíbulo donde el estaus de solicitud sea pendiente-->
   <?php 
   $sql = "SELECT * FROM actividadesvestibulo
   INNER JOIN asociaciones ON actividadesvestibulo.associationID = asociaciones.associationID
@@ -160,6 +165,7 @@ include 'sconn.php';
      $horaInicio[$i] = $row['actIni'];
      $horaFin[$i] = $row['actFin'];
      $fecha[$i] = $row['fecha'];
+     //Formato de la hora y fecha
      $fechaAct[$i] = date('D-d-M-Y', strtotime($fechaAct[$i]));
      $horaInicio[$i] = date('h:i a', strtotime($horaInicio[$i]));
      $horaFin[$i]= date('h:i a', strtotime($horaFin[$i]));
@@ -206,6 +212,7 @@ include 'sconn.php';
       $actFin[$i] = $row['actFin'];
       $actPlace[$i] = $row['actPlace'];
       $fecha[$i] = $row['fecha'];
+      //Formato de la hora y fecha
       $actdate[$i] = date('D-d-M-Y', strtotime($actdate[$i]));
       $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
       $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
@@ -261,6 +268,7 @@ include 'sconn.php';
       $departamento[$i] = $row['departamento'];
       $fechaUso[$i] = $row['fechaUso'];
       $fecha[$i] = $row['fecha'];
+      //Formato de la hora y fecha
       $fechaUso[$i] = date('D-d-M-Y', strtotime($fechaUso[$i]));
       $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
       $actFin[$i]= date('h:i a', strtotime($actFin[$i]));

@@ -1,3 +1,7 @@
+<!-- Alice M. Romero Reyes
+    Víctor M. Ayala Hernández
+    Aquí están las funciones que se utilizaron para realizar los headers de las tablas, 
+    son varias porque los headers de las tablas varían por solicitud-->
 <?php 
 function tableHeader(){
     echo '<table class="table table-bordered">
