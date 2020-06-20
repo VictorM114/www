@@ -129,7 +129,7 @@ include '../sconn.php';
           <b>Correo electrónico:</b><input type= "email" name ="email" class="form-control" placeholder="Ingresar su correo eléctronico">
           <b>Propósito:</b><select class="form-control" id="sel1" name="proposito">
             <option>--</option>
-            <option>ofrecer examen</option>
+            <option>Ofrecer Examen</option>
             <option>Reunión/taller/conferencia de Asoc. Estudiantil</option>
             <option>Repaso</option>
             <option>Otro</option>
