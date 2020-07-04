@@ -73,16 +73,17 @@ function tableTeatro(){
   echo '<table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
+      <th>Asociación</th>
       <th>Solicitante</th>
-      <th>Email</th>
       <th>Número de teléfono</th>
+      <th>Email</th>
       <th>Equipo audio-visual</th>
       <th>Propósito</th>
-      <th>Fecha de uso<th>
+      <th>Fecha de uso</th>
       <th>Hora inicio</th>
-      <th>Hora culminación<th>
-      <th>Cantidad de personas<th>
-      <th>Sometido en:</th>
+      <th>Hora culminación</th>
+      <th>Cantidad de personas</th>
+      <th>Sometido en</th>
       <th>Estatus</th>
     </tr>
   </thead>
@@ -102,7 +103,7 @@ function tableAuditorio(){
       <th>Cantidad de personas</th>
       <th>Departamento</th>
       <th>Fecha de uso</th>
-      <th>Lugar</th>
+      <th>Teléfono</th>
       <th>Sometido en:</th>
       <th>Estatus</th>
     </tr>
@@ -133,13 +134,14 @@ function tablePlantas(){
   echo '<table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
+      <th>Asociación</th>
       <th>Solicitante</th>
       <th>Fecha de uso</th>
       <th>Propósito</th>
       <th>Cantidad de Plantas</th>
       <th>Horario inicio</th>
       <th>Horario de conclusión</th>
-      <th>Lugar<th>
+      <th>Lugar</th>
       <th>Sometido en:</th>
       <th>Estatus</th>
     </tr>
@@ -172,15 +174,17 @@ function tableSalaConferencia(){
   echo '<table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
+      <th>Asociación</th>
       <th>Solicitante</th>
       <th>Correo electrónico</th>
       <th>Fecha de uso</th>
       <th>Horario inicio</th>
       <th>Horario de conclusión</th>
       <th>Teléfono</th>
-      <th>Proósito<th>
-      <th>Uso de equipo audio-visual<th>
-      <th>Sometido en:</th>
+      <th>Propósito</th>
+      <th>  </th>
+      <th>Uso de equipo audio-visual</th>
+      <th>Sometido en</th>
       <th>Estatus</th>
     </tr>
   </thead>
