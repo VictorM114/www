@@ -308,6 +308,183 @@ include 'sconn.php';
       
     }
     ?>
+  <?php 
+  $sql = "SELECT * FROM conferencia
+  INNER JOIN asociaciones ON conferencia.associationID = asociaciones.associationID
+  WHERE statusSol = 'pendiente';";
+  $result = $conn->query($sql);
+  $i = 1;
+  while($row = mysqli_fetch_assoc($result)){
+    $asociacion[$i] = $row['asocName'];
+    $nombreSol[$i] = $row['nombre'];
+    $email[$i] = $row['email'];
+    $fechaUso[$i] = $row['fechaUso'];
+    $actIni[$i] = $row['horaIni'];
+    $actFin[$i] = $row['horaFin'];
+    $telefono[$i] = $row['telefono'];
+    $proposito[$i] = $row['proposito'];
+    $otroProp[$i] = $row['otroProp'];
+    $uso[$i] = $row['uso'];
+    $estatus[$i] = $row['statusSol'];
+    $fecha[$i] = $row['fecha'];
+    //Formato de la hora y fecha
+    $fechaUso[$i] = date('D-d-M-Y', strtotime($fechaUso[$i]));
+    $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
+    $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
+    $i++;
+  }
+  //Mostrar la información de la solicitud de servicios para que se pueda aprobar
+  if($result->num_rows > 0){
+    echo "<h3>Solicitudes de sala de conferencias en espera de aprobación.</h3>";
+    tableSalaConferencia();
+    for($i=1; $i <=count($nombreSol); $i++)
+    {
+      echo "<tr>
+            <td>$asociacion[$i]</td>
+            <td>$nombreSol[$i]</td>
+            <td>$email[$i]</td>
+            <td>$fechaUso[$i]</td>
+            <td>$actIni[$i]</td>
+            <td>$actFin[$i]</td>
+            <td>$telefono[$i]</td>
+            <td>$proposito[$i]</td>
+            <td>$otroProp[$i]</td>
+            <td>$uso[$i]</td>
+            <td>$fecha[$i]</td>";
+            echo '<td><form action="aprobar.php" method = "POST">
+            <div class = "form-check">
+            <label class = "form-check-label">
+            <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+            </label
+
+            </div></td>
+            
+            </tr>';    
+    }
+    echo "</tbody>
+          </table>";
+   echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
+    
+  }
+  
+  
+  ?>
+<?php 
+  $sql = "SELECT * FROM plantas
+  INNER JOIN asociaciones ON plantas.associationID = asociaciones.associationID
+  WHERE estatus = 'pendiente';";
+  $result = $conn->query($sql);
+  $i = 1;
+  while($row = mysqli_fetch_assoc($result)){
+    $asociacion[$i] = $row['asocName'];
+    $nombreSol[$i] = $row['nombre'];
+    $fecha[$i] = $row['fecha'];
+    $proposito[$i] = $row['proposito'];
+    $cantidad[$i] = $row['cantidad'];
+    $fechaUso[$i] = $row['dateUso'];
+    $lugar[$i] = $row['lugar'];
+    $actIni[$i] = $row['hourIni'];
+    $actFin[$i] = $row['hourFIn'];
+    $fecha[$i] = $row['fecha'];
+    $estatus[$i] = $row['estatus'];
+    //Formato de la hora y fecha
+    $fechaUso[$i] = date('D-d-M-Y', strtotime($fechaUso[$i]));
+    $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
+    $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
+    $i++;
+  }
+  //Mostrar la información de la solicitud de plantas para que se pueda aprobar
+  if($result->num_rows > 0){
+    echo "<h3>Solicitudes de Plantas en espera de aprobación.</h3>";
+    tablePlantas();
+    for($i=1; $i <=count($nombreSol); $i++)
+    {
+      echo "<tr>
+            <td>$asociacion[$i]</td>
+            <td>$nombreSol[$i]</td>
+            <td>$fechaUso[$i]</td>
+            <td>$proposito[$i]</td>
+            <td>$cantidad[$i]</td>
+            <td>$actIni[$i]</td>
+            <td>$actFin[$i]</td>
+            <td>$fecha[$i]</td>
+            <td>$estatus[$i]</td>";
+            echo '<td><form action="aprobar.php" method = "POST">
+            <div class = "form-check">
+            <label class = "form-check-label">
+            <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+            </label
+
+            </div></td>
+            
+            </tr>';    
+    }
+    echo "</tbody>
+          </table>";
+   echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
+    
+  }?>
+
+<?php 
+ $sql = "SELECT * FROM actividadesteatro
+ INNER JOIN asociaciones ON actividadesteatro.associationID = asociaciones.associationID
+ WHERE statusSol = 'pendiente';";
+ $result = $conn->query($sql);
+ $i = 1;
+ while($row = mysqli_fetch_assoc($result)){
+   $asociacion[$i] = $row['asocName'];
+   $nombreSol[$i] = $row['nombreSol'];
+   $numTel[$i] = $row ['numTel'];
+   $emailSol[$i] = $row['emailSol'];
+   $audioVi[$i] = $row['audioVi'];
+   $actProp[$i] = $row['actProp'];
+   $actDate[$i] = $row['actDate'];
+   $actIni[$i] = $row['actIni'];
+   $actFin[$i] = $row['actFin'];
+   $cantPer[$i] = $row['cantPer'];
+   $estatus[$i] = $row['statusSol'];
+   $fecha[$i] = $row['fecha'];
+   //Formato de la hora y fecha
+   $actDate[$i] = date('D-d-M-Y', strtotime($actDate[$i]));
+   $actIni[$i] = date('h:i a', strtotime($actIni[$i]));
+   $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
+   $i++;
+ }
+ //Mostrar la información de la solicitud de plantas para que se pueda aprobar
+ if($result->num_rows > 0){
+   echo "<h3>Solicitudes de Plantas en espera de aprobación.</h3>";
+   tableTeatro();
+   for($i=1; $i <=count($numTel); $i++)
+   {
+     echo "<tr>
+           <td>$asociacion[$i]</td>
+           <td>$nombreSol[$i]</td>
+           <td>$numTel[$i]</td>
+           <td>$emailSol[$i]</td>
+           <td>$audioVi[$i]</td>
+           <td>$actProp[$i]</td>
+           <td>$actDate[$i]</td>
+           <td>$actIni[$i]</td>
+           <td>$actFin[$i]</td>
+           <td>$cantPer[$i]</td>
+           <td>$fecha[$i]</td>";
+           echo '<td><form action="aprobar.php" method = "POST">
+           <div class = "form-check">
+           <label class = "form-check-label">
+           <input type = "checkbox" class = "form-check-input" name = "aprobar" value = ""  > Aprobar
+           </label
+
+           </div></td>
+           
+           </tr>';    
+   }
+   echo "</tbody>
+         </table>";
+  echo '<button type="submit" name="submit" value ="submit" class="btn btn-primary">Someter Solicitud</button></form>';
+  
+ }
+
+?>
   </div>
  <br><br><br>
 
