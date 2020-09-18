@@ -450,9 +450,9 @@ include 'sconn.php';
    $actFin[$i]= date('h:i a', strtotime($actFin[$i]));
    $i++;
  }
- //Mostrar la información de la solicitud de plantas para que se pueda aprobar
+ //Mostrar la información de la solicitud de teatro para que se pueda aprobar
  if($result->num_rows > 0){
-   echo "<h3>Solicitudes de Plantas en espera de aprobación.</h3>";
+   echo "<h3>Solicitudes de teatro en espera de aprobación.</h3>";
    tableTeatro();
    for($i=1; $i <=count($numTel); $i++)
    {
