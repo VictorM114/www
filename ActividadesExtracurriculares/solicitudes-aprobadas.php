@@ -16,7 +16,7 @@ include 'sconn.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="over.css" rel="stylesheet" >
-    <title>Profile</title>
+    <title>Solicitudes Aprobadas</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-sm bg-light ">
@@ -28,13 +28,16 @@ include 'sconn.php';
         </b></span>
         <!-- Links -->
         <ul class="navbar-nav">
+         <li>
+            <a class="nav-link" href="profile.php"> Profile </a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Solicitudes
             </a>
             <!-- Dropdown con todas las solicitudes -->
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud Principal</a>
+              <a class="dropdown-item" href="solicitudes/solicitud-general.php">Solicitud</a>
               <a class="dropdown-item" href="solicitudes/solicitud-salon.php">Préstamo de Salón</a>
               <a class="dropdown-item" href="solicitudes/solicitud-auditorio.php">Solicitud del Auditorio 225</a>
               <a class="dropdown-item" href="solicitudes/solicitud-teatro.php">Teatro General</a>
@@ -58,7 +61,6 @@ include 'sconn.php';
           <li class="nav-item">
             <a class="nav-link" href="acreditacion.php">Acreditación</a>
           </li>
-
          </ul>
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav> 
@@ -66,15 +68,15 @@ include 'sconn.php';
   
           <div class = "container">
             <div class = "jumbotron">
-          <h2>Solicitudes Pendientes y/o Aprobadas</h2>
-          </div>
-          <?php
+            <h2>Solicitudes Aprobadas</h2>
+            </div>
+            <?php
                    /*Selecciona todo de actividades (que es la solicitud general), une asociaciones donde el association ID de 
                     ambas tablas sea igual y me muestras todo donde el nombre de la asociacion sea igual que 
                     el nombre completo del usuario (que es el mismo) */
                     $sql = "SELECT * FROM actividades
                             INNER JOIN asociaciones ON actividades.associationID = asociaciones.associationID
-                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'pendiente';";
+                            WHERE asocName ='".$_SESSION['Fname']."'AND statusSol = 'aprobada';";
                     $result = $conn->query($sql);
                     $i = 1;
                     while($row = mysqli_fetch_assoc($result)){
@@ -87,10 +89,11 @@ include 'sconn.php';
                       $incio[$i] = date('h:i a', strtotime($incio[$i]));
                       $final[$i] = date('h:i a', strtotime($final[$i]));
                       $i++;
+
                     }
                     if($result->num_rows > 0){
                       echo "<h3>Solicitud Principal</h3>";
-                    echo "<h4>Estas son las solicitudes pendiendes a aprobar.</h4>";
+                    echo "<h4>Estas son las solicitudes que han sido aprobadas.</h4>";
                     tableheader();
                     for($i=1; $i <=count($nombre); $i++)
                     {
@@ -107,10 +110,10 @@ include 'sconn.php';
                         }
 
                      ?>
-                     <?php 
+                    <?php 
                           $sql = "SELECT * FROM salones
                           INNER JOIN asociaciones ON salones.associationID = asociaciones.associationID
-                          WHERE asocName ='".$_SESSION['Fname']."'AND estatus = 'pendiente';";
+                          WHERE asocName ='".$_SESSION['Fname']."'AND estatus = 'aprobada';";
                            $result = $conn->query($sql);
                            $i = 1;
                            while($row = mysqli_fetch_assoc($result)){
@@ -127,7 +130,7 @@ include 'sconn.php';
                            }
                            if($result->num_rows > 0){
                              echo "<h3>Solicitud Prestamo de Salón</h3>";
-                             echo "<h4>Estas son las solicitudes pendientes para aprobar.</h4>";
+                             echo "<h4>Estas son las solicitudes de préstamo de salón aprobdas.</h4>";
                              echo '<table class="table table-bordered">
                                     <thead class="thead-dark">
                                       <tr>
@@ -152,10 +155,10 @@ include 'sconn.php';
                                   </table>"; 
                            }
                      ?>
-                     <?php 
+                    <?php 
                         $sql = "SELECT * FROM solicitudesservicio
                         INNER JOIN asociaciones ON solicitudesservicio.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                          $result = $conn->query($sql);
                          $i = 1;
                          while($row = mysqli_fetch_assoc($result)){
@@ -170,7 +173,7 @@ include 'sconn.php';
                            $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud de Servicios</h3>";
-                            echo "<h4>Estas son las solicitudes de servicios pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes de servicios aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                    <thead class="thead-dark">
                                      <tr>
@@ -195,10 +198,10 @@ include 'sconn.php';
                                  </table>";                             
                           }
                      ?>
-                     <?php 
+                    <?php 
                      $sql = "SELECT * FROM actividadesteatro
                      INNER JOIN asociaciones ON actividadesteatro.associationID = asociaciones.associationID
-                     WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                     WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                      $result = $conn->query($sql);
                      $i = 1;
                      while($row = mysqli_fetch_assoc($result)){
@@ -213,7 +216,7 @@ include 'sconn.php';
                        $i++; }
                       if($result->num_rows > 0){
                         echo "<h3>Solicitud del Teatro General</h3>";
-                        echo "<h4>Estas son las solicitudes del Teatro pendientes.</h4>";
+                        echo "<h4>Estas son las solicitudes del Teatro aprobada.</h4>";
                         echo '<table class="table table-bordered">
                                <thead class="thead-dark">
                                  <tr>
@@ -225,22 +228,22 @@ include 'sconn.php';
                                  </tr>
                                </thead>
                                <tbody>';
-                        for($i=1; $i<=count($cantidadPer); $i++){
-                         echo "<tr>
+                        for($i=1; $i<=count($proposito); $i++){
+                         echo '<tr>
                                <td>$proposito[$i]</td>
                                <td>$fecha[$i]</td>
                                <td>$cantidadPer[$i]</td>
                                <td>$incio[$i]</td>
                                <td>$final[$i]</td>
-                               </tr>";  
+                               </tr>';  
                         }
                         echo "</tbody>
                              </table>"; }
                      ?>
-                     <?php 
+                  <?php 
                         $sql = "SELECT * FROM actividadesvestibulo
                         INNER JOIN asociaciones ON actividadesvestibulo.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                         $result = $conn->query($sql);
                         $i = 1;
                         while($row = mysqli_fetch_assoc($result)){
@@ -254,7 +257,7 @@ include 'sconn.php';
                           $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud del Vestibulo</h3>";
-                            echo "<h4>Estas son las solicitudes del Vestibulo pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes del Vestibulo aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                   <thead class="thead-dark">
                                     <tr>
@@ -274,13 +277,12 @@ include 'sconn.php';
                                   </tr>";  
                             }
                             echo "</tbody>
-                                </table>"; 
-                          }                    
+                                </table>"; }                    
                      ?>
                      <?php 
                         $sql = "SELECT * FROM auditorio
                         INNER JOIN asociaciones ON auditorio.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                         $result = $conn->query($sql);
                         $i = 1;
                         while($row = mysqli_fetch_assoc($result)){
@@ -295,7 +297,7 @@ include 'sconn.php';
                           $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud del auditorio 225</h3>";
-                            echo "<h4>Estas son las solicitudes del Auditorio 225 pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes del Auditorio 225 aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                   <thead class="thead-dark">
                                     <tr>
@@ -320,11 +322,10 @@ include 'sconn.php';
                                 </table>"; 
                           }                    
                      ?>
-
                      <?php 
                         $sql = "SELECT * FROM conferencia
                         INNER JOIN asociaciones ON conferencia.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                         $result = $conn->query($sql);
                         $i = 1;
                         while($row = mysqli_fetch_assoc($result)){
@@ -338,7 +339,7 @@ include 'sconn.php';
                           $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud de la sala de conferencias</h3>";
-                            echo "<h4>Estas son las solicitudes de la sala de conferencias pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes de la sala de conferencias aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                   <thead class="thead-dark">
                                     <tr>
@@ -360,12 +361,11 @@ include 'sconn.php';
                             echo "</tbody>
                                 </table>"; 
                           }                    
-                     ?>   
-
-                     <?php 
+                     ?>
+                    <?php 
                         $sql = "SELECT * FROM plantas
                         INNER JOIN asociaciones ON plantas.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND estatus = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND estatus = 'aprobada';";
                         $result = $conn->query($sql);
                         $i = 1;
                         while($row = mysqli_fetch_assoc($result)){
@@ -379,7 +379,7 @@ include 'sconn.php';
                           $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud de plantas</h3>";
-                            echo "<h4>Estas son las solicitudes de plantas pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes de plantas aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                   <thead class="thead-dark">
                                     <tr>
@@ -401,12 +401,11 @@ include 'sconn.php';
                             echo "</tbody>
                                 </table>"; 
                           }                    
-                     ?> 
- 
-                     <?php 
+                     ?>
+                      <?php 
                         $sql = "SELECT * FROM prestamoequipo
                         INNER JOIN asociaciones ON prestamoequipo.associationID = asociaciones.associationID
-                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'pendiente';";
+                        WHERE asocName ='".$_SESSION['Fname']."' AND statusSol = 'aprobada';";
                         $result = $conn->query($sql);
                         $i = 1;
                         while($row = mysqli_fetch_assoc($result)){
@@ -421,7 +420,7 @@ include 'sconn.php';
                           $i++; }
                           if($result->num_rows > 0){
                             echo "<h3>Solicitud Prestamo de Equipo</h3>";
-                            echo "<h4>Estas son las solicitudes de prestamo de equipo pendientes.</h4>";
+                            echo "<h4>Estas son las solicitudes de prestamo de equipo aprobadas.</h4>";
                             echo '<table class="table table-bordered">
                                   <thead class="thead-dark">
                                     <tr>
@@ -446,8 +445,7 @@ include 'sconn.php';
                                 </table>
                                 <br><br>"; 
                           }                    
-                     ?>
- 
+                     ?>                         
     <!-- Footer, alineado en el centro-->
     <!--Cambie el tag div por footer-->
     <footer class="footer"> 
