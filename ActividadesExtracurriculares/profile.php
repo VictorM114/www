@@ -55,6 +55,9 @@ include 'sconn.php';
           <li class="nav-item">
             <a class="nav-link" href="acreditacion.php">Acreditación</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="conocetusasoc.php">Conoce tus asociaciones</a>
+          </li>
          </ul>
          <a><form action= "logout.php" method ="post"><button type="submit" name="logout" class="btn btn-primary btn-sm">Salir</button></form></a> 
   </nav> 

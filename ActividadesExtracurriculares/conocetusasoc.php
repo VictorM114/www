@@ -2,9 +2,9 @@
     session_start();
     include 'functions.php';
     include 'sconn.php';
-    /*Víctor M. Ayala Hernández 
-  En esta pantalla los usuarios podrán someter los documentos para 
-  poder acreditar la asociacion */
+    /*Alice M Romero Reyes
+  En esta pantalla los usuarios podrán conocer las asociaciones activas
+  en el recinto*/
 ?>
 <!doctype html><!--Boostrap Siempre Requiere doctype-->
 <html lang="en">
@@ -68,7 +68,7 @@
   </nav> 
   <div class = "container">
             <div class = "jumbotron">
-          <h2>Aquí podrás someter los documentos de Acreditación</h2>
+          <h2>Conoce tus asociaciones</h2>
           </div>
 
   
